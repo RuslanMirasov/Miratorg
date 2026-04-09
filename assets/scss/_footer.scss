@@ -2,9 +2,50 @@
   display: block;
   width: 100%;
   height: auto;
-  min-height: 240px;
   background: var(--red);
-  padding: 65px 0px 62px 0px;
+  padding: 60px 0px;
   border-radius: 50px 50px 0px 0px;
   border-top: 2px solid var(--green);
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    width: 230px;
+    gap: 15px;
+    margin: 0;
+  }
+}
+
+.copy {
+  display: block;
+  max-width: 262px;
+}
+
+.footer-menu {
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 282px;
+  flex-direction: column;
+  gap: 20px;
+  li {
+    text-align: right;
+    a {
+      text-align: right;
+      font-size: 16px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0);
+      @media (hover: hover) {
+        &:hover {
+          border-bottom: 1px solid var(--white);
+        }
+      }
+    }
+  }
 }

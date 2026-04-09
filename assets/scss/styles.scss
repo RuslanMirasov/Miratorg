@@ -6,10 +6,7 @@
   --yellow: #e9cc29;
   --green: #88bf4a;
   --red: #e7102e;
-  --invalid: #ff0100;
-
-  --gradient: linear-gradient(90deg, #fffcb6, #fade79, #f2d344);
-  --gradient-invers: linear-gradient(90deg, #f2d344, #fade79, #fffcb6);
+  --invalid: #ffe26b;
 }
 
 @import 'mixins';
@@ -22,5 +19,6 @@
 @import 'swiper';
 @import 'footer';
 @import 'section__hero';
+@import 'section__soon';
 @import 'soon';
 @import 'popup';
