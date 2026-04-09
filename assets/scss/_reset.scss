@@ -1,0 +1,151 @@
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  backface-visibility: hidden;
+}
+
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+  z-index: 0;
+}
+
+body {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: auto;
+  font-family: var(--font);
+  color: var(--white);
+  background: var(--red);
+}
+
+img {
+  display: block;
+  object-fit: cover;
+  user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  color: inherit;
+  font-family: var(--font);
+  font-weight: 500;
+}
+
+b {
+  font-family: var(--font);
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol,
+menu {
+  list-style: none;
+}
+
+button {
+  position: relative;
+  border: none;
+  cursor: pointer;
+  background: none;
+  color: inherit;
+  &:disabled {
+    cursor: auto;
+    pointer-events: none;
+  }
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+.gradient {
+  background-image: linear-gradient(90deg, #fffcb6, #fade79, #f2d344);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 0.5rem;
+  @media (max-width: 767px) {
+    padding-bottom: 0.3rem;
+  }
+}
+
+.main {
+  display: block;
+  flex: 1;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: calc(100svh - 240px);
+  overflow: hidden;
+}
+
+.container {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0px 20px;
+  z-index: 1;
+  @media (max-width: 1439px) {
+    max-width: 100%;
+  }
+}
+
+.section {
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &.full {
+    min-height: 100svh;
+  }
+  &.visible {
+    overflow: visible;
+  }
+}
+
+.delete-in-mobil {
+  @media (max-width: 1279px), (orientation: portrait) {
+    display: none !important;
+  }
+}
+
+.show-in-momil {
+  display: none !important;
+  @media (max-width: 1279px), (orientation: portrait) {
+    display: block !important;
+  }
+}

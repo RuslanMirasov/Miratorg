@@ -1,0 +1,254 @@
+.header--soon {
+  height: myclamp(80px, 158px, 1440px, 1440px);
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  z-index: 3;
+  left: 0px;
+  top: 0px;
+  padding-top: myclamp(10px, 30px, 1440px, 1440px);
+  padding-right: myclamp(30px, 40px, 1440px, 1440px);
+  padding-left: myclamp(15px, 40px, 1440px, 1440px);
+
+  h1 {
+    display: block;
+    text-align: center;
+    width: 260px;
+    font-size: 20px;
+    line-height: 0.9;
+    margin-right: auto;
+  }
+
+  .logo-soon {
+    display: flex;
+    position: relative;
+    width: myclamp(55px, 92px, 1440px, 1440px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+    }
+
+    p {
+      position: absolute;
+      top: calc(100% + myclamp(4px, 15px, 1440px, 1440px));
+      white-space: nowrap;
+      font-size: myclamp(9px, 12px, 1440px, 1440px);
+      font-weight: 300;
+      opacity: 0.5;
+    }
+  }
+
+  @media (max-width: 1279px) {
+    height: 80px;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-left: 15px;
+  }
+}
+
+.main-soon {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100svh;
+  background: url('../img/soon/bg.webp') no-repeat center center/cover;
+}
+
+.content {
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 1240px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: center;
+  gap: 60px;
+}
+
+.img1 {
+  position: relative;
+  margin-left: -56px;
+  width: myclamp(204px, 360px, 1440px, 1440px);
+  height: myclamp(521px, 919px, 1440px, 1440px);
+}
+
+.choco {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: myclamp(183px, 370px, 1440px, 1440px);
+  height: myclamp(344px, 696px, 1440px, 1440px);
+  background: url('../img/soon/img2.webp') no-repeat center center/cover;
+}
+
+.choco__title {
+  display: block;
+  width: myclamp(148px, 440px, 1440px, 1440px);
+  font-size: myclamp(18px, 40px, 1440px, 1440px);
+  line-height: 1;
+  position: absolute;
+  transform: rotate(-2deg);
+  bottom: 100%;
+  text-align: center;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 50%;
+    right: 82%;
+    width: 100px;
+    height: 100px;
+    background: url('../img/soon/arrow.svg') no-repeat center center/contain;
+  }
+}
+
+.choco__start {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: myclamp(154px, 230px, 1440px, 1440px);
+
+  bottom: calc(100% + 140px);
+  font-weight: 400;
+  font-size: myclamp(14px, 30px, 1440px, 1440px);
+
+  .yellow {
+    display: block;
+    background: var(--yellow);
+    left: calc(100% + 30px);
+    font-weight: 900;
+    font-size: myclamp(12px, 28px, 1440px, 1440px);
+    color: var(--black);
+    padding: 4px myclamp(18px, 32px, 1440px, 1440px);
+    border-radius: 20px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    position: absolute;
+  }
+}
+
+.choco__center {
+  text-align: center;
+  display: block;
+  position: relative;
+  transform: rotate(-2deg) translate(-2%, 22%);
+  font-weight: 600;
+  font-size: myclamp(10px, 20px, 1440px, 1440px);
+}
+
+.titles {
+  display: flex;
+  position: relative;
+  width: myclamp(178px, 385px, 1440px, 1440px);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 70px;
+
+  h1,
+  h2 {
+    display: block;
+    text-align: center;
+    width: myclamp(260px, 482px, 1440px, 1440px);
+    font-size: myclamp(20px, 58px, 1440px, 1440px);
+    line-height: 0.9;
+    margin-right: auto;
+    margin-bottom: myclamp(0px, 324px, 1440px, 1440px);
+  }
+}
+
+@media (max-width: 1279px), (orientation: portrait) {
+  .content {
+    max-width: 490px;
+    margin-top: 270px;
+    gap: 0px;
+  }
+
+  .titles {
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    h1,
+    h2 {
+      display: block;
+      position: fixed;
+      left: 10px;
+      top: 10px;
+      width: 260px;
+      font-size: 20px;
+      line-height: 1.1;
+      margin-bottom: 0px;
+      z-index: 20;
+    }
+
+    .button {
+      margin-left: 175px;
+    }
+  }
+
+  .choco {
+    margin-left: 175px;
+  }
+
+  .img1 {
+    position: absolute;
+    margin-left: 0px;
+    width: 204px;
+    height: 521px;
+    left: -5px;
+    bottom: 0px;
+  }
+
+  .choco__start {
+    bottom: calc(100% + 33px);
+
+    .yellow {
+      display: block;
+      background: var(--yellow);
+      position: relative;
+      left: auto;
+      font-size: 12px;
+      text-transform: uppercase;
+      border-radius: 20px;
+      margin-top: 5px;
+    }
+  }
+
+  .choco__title {
+    width: 148px;
+    font-size: 18px;
+    bottom: calc(100% + 130px);
+    text-align: center;
+
+    &:before {
+      bottom: 50%;
+      right: 100%;
+      width: 58px;
+      height: 50px;
+      transform: rotate(-22deg);
+    }
+  }
+}
