@@ -28,10 +28,10 @@
 
 .dog {
   position: absolute;
-  width: 30%;
+  width: 17.777777%;
   left: 50%;
   top: 50%;
-  transform: translate(-42%, -54%);
+  transform: translate(-70%, -54%);
   img {
     position: relative;
     width: 100%;
@@ -63,11 +63,13 @@
   &:before {
     content: '';
     width: 100%;
+    min-width: 900px;
     height: 120px;
     background: url('../img/svg/hero-red-border.svg') no-repeat center bottom;
     background-size: 100% 100%;
     position: absolute;
-    left: 0px;
+    left: 50%;
+    transform: translate(-50%, 0%);
     bottom: calc(100% - 1px);
   }
   .container {
@@ -102,7 +104,7 @@
 
 .hero-timer {
   width: 378px;
-  margin-right: auto;
+  margin-top: -150px;
 
   .title {
     line-height: 0.8;
@@ -144,14 +146,15 @@
 
 .hero-form {
   width: 330px;
-  margin-right: 70px;
+  margin: 0 auto;
+  margin-top: 20px;
 
   .hero-form__title {
     display: block;
     max-width: 320px;
     font-size: 16px;
     font-weight: 500;
-    margin-bottom: 25px;
+    margin-bottom: 14px;
   }
 
   button {
@@ -167,5 +170,57 @@
     border-radius: 12px;
     background: var(--red);
     transition: 0.3s;
+  }
+}
+
+.house {
+  display: flex;
+  flex: 1;
+  max-width: 380px;
+  flex-shrink: 0;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+  align-content: flex-end;
+  margin-left: 20px;
+}
+
+.house__image {
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  bottom: 24px;
+  width: 528px;
+}
+
+.fsk {
+  position: relative;
+  min-width: 270px;
+  z-index: 2;
+  background: var(--green);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  padding: 18px;
+  margin-left: auto;
+  margin-right: -30px;
+  padding-top: 0px;
+  img {
+    height: 48px;
+    margin: 0 auto;
+    margin-top: -24px;
+    margin-bottom: 10px;
+  }
+
+  span {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 }
