@@ -1,7 +1,7 @@
 .section--soon {
   display: flex;
   flex-direction: column;
-  background-size: auto 89vh;
+  background-size: auto 89svh;
   height: 100svh;
   min-height: 780px;
 
@@ -12,8 +12,32 @@
     left: 0px;
     top: 0px;
     width: 100%;
-    height: 90svh;
+    height: 90%;
     background: url('../img/hero/family.webp') no-repeat center top/cover;
+  }
+
+  @media (max-width: 1439px) {
+    min-height: 600px;
+    max-height: 720px;
+  }
+
+  @media (max-width: 1279px) {
+    max-height: 620px;
+  }
+
+  @media (max-width: 1279px) and (orientation: portrait), (max-width: 1023px) {
+    height: auto;
+    min-height: 1px;
+    max-height: none;
+
+    &:before {
+      height: 382px;
+      background: url('../img/hero/family-mobil.webp') no-repeat right bottom/cover;
+    }
+
+    .container {
+      max-width: 375px;
+    }
   }
 }
 
@@ -28,13 +52,33 @@
   gap: 30px;
   margin-top: 33px;
   margin-left: 90px;
-  @media (min-width: 1600px) {
-    margin-left: 0px;
-  }
+
   img {
     &:last-child {
       width: calc(100% - 10px);
     }
+  }
+
+  @media (min-width: 1600px) {
+    margin-left: 0px;
+  }
+
+  @media (max-width: 1439px) {
+    width: 370px;
+    margin-left: 50px;
+  }
+
+  @media (max-width: 1279px) {
+    width: 320px;
+    gap: 20px;
+  }
+
+  @media (max-width: 1279px) and (orientation: portrait), (max-width: 1023px) {
+    width: 204px;
+    gap: 14px;
+    margin-left: 0px;
+    margin-top: 30px;
+    margin-bottom: 246px;
   }
 }
 
@@ -43,12 +87,25 @@
   width: 17.777777%;
   left: 50%;
   top: 50%;
-  transform: translate(-66%, -60%);
+  transform: translate(-60%, -74%);
   img {
     position: relative;
     width: 100%;
     animation: floatY 4s ease-in-out infinite;
     z-index: 1;
+  }
+
+  @media (max-width: 1279px) and (orientation: portrait), (max-width: 1023px) {
+    width: 116px;
+    left: 50%;
+    top: 165px;
+    transform: translate(-140%, 0%);
+    img {
+      position: relative;
+      width: 100%;
+      animation: floatY 4s ease-in-out infinite;
+      z-index: 1;
+    }
   }
 }
 
@@ -74,7 +131,7 @@
 
   &:before {
     content: '';
-    width: 100%;
+    width: 102%;
     min-width: 900px;
     height: 120px;
     background: url('../img/svg/hero-red-border.svg') no-repeat center bottom;
@@ -90,7 +147,34 @@
     justify-content: space-between;
     align-items: flex-end;
     align-content: flex-end;
-    gap: 40px;
+    gap: 42px;
+  }
+
+  @media (max-width: 1439px) {
+    padding-bottom: 40px;
+    padding-top: 0px;
+    .container {
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 1279px) {
+    .container {
+      gap: 24px;
+    }
+  }
+
+  @media (max-width: 1279px) and (orientation: portrait), (max-width: 1023px) {
+    padding-bottom: 60px;
+    .container {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: center;
+    }
+    &:before {
+      transform: translate(-55%, 0%);
+    }
   }
 }
 
@@ -106,21 +190,56 @@
   img {
     margin-bottom: -3%;
     &:first-child {
-      width: 36.4%;
+      width: 35.4%;
     }
     &:last-child {
-      width: 63%;
+      width: 62.2%;
     }
+  }
+
+  @media (max-width: 1439px) {
+    width: 400px;
+  }
+
+  @media (max-width: 1279px) {
+    width: 320px;
+  }
+
+  @media (max-width: 1279px) and (orientation: portrait), (max-width: 1023px) {
+    display: none;
   }
 }
 
 .hero-timer {
+  text-align: center;
   width: 378px;
   margin-top: -110px;
 
   .title {
+    display: inline-block;
+    width: auto;
     line-height: 0.8;
     margin-bottom: 20px;
+    padding: 8px 16px 11px 16px;
+    border-radius: 10px;
+    background: rgba(136, 191, 74, 0.8);
+  }
+
+  @media (max-width: 1439px) {
+    width: 340px;
+    margin-top: -88px;
+
+    .title {
+      margin-bottom: 10px;
+      padding: 7px 14px 10px 14px;
+      border-radius: 8px;
+    }
+  }
+
+  @media (max-width: 1279px) and (orientation: portrait), (max-width: 1023px) {
+    width: 100%;
+    max-width: 380px;
+    margin-top: -70px;
   }
 }
 
@@ -154,6 +273,22 @@
       color: var(--red);
     }
   }
+
+  @media (max-width: 1439px) {
+    gap: 8px;
+    .timer--inner {
+      border-radius: 14px;
+      gap: 4px;
+
+      span {
+        font-size: 12px;
+      }
+
+      strong {
+        font-size: 42px;
+      }
+    }
+  }
 }
 
 .hero-form {
@@ -167,6 +302,7 @@
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 14px;
+    text-align: left;
   }
 
   button {
@@ -183,27 +319,67 @@
     background: var(--red);
     transition: 0.3s;
   }
+
+  @media (max-width: 1439px) {
+    width: 295px;
+    margin-top: 12px;
+
+    .hero-form__title {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 40px;
+      height: 32px;
+      border-radius: 10px;
+      img {
+        margin-left: 2px;
+      }
+    }
+  }
 }
 
 .house {
   display: flex;
   flex: 1;
-  max-width: 353px;
+  max-width: 500px;
   flex-shrink: 0;
   position: relative;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-end;
   align-content: flex-end;
-  margin-left: 20px;
+
+  @media (max-width: 1279px) and (orientation: portrait), (max-width: 1023px) {
+    width: 100%;
+    max-width: 380px;
+    height: 252px;
+    min-height: 252px;
+  }
 }
 
 .house__image {
   position: absolute;
   z-index: 1;
-  left: 0px;
+  left: 100%;
   bottom: 24px;
   width: 433px;
+  transform: translate(-354px, 0px);
+
+  @media (max-width: 1439px) {
+    width: 328px;
+  }
+
+  @media (max-width: 1279px) {
+    left: 0%;
+    transform: translate(0px, 0px);
+  }
+  @media (max-width: 1279px) and (orientation: portrait), (max-width: 1023px) {
+    width: auto;
+    height: calc(252px - 24px);
+    transform: translate(-28px, 0px);
+  }
 }
 
 .fsk {
@@ -213,25 +389,37 @@
   background: var(--green);
   border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-  padding: 18px;
+  padding: 8px 30px 0px 30px;
   margin-left: auto;
   margin-right: -30px;
-  padding-top: 0px;
+  margin-bottom: 24px;
+  text-align: center;
+  @media (max-width: 1439px) {
+    margin-right: 0px;
+  }
+  @media (max-width: 1279px) {
+    padding: 8px 20px 0px 20px;
+    margin-right: -40px;
+  }
+  @media (max-width: 1279px) and (orientation: portrait), (max-width: 1023px) {
+    padding: 8px 36px 0px 36px;
+    margin-right: -32px;
+  }
   img {
     height: 48px;
-    margin: 0 auto;
-    margin-top: -24px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: -24px;
   }
 
   span {
     display: block;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
   }
 
   p {
-    font-size: 24px;
+    font-size: 32px;
+    line-height: 1;
     font-weight: 700;
     text-transform: uppercase;
   }

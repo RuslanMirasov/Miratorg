@@ -21,11 +21,46 @@
     gap: 15px;
     margin: 0;
   }
+
+  @media (max-width: 1439px) {
+    padding: 40px 0px;
+
+    .container {
+      padding: 0px 20px;
+    }
+
+    .logo {
+      width: 180px;
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 1279px) and (orientation: portrait), (max-width: 1023px) {
+    .container {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: center;
+      gap: 50px;
+    }
+    .logo {
+      order: 2;
+    }
+  }
 }
 
 .copy {
   display: block;
-  max-width: 374px;
+  width: 100%;
+  max-width: 380px;
+  @media (max-width: 1439px) {
+    font-size: 12px;
+    max-width: 324px;
+  }
+  @media (max-width: 1279px) and (orientation: portrait), (max-width: 1023px) {
+    order: 3;
+    text-align: center;
+  }
 }
 
 .footer-menu {
@@ -33,7 +68,7 @@
   position: relative;
   align-items: flex-end;
   width: 100%;
-  max-width: 374px;
+  max-width: 380px;
   flex-direction: column;
   gap: 20px;
   li {
@@ -46,6 +81,30 @@
         &:hover {
           border-bottom: 1px solid var(--white);
         }
+      }
+    }
+  }
+
+  @media (max-width: 1439px) {
+    max-width: 324px;
+    gap: 14px;
+    li {
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media (max-width: 1279px) and (orientation: portrait), (max-width: 1023px) {
+    order: 1;
+    max-width: 282px;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    li {
+      text-align: center;
+      a {
+        font-size: 16px;
       }
     }
   }

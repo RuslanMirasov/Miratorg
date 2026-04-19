@@ -10,5 +10,8 @@
 
   &.title--28 {
     font-size: 28px;
+    @media (max-width: 1439px) {
+      font-size: 25px;
+    }
   }
 }

@@ -89,6 +89,9 @@ button {
   height: auto;
   min-height: calc(100svh - 240px);
   overflow: hidden;
+  @media (max-width: 1279px) and (orientation: portrait), (max-width: 1023px) {
+    min-height: calc(100svh - 430px);
+  }
 }
 
 .container {
@@ -100,7 +103,13 @@ button {
   padding: 0px 20px;
   z-index: 1;
   @media (max-width: 1439px) {
-    max-width: 100%;
+    max-width: 1200px;
+  }
+  @media (max-width: 1279px) {
+    max-width: 1024px;
+  }
+  @media (max-width: 1279px) and (orientation: portrait), (max-width: 1023px) {
+    max-width: 768px;
   }
 }
 
@@ -115,18 +124,5 @@ button {
   }
   &.visible {
     overflow: visible;
-  }
-}
-
-.delete-in-mobil {
-  @media (max-width: 1279px), (orientation: portrait) {
-    display: none !important;
-  }
-}
-
-.show-in-momil {
-  display: none !important;
-  @media (max-width: 1279px), (orientation: portrait) {
-    display: block !important;
   }
 }
