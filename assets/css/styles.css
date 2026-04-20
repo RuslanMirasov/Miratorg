@@ -751,9 +751,9 @@ button:disabled {
   width: 17.777777%;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-60%, -74%);
-      -ms-transform: translate(-60%, -74%);
-          transform: translate(-60%, -74%);
+  -webkit-transform: translate(-60%, -68%);
+      -ms-transform: translate(-60%, -68%);
+          transform: translate(-60%, -68%);
 }
 .dog img {
   position: relative;
@@ -761,6 +761,13 @@ button:disabled {
   -webkit-animation: floatY 4s ease-in-out infinite;
           animation: floatY 4s ease-in-out infinite;
   z-index: 1;
+}
+@media (min-width: 1600px) {
+  .dog {
+    -webkit-transform: translate(-60%, -55%);
+        -ms-transform: translate(-60%, -55%);
+            transform: translate(-60%, -55%);
+  }
 }
 @media (max-width: 1279px) and (orientation: portrait), (max-width: 1023px) {
   .dog {
