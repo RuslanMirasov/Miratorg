@@ -18,23 +18,24 @@
 }
 
 html,
-body {
+body,
+.body {
   height: 100%;
   z-index: 0;
 }
 
-body {
+.body {
   width: 100%;
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: none;
-  -webkit-overflow-scrolling: auto;
   font-family: var(--font);
   color: var(--white);
   background: var(--red);
   font-size: 14px;
   font-weight: 400;
+  -webkit-overflow-scrolling: touch;
 }
 
 img {

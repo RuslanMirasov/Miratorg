@@ -31,24 +31,25 @@
 }
 
 html,
-body {
+body,
+.body {
   height: 100%;
   z-index: 0;
 }
 
-body {
+.body {
   width: 100%;
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
   -ms-scroll-chaining: none;
       overscroll-behavior: none;
-  -webkit-overflow-scrolling: auto;
   font-family: var(--font);
   color: var(--white);
   background: var(--red);
   font-size: 14px;
   font-weight: 400;
+  -webkit-overflow-scrolling: touch;
 }
 
 img {
@@ -394,6 +395,7 @@ button:disabled {
 }
 .button > * {
   z-index: 1;
+  pointer-events: none;
 }
 .button:before, .button:after {
   content: "";
@@ -1577,6 +1579,7 @@ button:disabled {
 }
 .backdrop:before {
   content: "";
+  display: block;
   position: absolute;
   pointer-events: none;
   left: -20px;
@@ -1584,23 +1587,8 @@ button:disabled {
   top: -50px;
   width: calc(100% + 40px);
   height: calc(100% + 70px);
-  background: var(--black);
-  opacity: 0.5;
+  background: rgba(0, 0, 0, 0.4);
   grid-area: 1/1/2/2;
-}
-@supports (-webkit-touch-callout: none) and (-webkit-overflow-scrolling: touch) {
-  .backdrop:before {
-    content: none;
-  }
-}
-@media (min-width: 1280px) {
-  .backdrop {
-    padding: 40px 10px 40px 10px;
-  }
-  .backdrop:before {
-    top: -80px;
-    height: calc(100% + 120px);
-  }
 }
 
 .popup {
