@@ -7,12 +7,12 @@
   --input-height: 46px;
   --input-padding: 0px 16px;
   --input-background: var(--white);
-  --input-border: none;
+  --input-border: 2px solid var(--white);
   --input-border-radius: 12px;
   --input-color: var(--black);
   --input-placeholder-color: var(--black);
   --input-placeholder-opacity: 0.6;
-  --invalid-border: none;
+  --invalid-border: 2px solid var(--green);
   --invalid-color: var(--invalid);
 
   //FORM
@@ -22,7 +22,6 @@
     --input-height: 42px;
     --input-font-size: 13px;
     --input-border-radius: 10px;
-    --input-padding: 0px 14px;
   }
 }
 
@@ -53,19 +52,18 @@
     position: absolute;
     width: 0px;
     height: 100%;
-    left: 0px;
-    top: 0px;
+    left: 18px;
+    top: -2px;
+    @media (max-width: 767px) {
+      top: 0px;
+    }
     flex-wrap: wrap;
     justify-content: flex-start;
-    padding: 16px;
-    @media (max-width: 1439px) {
-      padding: 14px;
-    }
     align-items: center;
     align-content: center;
     color: var(--black);
     opacity: 0.6;
-    transform: scale(1) translate(0%, -4%);
+    transform: scale(1) translate(0px, 0px);
     transition: transform 0.2s;
     pointer-events: none;
     white-space: nowrap;
@@ -96,11 +94,12 @@
 
   &.invalid {
     border: var(--invalid-border);
+    color: var(--red);
   }
 
   &:focus + .placeholder,
   &:not(:placeholder-shown) + .placeholder {
-    transform: scale(0.7) translate(-1px, -44%);
+    transform: scale(0.7) translate(0px, -18px);
   }
 }
 
@@ -117,11 +116,10 @@
   width: 100%;
   height: 0px;
   position: absolute;
-  left: 8px;
-  top: calc(100% - 8px);
+  left: 0px;
+  top: 100%;
   text-align: left;
   transition: 0.3s;
-  color: var(--invalid);
   font-size: 14px;
   font-family: var(--font);
   z-index: 10;
@@ -131,24 +129,12 @@
   span {
     display: inline-block;
     position: relative;
-    padding: 4px 10px 5px 10px;
-    color: var(--black);
-    font-size: 11px;
-    background: var(--yellow);
-    border-radius: 6px;
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    padding-left: 18px;
+    color: var(--white);
+    font-size: 10px;
+    line-height: 1;
     top: -0px;
     left: 0px;
     margin: 0px;
-    &:before {
-      content: '';
-      width: 8px;
-      height: 8px;
-      background: var(--yellow);
-      position: absolute;
-      left: 12px;
-      top: -3px;
-      transform: scaleX(1.5) rotate(45deg);
-    }
   }
 }

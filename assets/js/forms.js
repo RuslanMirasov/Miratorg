@@ -4,11 +4,11 @@ const validationRegEx = [
   {
     type: 'email',
     regex: /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/,
-    error: 'Не верный формат E-mail',
+    error: 'введите правильный email адрес',
   },
   {
     type: 'checkbox',
-    error: 'Это обязательное поле!',
+    error: 'поле обязательно к заполнению',
   },
   {
     type: 'radio',

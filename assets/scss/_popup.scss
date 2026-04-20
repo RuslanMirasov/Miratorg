@@ -25,7 +25,7 @@ $popup_transition: 0.5s;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   padding: 20px 10px 20px 10px;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(5px);
   transition:
     opacity $popup_transition ease-in-out 0s,
     visibility $popup_transition ease-in-out 0s;
@@ -45,9 +45,9 @@ $popup_transition: 0.5s;
     right: -20px;
     top: -50px;
     width: calc(100% + 40px);
-    height: calc(100% + 100px);
-    background: linear-gradient(90deg, #1f5621, #398b3f, #1f5621);
-    opacity: 0.8;
+    height: calc(100% + 70px);
+    background: var(--black);
+    opacity: 0.5;
     grid-area: 1 / 1 / 2 / 2;
     @supports (-webkit-touch-callout: none) and (-webkit-overflow-scrolling: touch) {
       content: none;
@@ -80,15 +80,15 @@ $popup_transition: 0.5s;
 .popup-close {
   display: block;
   position: absolute;
-  width: 30px;
-  height: 30px;
-  right: 20px;
-  top: 20px;
+  width: 32px;
+  height: 32px;
+  left: 100%;
+  top: 0px;
+  cursor: pointer;
+
   @media (max-width: 767px) {
-    width: 15px;
-    height: 15px;
-    right: 10px;
-    top: 10px;
+    left: calc(100% - 32px);
+    top: -32px;
   }
 
   &:after {
@@ -115,275 +115,54 @@ $popup_transition: 0.5s;
   align-items: center;
   align-content: center;
   text-align: center;
-  gap: 30px;
+  gap: 18px;
   position: relative;
   margin: 0 auto;
   width: 100%;
-  max-width: 800px;
+  max-width: 360px;
   user-select: none;
-  background: var(--white);
-  color: var(--black);
+  background: var(--red);
+  color: var(--white);
   border-radius: 20px;
-  padding: 50px 45px 40px 45px;
-  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.4);
-  pointer-events: none;
-  &.active {
-    pointer-events: all;
+  padding: 32px;
+  @media (max-width: 499px) {
+    padding: 32px 20px;
   }
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  pointer-events: all;
 
   .button {
     margin: 0 auto;
-  }
-
-  @media (max-width: 767px) {
-    gap: 20px;
-    max-width: 320px;
-    padding: 30px 20px 20px 20px;
-    border-radius: 10px;
-
-    .title.title--h2,
-    .title.title--h3 {
-      font-size: 20px;
-      line-height: 1.2;
-    }
-
-    .button {
-      min-height: 44px;
-      padding: 12px 20px;
-      margin-top: 4px;
-    }
+    margin-top: 20px;
   }
 }
 
-.popup__text {
-  display: block;
-  width: 100%;
-  margin: 0 auto;
-  font-size: 32px;
-  line-height: 1.1;
-  font-weight: 400;
-  font-family: var(--font);
-  a {
-    display: inline;
-    text-decoration: underline;
-    transition: color 0.3s;
-    @media (hover: hover) {
-      &:hover {
-        color: var(--yellow);
-      }
-    }
-  }
-
-  &.small {
-    font-size: 30px;
-  }
-
-  &.w900 {
-    font-weight: 900;
-  }
-
-  &.w600 {
-    font-weight: 600;
-  }
-
-  &.w700 {
-    font-weight: 700;
-    font-family: var(--font);
-  }
-
-  @media (max-width: 767px) {
-    font-size: 16px;
-    br {
-      display: none;
-    }
-    &.small {
-      font-size: 16px;
-    }
-  }
-}
-
-.popup-status {
-  display: block;
-  width: 180px;
-  height: 180px;
-  margin: 0 auto;
-  @media (max-width: 767px) {
-    width: 100px;
-    height: 100px;
-  }
-
-  &.loading {
-    background: url('../img/popup/preloader.gif') no-repeat center center/cover;
-  }
-  &.success {
-    background: url('../img/popup/accept.webp') no-repeat center center/cover;
-  }
-  &.rejected {
-    background: url('../img/popup/rejected.webp') no-repeat center center/cover;
-  }
-  &.error {
-    background: url('../img/popup/error.webp') no-repeat center center/contain;
-  }
-  &.moderation {
-    background: url('../img/popup/moderation.webp') no-repeat center center/cover;
-  }
-}
-
-#code-activation-process {
-  .popup-status {
-    margin: 50px auto 70px auto;
-    @media (max-width: 767px) {
-      margin: 20px auto 30px auto;
-    }
-  }
-}
-
-.to-clipbord {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  width: 100%;
-  height: 70px;
-  border-radius: 70px;
-  border: 2px solid var(--black);
-  cursor: pointer;
-  user-select: text;
-
-  span {
-    font-size: 30px;
-  }
-
-  &:after {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 32px;
-    background: url('../img/svg/copy.svg') no-repeat center center/contain;
-  }
-
-  @media (max-width: 767px) {
-    height: 42px;
-    span {
-      font-size: 24px;
-    }
-    &:after {
-      width: 30px;
-      height: 30px;
-    }
-  }
-}
-
-.notify {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translate(-50%, 150%);
-  padding: 14px 24px;
-  font-family: var(--font);
-  background: var(--yellow);
-  border: 2px solid var(--black);
-  font-weight: 900;
-  color: var(--black);
-  font-size: 15px;
-  border-radius: 50px;
-  z-index: 9999;
-  opacity: 0;
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
-  white-space: nowrap;
-
-  @media (max-width: 767px) {
-    bottom: 20px;
-    padding: 12px 20px;
-    border: 1px solid var(--black);
-    font-size: 12px;
-  }
-}
-
-.prize-horisontal {
-  display: flex;
-  position: relative;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-  padding-right: 260px;
-
-  .prize-price {
-    position: absolute;
-    right: 0px;
-    width: 240px;
-    height: 100px;
-    span {
-      font-size: 64px;
-    }
-  }
-
+#subscribe-success {
   .title {
-    text-align: left;
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 1.1;
+    font-size: 24px;
+    font-family: var(--montserrat);
+  }
+
+  p {
+    font-size: 14px;
+    font-family: var(--montserrat);
   }
 
   .button {
-    min-height: 58px;
-    padding: 20px 50px;
-    border: 2px solid var(--black);
-    margin: 30px auto 0px 0px;
+    padding: 20px 32px;
+    background: var(--white);
+    border-radius: 50px;
     span {
-      font-size: 20px;
+      color: var(--black);
+      transition: color 0.2s;
     }
-  }
 
-  @media (max-width: 767px) {
-    padding-right: 120px;
-
-    .prize-price {
-      width: 108px;
-      height: 44px;
-      top: 8px;
-      span {
-        font-size: 30px;
+    @media (hover: hover) {
+      &:hover {
+        span {
+          color: var(--white);
+        }
       }
-    }
-
-    .title.title--h3 {
-      font-size: 12px;
-    }
-
-    .button {
-      min-height: 30px;
-      padding: 8px 24px;
-      margin: 20px auto -10px 0px;
-      span {
-        font-size: 10px;
-      }
-    }
-  }
-}
-
-#status-error {
-  @media (max-width: 767px) {
-    .button {
-      span {
-        font-size: 13px;
-      }
-    }
-  }
-}
-
-#upload-photo-moderation-success,
-#upload-photo-error {
-  .popup__text {
-    a {
-      display: block;
-      width: 100%;
-      text-align: center;
     }
   }
 }

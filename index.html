@@ -56,12 +56,20 @@
 
               <div class="hero-form">
                 <p class="hero-form__title">Оставьте свою почту и мы сообщим когда Гриль-охота начнется</p>
-                <form action="#" class="form" novalidate>
+
+                <script>
+                  const subscribe = e => {
+                    e.preventDefault();
+                    window.popup.open('subscribe-success');
+                  };
+                </script>
+
+                <form action="#" class="form" novalidate onsubmit="subscribe(event)">
                   <label class="label">
-                    <input type="email" name="email" class="input" placeholder required />
+                    <input type="email" name="email" class="input" placeholder="&nbsp;" required />
                     <p class="placeholder">Email</p>
                   </label>
-                  <button type="submit">
+                  <button type="submit" class="button">
                     <img src="./assets/img/svg/btn-arrow.svg" alt="Мираторг" />
                   </button>
                 </form>
@@ -85,8 +93,8 @@
     <footer class="footer">
       <div class="container">
         <p class="copy">
-          Сроки проведения акции с&nbsp;1 июня по&nbsp;31&nbsp;июля&nbsp;2026г. <br />
-          Период покупок с&nbsp;01 июня&nbsp;2026&nbsp;г. по&nbsp;31 июля&nbsp;2026г.
+          Сроки проведения акции с&nbsp;1 июня по&nbsp;31&nbsp;июля&nbsp;2026&nbsp;г. <br />
+          Период покупок с&nbsp;1 июня&nbsp;2026&nbsp;г. по&nbsp;31 июля&nbsp;2026&nbsp;г.
         </p>
 
         <div class="logo">
@@ -101,6 +109,20 @@
         </menu>
       </div>
     </footer>
+
+    <!--POPUPS-->
+    <div class="backdrop" data-backdrop>
+      <div class="popup" data-popup>
+        <!--SUBSCRIBE-SUCCESS-->
+        <div class="popup-content" id="subscribe-success">
+          <button class="popup-close" data-popup-close></button>
+
+          <h2 class="title">Заголовок</h2>
+          <p>Текст модального окна</p>
+          <button class="button" data-popup-close><span>Понял принял</span></button>
+        </div>
+      </div>
+    </div>
 
     <script src="./assets/js/scripts.js" type="module" defer></script>
   </body>
