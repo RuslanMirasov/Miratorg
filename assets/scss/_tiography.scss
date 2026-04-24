@@ -9,9 +9,6 @@
   }
 
   &.title--28 {
-    font-size: 28px;
-    @media (max-width: 1439px) {
-      font-size: 25px;
-    }
+    font-size: myclamp(22px, 28px, 1440px, 2560px);
   }
 }

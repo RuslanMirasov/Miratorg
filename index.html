@@ -15,75 +15,48 @@
       <main class="main">
         <!--SECTION SOON-->
         <section class="section section--soon">
-          <div class="container">
-            <div class="logo">
-              <img src="./assets/img/svg/logo.svg" alt="Мираторг" />
-              <img src="./assets/img/svg/grill-logo.svg" alt="Мираторг" />
-            </div>
-          </div>
-
-          <div class="dog">
-            <img src="./assets/img/hero/dog.webp" alt="Мираторг" />
+          <div class="hero-images">
+            <picture>
+              <source srcset="./assets/img/hero/family-mobil.webp" media="(max-width: 600px)" type="image/webp" />
+              <img src="./assets/img/hero/family.webp" alt="Мираторг" class="family" />
+            </picture>
+            <img src="./assets/img/hero/smoke.gif" alt="Мираторг" class="smoke" />
+            <img src="./assets/img/svg/logo.svg" alt="Мираторг" class="logo" />
+            <img src="./assets/img/hero/dog.webp" alt="Мираторг" class="dog" />
           </div>
 
           <div class="hero-content">
-            <div class="container">
-              <div class="hero-products">
-                <img src="./assets/img/hero/product-1.webp" alt="Мираторг" />
-                <img src="./assets/img/hero/product-2.webp" alt="Мираторг" />
-              </div>
+            <div class="hero-products">
+              <img src="./assets/img/hero/product-1.webp" alt="Мираторг" />
+              <img src="./assets/img/hero/product-2.webp" alt="Мираторг" />
+            </div>
 
-              <div class="hero-timer">
-                <h1 class="title title--28">До начала акции:</h1>
+            <div class="hero-timer">
+              <h1 class="title title--28">До начала акции:</h1>
 
-                <div class="timer" data-timer>
-                  <div class="timer--inner">
-                    <span>дни</span>
-                    <strong data-timer-days>0</strong>
-                  </div>
-                  <div class="timer--inner">
-                    <span>часы</span>
-                    <strong data-timer-hours>0</strong>
-                  </div>
-                  <div class="timer--inner">
-                    <span>минуты</span>
-                    <strong data-timer-minutes>0</strong>
-                  </div>
-                  <!-- <div class="timer--inner">
-                  <span>секунды</span>
-                  <strong data-timer-seconds>0</strong>
-                </div> -->
+              <div class="timer" data-timer>
+                <div class="timer--inner">
+                  <span>дни</span>
+                  <strong data-timer-days>0</strong>
                 </div>
-
-                <div class="hero-form">
-                  <p class="hero-form__title">Оставьте свою почту и мы сообщим когда Гриль-охота начнется</p>
-
-                  <script>
-                    const subscribe = e => {
-                      e.preventDefault();
-                      window.popup.open('subscribe-success');
-                    };
-                  </script>
-
-                  <form action="#" class="form" novalidate onsubmit="subscribe(event)">
-                    <label class="label">
-                      <input type="email" name="email" class="input" placeholder="&nbsp;" required />
-                      <p class="placeholder">Email</p>
-                    </label>
-                    <button type="submit" class="button">
-                      <img src="./assets/img/svg/btn-arrow.svg" alt="Мираторг" />
-                    </button>
-                  </form>
+                <div class="timer--inner">
+                  <span>часы</span>
+                  <strong data-timer-hours>0</strong>
+                </div>
+                <div class="timer--inner">
+                  <span>минуты</span>
+                  <strong data-timer-minutes>0</strong>
                 </div>
               </div>
+            </div>
 
-              <div class="house">
-                <img src="./assets/img/hero/house.webp" alt="" class="house__image" />
-                <div class="fsk">
-                  <span>ГЛАВНАЯ ДОБЫЧА —</span>
-                  <p>ТАУНХАУС</p>
-                  <img src="./assets/img/hero/fsk.svg" alt="" />
-                </div>
+            <div class="house">
+              <img src="./assets/img/hero/house.webp" alt="" class="house__image" />
+              <div class="fsk">
+                <span>ГЛАВНАЯ ДОБЫЧА —</span>
+                <p>ТАУНХАУС</p>
+                <img src="./assets/img/hero/fsk.svg" alt="" />
+                <span class="absolute">и тысячи других призов</span>
               </div>
             </div>
           </div>
@@ -93,20 +66,43 @@
       <!--FOOTER-->
       <footer class="footer">
         <div class="container">
-          <p class="copy">
-            Сроки проведения акции с&nbsp;1 июня по&nbsp;31&nbsp;июля&nbsp;2026&nbsp;г. <br />
-            Период покупок с&nbsp;1 июня&nbsp;2026&nbsp;г. по&nbsp;31 июля&nbsp;2026&nbsp;г.
-          </p>
+          <div class="footer__form">
+            <div class="hero-form">
+              <p class="hero-form__title">Оставьте свою почту и мы сообщим когда Гриль-охота начнется</p>
 
-          <div class="logo">
+              <script>
+                const subscribe = e => {
+                  e.preventDefault();
+                  window.popup.open('subscribe-success');
+                };
+              </script>
+
+              <form action="#" class="form" novalidate onsubmit="subscribe(event)">
+                <label class="label">
+                  <input type="email" name="email" class="input" placeholder="&nbsp;" required />
+                  <p class="placeholder">Email</p>
+                </label>
+                <button type="submit" class="button">
+                  <img src="./assets/img/svg/btn-arrow.svg" alt="Мираторг" />
+                </button>
+              </form>
+            </div>
+            <p class="copy">
+              Сроки проведения акции с&nbsp;1 июня по&nbsp;31&nbsp;июля&nbsp;2026&nbsp;г. <br />
+              Период покупок с&nbsp;1 июня&nbsp;2026&nbsp;г. по&nbsp;31 июля&nbsp;2026&nbsp;г.
+            </p>
+          </div>
+
+          <div class="footer-logo">
             <img src="./assets/img/svg/logo.svg" alt="Мираторг" />
-            <img src="./assets/img/svg/grill-logo.svg" alt="Мираторг" />
           </div>
 
           <menu class="footer-menu">
             <li><a href="#">Правила акции</a></li>
             <li><a href="#">Политика конфиденциальности</a></li>
-            <li><a href="#">Политика в&nbsp;отношении обработки персональных данных</a></li>
+            <li>
+              <a href="#">Политика в&nbsp;отношении обработки <br />персональных данных</a>
+            </li>
           </menu>
         </div>
       </footer>
