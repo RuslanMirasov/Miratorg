@@ -174,7 +174,6 @@ export const popup = {
 
   _lockScroll() {
     const header = document.querySelector('.header');
-    const fixedBackgrounds = document.querySelectorAll('[data-fix-bg]');
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
     document.body.style.overflow = 'hidden';
@@ -183,26 +182,13 @@ export const popup = {
     if (header) {
       header.style.width = `calc(100% - ${scrollbarWidth}px)`;
     }
-
-    if (fixedBackgrounds.length > 0) {
-      fixedBackgrounds.forEach(bg => {
-        bg.style.width = `calc(100% - ${scrollbarWidth}px)`;
-      });
-    }
   },
 
   _unlockScroll() {
     const header = document.querySelector('.header');
-    const fixedBackgrounds = document.querySelectorAll('[data-fix-bg]');
 
     if (header) {
       header.style.width = '100%';
-    }
-
-    if (fixedBackgrounds.length > 0) {
-      fixedBackgrounds.forEach(bg => {
-        bg.style.width = '100%';
-      });
     }
 
     document.body.style.overflow = '';

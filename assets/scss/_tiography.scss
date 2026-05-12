@@ -7,8 +7,20 @@
   &.ta--l {
     text-align: left;
   }
+  &.upper {
+    text-transform: uppercase;
+  }
 
   &.title--28 {
     font-size: myclamp(22px, 28px, 1440px, 2560px);
+  }
+
+  &.title--46 {
+    font-size: myclamp(32px, 46px, 1440px, 2560px);
+  }
+
+  &.title--60 {
+    font-size: myclamp(26px, 60px, 1440px, 2560px);
+    text-transform: uppercase;
   }
 }

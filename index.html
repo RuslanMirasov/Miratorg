@@ -7,14 +7,67 @@
     <meta name="theme-color" content="#e7102e" />
     <meta name="description" content="Мираторг - Гриль охота" />
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" />
-    <link rel="stylesheet" href="./assets/css/styles.min.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/dropzone.min.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.min.css" />
     <title>Мираторг | Гриль охота</title>
   </head>
   <body>
     <div class="body">
+      <!--HEADER-->
+      <header class="header">
+        <div class="header__buttons">
+          <a href="./" aria-label="">
+            <img src="./assets/img/svg/miratorg.svg" alt="" class="logo-miratorg" />
+          </a>
+          <a href="./" aria-label="">
+            <img src="./assets/img/svg/grill-logo.svg" alt="" class="logo-grill" />
+          </a>
+        </div>
+
+        <nav class="navigation">
+          <ul class="menu">
+            <li>
+              <button class="button medium green-white" data-popup-open="cheque"><span>Загрузить чек</span></button>
+            </li>
+            <li>
+              <a href="./game.html" class="menu__link"><span>Игра</span></a>
+            </li>
+            <li>
+              <a href="#prizes" class="menu__link"><span>Призы</span></a>
+            </li>
+            <li>
+              <a href="#winners" class="menu__link"><span>Победители</span></a>
+            </li>
+            <li>
+              <a href="#rules" class="menu__link"><span>Правила</span></a>
+            </li>
+            <li>
+              <a href="#products" class="button small green"><span>Продукты</span></a>
+            </li>
+            <li>
+              <a href="#products" class="button small green"><span>Акция в СМ Мираторг</span></a>
+            </li>
+            <li>
+              <button class="header__buttons" data-popup-open="auth">
+                <img src="./assets/img/svg/login.svg" alt="" />
+                <span>Вход</span>
+              </button>
+              <!-- <a href="./profile.html" class="header__buttons">
+                <img src="./assets/img/svg/profile.svg" alt="" />
+                <span>Личный кабинет</span>
+              </a> -->
+            </li>
+          </ul>
+        </nav>
+
+        <button class="burger">
+          <span>Меню бургер</span>
+        </button>
+      </header>
+
       <main class="main">
-        <!--SECTION SOON-->
-        <section class="section section--soon">
+        <!--SECTION HERO-->
+        <section class="section section--hero">
           <div class="hero-images">
             <picture>
               <source srcset="./assets/img/hero/family-mobil.webp" media="(max-width: 600px)" type="image/webp" />
@@ -31,23 +84,8 @@
               <img src="./assets/img/hero/product-2.webp" alt="Мираторг" />
             </div>
 
-            <div class="hero-timer">
-              <h1 class="title title--28">До начала акции:</h1>
-
-              <div class="timer" data-timer>
-                <div class="timer--inner">
-                  <span>дни</span>
-                  <strong data-timer-days>0</strong>
-                </div>
-                <div class="timer--inner">
-                  <span>часы</span>
-                  <strong data-timer-hours>0</strong>
-                </div>
-                <div class="timer--inner">
-                  <span>минуты</span>
-                  <strong data-timer-minutes>0</strong>
-                </div>
-              </div>
+            <div class="hero-title">
+              <h1 class="title title--46 upper">Открывай<br />сезон охоты</h1>
             </div>
 
             <div class="house">
@@ -61,32 +99,19 @@
             </div>
           </div>
         </section>
+
+        <!--SECTION HOW TO WIN-->
+        <section class="section section--winn" id="how-to-winn">
+          <div class="container">
+            <h2 class="title title--60">Как выиграть призы</h2>
+          </div>
+        </section>
       </main>
 
       <!--FOOTER-->
       <footer class="footer">
         <div class="container">
           <div class="footer__form">
-            <div class="hero-form">
-              <p class="hero-form__title">Оставьте свою почту и мы сообщим когда Гриль-охота начнется</p>
-
-              <script>
-                const subscribe = e => {
-                  e.preventDefault();
-                  window.popup.open('subscribe-success');
-                };
-              </script>
-
-              <form action="#" class="form" novalidate onsubmit="subscribe(event)">
-                <label class="label">
-                  <input type="email" name="email" class="input" placeholder="&nbsp;" required />
-                  <p class="placeholder">Email</p>
-                </label>
-                <button type="submit" class="button">
-                  <img src="./assets/img/svg/btn-arrow.svg" alt="Мираторг" />
-                </button>
-              </form>
-            </div>
             <p class="copy">
               Сроки проведения акции с&nbsp;1 июня по&nbsp;31&nbsp;июля&nbsp;2026&nbsp;г. <br />
               Период покупок с&nbsp;1 июня&nbsp;2026&nbsp;г. по&nbsp;31 июля&nbsp;2026&nbsp;г.
@@ -111,17 +136,338 @@
     <!--POPUPS-->
     <div class="backdrop" data-backdrop>
       <div class="popup" data-popup>
-        <!--SUBSCRIBE-SUCCESS-->
-        <div class="popup-content" id="subscribe-success">
+        <!--AUTH POPUP-->
+        <div class="popup-content" id="auth">
           <button class="popup-close" data-popup-close></button>
+          <div class="tabs" data-tabs="auth">
+            <ul class="tabs-navigation">
+              <li><button data-tab-target="auth-login" class="active">Вход</button></li>
+              <li><button data-tab-target="auth-register">Регистрация</button></li>
+            </ul>
 
-          <h2 class="title">ЗАГОЛОВОК</h2>
-          <p>Текст модального окна</p>
-          <button class="button" data-popup-close><span>Понял принял</span></button>
+            <div class="tab active" data-tab="auth-login">
+              <div class="tabs" data-tabs="login-tabs">
+                <!--Login form-->
+                <div class="tab active" data-tab="1">
+                  <script>
+                    function onLoginFormSubmit(e) {
+                      e.preventDefault();
+                      openTab('login-tabs', '2');
+                    }
+                  </script>
+                  <form action="#" class="form" novalidate onsubmit="onLoginFormSubmit(event)">
+                    <label class="label">
+                      <span class="label__text">Телефон</span>
+                      <input type="tel" name="phone" class="input" placeholder="Телефон" required />
+                    </label>
+                    <fieldset>
+                      <label class="label">
+                        <input type="checkbox" name="remember" class="checkbox" />
+                        <p class="label__text">Запомнить меня</p>
+                      </label>
+                    </fieldset>
+                    <button type="submit" class="button white full"><span>Войти</span></button>
+                  </form>
+                </div>
+
+                <!--Login form (confirm code)-->
+                <div class="tab" data-tab="2">
+                  <script>
+                    function onLoginConfirmCodeSubmit(e) {
+                      e.preventDefault();
+                      window.location.href = './profile';
+                    }
+                  </script>
+                  <form action="#" class="form" novalidate onsubmit="onLoginConfirmCodeSubmit(event)">
+                    <label class="label">
+                      <span class="label__text">Код подтверждения</span>
+                      <input type="text" name="confirm-code" class="input" placeholder="Код подтверждения" required />
+                    </label>
+                    <button type="submit" class="button white full"><span>Войти</span></button>
+                    <p class="popup-text">Тебе поступит звонок с кодом подтверждения.</p>
+                    <p class="popup-text">
+                      Если не хочешь ждать или звонок не поступил,&nbsp;позвони по номеру и регистрация подтвердится автоматически
+                    </p>
+                    <p class="popup-text big">8 800 800 80 80</p>
+                    <p class="popup-link ta--l" onclick="openTab('login-tabs', '1')">Назад</p>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab" data-tab="auth-register">
+              <div class="tabs" data-tabs="register-tabs">
+                <!--Registration form-->
+                <div class="tab active" data-tab="1">
+                  <script>
+                    function onRegisterFormSubmit(e) {
+                      e.preventDefault();
+                      openTab('register-tabs', '2');
+                    }
+                  </script>
+                  <form action="#" class="form" novalidate onsubmit="onRegisterFormSubmit(event)">
+                    <label class="label">
+                      <span class="label__text">Имя</span>
+                      <input type="text" name="name" class="input" required />
+                    </label>
+                    <label class="label">
+                      <span class="label__text">E-mail</span>
+                      <input type="email" name="email" class="input" required />
+                    </label>
+                    <label class="label">
+                      <span class="label__text">Телефон</span>
+                      <input type="tel" name="phone" class="input" required placeholder="+7 ___ ___-__-__" autocomplete="off" />
+                    </label>
+
+                    <p class="popup-text ta--l">
+                      На твой номер телефона поступит звонок с&nbsp;голосовым сообщением кода для подтверждения регистрации.
+                    </p>
+
+                    <fieldset>
+                      <label class="label">
+                        <input type="checkbox" name="confirmation" class="checkbox" required />
+                        <p class="label__text">
+                          <span>Я соглашаюсь с <a href="#">Правилами</a> и&nbsp;<a href="#">Политикой&nbsp;конфиденциальности</a></span>
+                        </p>
+                      </label>
+                      <label class="label">
+                        <input class="checkbox" required type="checkbox" name="confirmation2" />
+                        <p class="label__text">
+                          <span>Я соглашаюсь с <a href="#">Политикой обработки персональных данных</a></span>
+                        </p>
+                      </label>
+                    </fieldset>
+
+                    <button type="submit" class="button white full"><span>Зарегистрироваться</span></button>
+                  </form>
+                </div>
+
+                <!--Registration form (confirm code)-->
+                <div class="tab" data-tab="2">
+                  <script>
+                    function onRegisterConfirmCodeSubmit(e) {
+                      e.preventDefault();
+                      window.popup.open('add-register-info');
+                    }
+                  </script>
+                  <form action="#" class="form" novalidate onsubmit="onRegisterConfirmCodeSubmit(event)">
+                    <label class="label">
+                      <span class="label__text">Код подтверждения</span>
+                      <input type="text" name="confirm-code" class="input" placeholder="Код подтверждения" required />
+                    </label>
+                    <button type="submit" class="button white full"><span>Зарегистрироваться</span></button>
+                    <p class="popup-text">Тебе поступит звонок с кодом подтверждения.</p>
+                    <p class="popup-text">
+                      Если не хочешь ждать или звонок не поступил,&nbsp;позвони по номеру и регистрация подтвердится автоматически
+                    </p>
+                    <p class="popup-text big">8 800 800 80 80</p>
+                    <p class="popup-link ta--l" onclick="openTab('register-tabs', '1')">Назад</p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--ADD REGISTER INFO POPUP-->
+        <div class="popup-content" id="add-register-info">
+          <button class="popup-close" data-popup-close></button>
+          <h2 class="popup-title">Мои данные</h2>
+          <p class="popup-subtitle">Заполни 2 поля и получи <br /><span>XX</span> стрел</p>
+
+          <form action="#" class="form" novalidate onsubmit="onRegisterConfirmCodeSubmit(event)">
+            <label class="label">
+              <span class="label__text">Фамилия</span>
+              <input type="text" name="lastname" class="input" placeholder="Твоя фамилия" required />
+            </label>
+            <label class="label">
+              <span class="label__text">Отчество</span>
+              <input type="text" name="middlename" class="input" placeholder="Твоё отчество" required />
+            </label>
+            <button type="submit" class="button white full"><span>Сохранить</span></button>
+          </form>
+        </div>
+
+        <!--ARROWS EXCHANGE POPUP-->
+        <div class="popup-content" id="arrows-exchange">
+          <button class="popup-close" data-popup-close></button>
+          <img src="./assets/img/svg/add-arrows-popup.svg" alt="" class="arrows-exchange__image" />
+          <h2 class="popup-title big">Обмен стрел <br />на приз</h2>
+          <p class="popup-subtitle big">Хочешь обменять <span>ХХХ</span> <br />стрел на Промокод OZON?</p>
+
+          <script>
+            function onArrowsExchangeSubmit(e) {
+              e.preventDefault();
+              window.popup.open('arrows-exchange-success');
+            }
+          </script>
+
+          <form action="#" class="form" onsubmit="onArrowsExchangeSubmit(event)">
+            <input type="hidden" name="some-count" value="ХХХ" />
+            <button type="submit" class="button white full"><span>Обменять</span></button>
+            <p class="popup-link under" data-popup-close>Отмена</p>
+          </form>
+        </div>
+
+        <!--ARROWS EXCHANGE ERROR POPUP-->
+        <div class="popup-content" id="arrows-exchange-error">
+          <button class="popup-close" data-popup-close></button>
+          <img src="./assets/img/svg/add-arrows-popup.svg" alt="" class="arrows-exchange__image" />
+          <h2 class="popup-title big">Обмен стрел <br />на приз</h2>
+          <p class="popup-text medium">
+            Тебе не&nbsp;хватает <span>YYY</span> стрел, чтобы&nbsp;обменять их на&nbsp;Промокод OZON. Получай стрелы, регистрируя чеки
+            с&nbsp;продукцией Мираторг. <br />Также можно получить стрелы, отгадывая слова в&nbsp;игре.
+          </p>
+          <div class="buttons">
+            <button type="button" class="button white full" data-popup-open="cheque"><span>Зарегистрировать чек</span></button>
+            <a href="./game.html" class="button white full"><span>Играть в «Охота за словами»</span></a>
+          </div>
+        </div>
+
+        <!--ARROWS EXCHANGE SUCCESS POPUP-->
+        <div class="popup-content" id="arrows-exchange-success">
+          <button class="popup-close" data-popup-close></button>
+          <img src="./assets/img/svg/add-arrows-popup.svg" alt="" class="arrows-exchange__image" />
+          <h2 class="popup-title big">Обмен стрел <br />на приз</h2>
+          <p class="popup-subtitle big">Ура! Ты обменял <span>ХХХ</span> <br />стрел на&nbsp;Промокод OZON!</p>
+          <div class="buttons">
+            <a href="./profile.html#my-prize" class="button white full"><span>Мои призы</span></a>
+          </div>
+        </div>
+
+        <!--CHEQUE POPUP-->
+        <div class="popup-content" id="cheque">
+          <button class="popup-close" data-popup-close></button>
+          <h2 class="popup-title big">Регистрация чека</h2>
+          <div class="buttons">
+            <button type="button" class="button white full" data-popup-open="cheque-by-camera"><span>С помощью камеры</span></button>
+            <button type="button" class="button white full" data-popup-open="cheque-instruction"><span>Загрузить фотографию</span></button>
+            <button type="button" class="button white full" data-popup-open="cheque-by-self"><span>Ввести вручную</span></button>
+          </div>
+        </div>
+
+        <!--CHEQUE BY CAMERA POPUP-->
+        <div class="popup-content" id="cheque-by-camera">
+          <button class="popup-close" data-popup-close></button>
+          <h2 class="popup-title big">Регистрация чека</h2>
+        </div>
+
+        <!--CHEQUE DOWNLOAD INSRTUCTION POPUP-->
+        <div class="popup-content" id="cheque-instruction">
+          <button class="popup-close" data-popup-close></button>
+          <h2 class="popup-title big">Регистрация чека</h2>
+          <ul class="register-check-list">
+            <li>
+              <img src="./assets/img/cheque-info1.webp" alt="President" />
+              <span>Нажмите «Загрузить»</span>
+            </li>
+            <li>
+              <img src="./assets/img/cheque-info2.webp" alt="President" />
+              <span>Выберите фото чека</span>
+            </li>
+            <li>
+              <img src="./assets/img/cheque-info3.webp" alt="President" />
+              <span>Фото чека должно быть:</span>
+              <ul>
+                <li><span>чётким</span></li>
+                <li><span>с полным списком продуктов</span></li>
+                <li><span>на фото должен быть QR код</span></li>
+              </ul>
+            </li>
+            <li>
+              <img src="./assets/img/cheque-info4.webp" alt="President" />
+              <span>Если фото окажется плохого качества, чек принят не будет</span>
+            </li>
+          </ul>
+
+          <div class="example">
+            <img src="./assets/img/cheque.webp" alt="President" />
+            <span>Пример чека</span>
+          </div>
+
+          <div class="buttons">
+            <button type="button" class="button white full" data-popup-open="cheque-by-photo">
+              <span>Загрузить</span>
+            </button>
+          </div>
+        </div>
+
+        <!--CHEQUE DOWNLOAD BY PHOTO POPUP-->
+        <div class="popup-content" id="cheque-by-photo">
+          <button class="popup-close" data-popup-close></button>
+          <h2 class="popup-title big">Регистрация чека</h2>
+          <form action="#" class="dropzone" data-dropzone></form>
+          <script>
+            function onChequeLoadFormSubmit(e) {
+              e.preventDefault();
+              window.popup.open('cheque-success');
+            }
+          </script>
+          <button type="button" class="button white full" onClick="onChequeLoadFormSubmit(event)">
+            <span>Загрузить</span>
+          </button>
+          <br />
+          <div class="buttons">
+            <p class="popup-subtitle">Нет возможности сфотографировать&nbsp;чек?</p>
+            <a class="popup-link under" data-popup-open="cheque-by-self">Введи данные чека вручную</a>
+          </div>
+        </div>
+
+        <!--CHEQUE DOWNLOAD BY SELF POPUP-->
+        <div class="popup-content" id="cheque-by-self">
+          <button class="popup-close" data-popup-close></button>
+          <h2 class="popup-title">Ввод данных чека</h2>
+          <h2 class="popup-subtitle">Внимательно введи <br />данные чека в&nbsp;поля ниже</h2>
+          <script>
+            function onChequeFormSubmit(e) {
+              e.preventDefault();
+              window.popup.open('cheque-success');
+            }
+          </script>
+          <form action="#" class="form" novalidate onsubmit="onChequeFormSubmit(event)">
+            <label class="label">
+              <span class="label__text">ФН</span>
+              <input type="text" name="fn" class="input" placeholder="ФН" required />
+            </label>
+            <label class="label">
+              <span class="label__text">ФД</span>
+              <input type="text" name="fd" class="input" placeholder="ФД" required />
+            </label>
+            <label class="label">
+              <span class="label__text">ФП</span>
+              <input type="text" name="fp" class="input" placeholder="ФП" required />
+            </label>
+            <label class="label">
+              <span class="label__text">Дата покупки</span>
+              <input type="date" name="buy-date" class="input" required />
+            </label>
+            <label class="label">
+              <span class="label__text">Время покупки</span>
+              <input type="time" name="buy-time" class="input" required />
+            </label>
+            <label class="label">
+              <span class="label__text">Сумма покупки</span>
+              <input type="text" name="amount" inputmode="decimal" class="input" placeholder="0.00" required />
+            </label>
+            <br />
+            <button type="submit" class="button white full"><span>Отправить</span></button>
+            <p class="popup-link under" data-popup-open="cheque-by-photo">Попробовать снова загрузить фото</p>
+          </form>
+        </div>
+
+        <!--CHEQUE DOWNLOAD SUCCESS POPUP-->
+        <div class="popup-content" id="cheque-success">
+          <button class="popup-close" data-popup-close></button>
+          <h2 class="popup-title big">Чек зарегистрирован</h2>
+          <p class="popup-subtitle big">Чек на&nbsp;проверке. <br />Следи за&nbsp;его статусом в&nbsp;своём личном кабинете.</p>
+          <br />
+          <button type="button" class="button white full" data-popup-open="cheque"><span>Загрузить еще</span></button>
         </div>
       </div>
     </div>
 
+    <script src="./assets/js/iMask.js"></script>
+    <script src="./assets/js/dropzone.min.js"></script>
     <script src="./assets/js/scripts.js" type="module" defer></script>
   </body>
 </html>

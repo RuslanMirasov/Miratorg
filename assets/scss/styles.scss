@@ -7,6 +7,7 @@
   --yellow: #e9cc29;
   --green: #88bf4a;
   --red: #e7102e;
+  --red-dark: #b10000;
   --invalid: #ffe26b;
 }
 
@@ -17,9 +18,11 @@
 @import 'forms';
 @import 'buttons';
 @import 'header';
+@import 'tabs';
 @import 'swiper';
 @import 'footer';
 @import 'section__hero';
 @import 'section__soon';
 @import 'soon';
 @import 'popup';
+@import 'dropzone';

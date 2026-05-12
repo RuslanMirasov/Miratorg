@@ -24,7 +24,7 @@ $popup_transition: 0.5s;
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  padding: 20px 10px 20px 10px;
+  padding: 34px 10px 20px 10px;
   backdrop-filter: blur(5px);
   transition:
     opacity $popup_transition ease-in-out 0s,
@@ -76,7 +76,7 @@ $popup_transition: 0.5s;
   top: 0px;
   cursor: pointer;
 
-  @media (max-width: 767px) {
+  @media (max-width: 767px) and (orientation: portrait) {
     left: calc(100% - 32px);
     top: -32px;
   }
@@ -109,7 +109,7 @@ $popup_transition: 0.5s;
   position: relative;
   margin: 0 auto;
   width: 100%;
-  max-width: 360px;
+  max-width: 375px;
   user-select: none;
   background: var(--red);
   color: var(--white);
@@ -123,11 +123,152 @@ $popup_transition: 0.5s;
 
   .button {
     margin: 0 auto;
-    margin-top: 20px;
+    &.white {
+      &:before,
+      &:after {
+        background: var(--black);
+      }
+    }
+  }
+}
+
+.popup-title,
+.popup-subtitle,
+.popup-text {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font);
+  &.ta--l {
+    text-align: left;
+  }
+}
+.popup-title {
+  font-size: 24px;
+  line-height: 1.24;
+  font-weight: 500;
+  &.big {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+}
+
+.popup-subtitle {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 500;
+  &.big {
+    font-size: 20px;
+  }
+}
+
+.popup-text {
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 400;
+  &.medium {
+    font-size: 14px;
+  }
+  &.big {
+    font-size: 24px;
+  }
+}
+
+.popup-link {
+  display: block;
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.1;
+  font-weight: 500;
+  color: var(--yellow);
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 10px;
+  &.under {
+    text-decoration: none !important;
+    border-bottom: 1px solid var(--yellow);
+  }
+  &.ta--l {
+    margin-left: 0px;
+  }
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.register-check-list {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  flex-direction: column;
+  gap: 20px;
+  font-family: var(--font);
+  text-align: left;
+  li {
+    position: relative;
+    padding-left: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
+    ul {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      gap: 5px;
+      margin: 5px 0px;
+      padding-left: 5px;
+
+      li {
+        padding-left: 0px;
+        list-style: disc;
+        list-style-position: inside;
+        font-size: 12px;
+        span {
+          font-size: 16px;
+        }
+      }
+    }
+
+    img {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      left: 0px;
+      top: -5px;
+      @media (max-width: 767px) {
+        width: 25px;
+        height: 25px;
+        left: 0px;
+        top: -6px;
+      }
+    }
+  }
+}
+
+.example {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 10px;
+  img {
+    width: 100%;
+  }
+
+  span {
+    font-size: 12px;
+    opacity: 0.7;
   }
 }
 
 #subscribe-success {
+  max-width: 360px;
   .title {
     font-size: 24px;
     font-family: var(--montserrat);
@@ -154,5 +295,65 @@ $popup_transition: 0.5s;
         }
       }
     }
+  }
+}
+
+#auth {
+  max-width: 375px;
+  background: var(--red);
+  border-radius: 24px;
+  padding: 0;
+  .tabs {
+    overflow: hidden;
+  }
+  .tab {
+    background: var(--red);
+    border-radius: 0px 0px 24px 24px;
+  }
+
+  .form {
+    padding: 24px 40px 36px 40px;
+  }
+
+  [data-tab='auth-register'] [data-tab='1'] .button[type='submit'] {
+    margin-top: 14px;
+  }
+}
+
+#add-register-info {
+  max-width: 375px;
+  gap: 10px;
+  margin-top: 50px;
+  .button[type='submit'] {
+    margin-top: 20px;
+  }
+}
+
+#arrows-exchange,
+#arrows-exchange-error,
+#arrows-exchange-success {
+  margin-top: 25px;
+  .arrows-exchange__image {
+    width: 100px;
+    margin-top: -82px;
+  }
+  form {
+    .button {
+      margin-top: 14px;
+    }
+  }
+  .buttons {
+    margin-top: 14px;
+  }
+  .popup-text {
+    font-size: 14px;
+    max-width: 280px;
+  }
+}
+
+#cheque {
+  .buttons {
+    margin-top: 20px;
+    gap: 20px;
   }
 }

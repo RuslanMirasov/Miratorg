@@ -1,4 +1,29 @@
 .section--hero {
-  background: url('../img/hero/family.webp') no-repeat center top/cover;
-  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.hero-title {
+  text-align: center;
+  width: myclamp(340px, 378px, 1440px, 2560px);
+
+  .title {
+    width: 100%;
+    text-align: center;
+  }
+
+  @media (max-width: 1023px) {
+    display: flex;
+    width: auto;
+    padding: 14px 30px;
+    border-radius: 12px;
+    margin-top: -50px;
+    margin-bottom: 10px;
+    background: var(--green);
+  }
+
+  @media (max-width: 600px) {
+    margin-top: -76px;
+  }
 }

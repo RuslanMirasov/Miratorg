@@ -5,18 +5,18 @@
   --input-font-weight: 400;
   --input-text-transform: auto;
   --input-height: 46px;
-  --input-padding: 0px 16px;
+  --input-padding: 0px 14px;
   --input-background: var(--white);
   --input-border: 2px solid var(--white);
-  --input-border-radius: 12px;
+  --input-border-radius: 5px;
   --input-color: var(--black);
   --input-placeholder-color: var(--black);
   --input-placeholder-opacity: 0.6;
-  --invalid-border: 2px solid var(--green);
+  --invalid-border: 2px solid var(--yellow);
   --invalid-color: var(--invalid);
 
   //FORM
-  --form-gap: 10px;
+  --form-gap: 14px;
 
   @media (max-width: 1439px) {
     --input-height: 42px;
@@ -34,10 +34,12 @@
   margin-right: auto;
   gap: var(--form-gap);
 
-  a {
-    display: inline;
-    color: inherit;
-    text-decoration: underline;
+  fieldset {
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    gap: 14px;
   }
 }
 
@@ -46,6 +48,18 @@
   width: 100%;
   position: relative;
   color: inherit;
+
+  .label__text {
+    display: block;
+    width: 100%;
+    padding: 0px 4px;
+    font-size: 10px;
+    font-family: var(--font);
+    opacity: 0.5;
+    font-weight: 500;
+    text-align: left;
+    padding-bottom: 5px;
+  }
 
   .placeholder {
     display: flex;
@@ -88,6 +102,17 @@
   box-shadow: none;
   resize: none;
 
+  &::placeholder {
+    opacity: 0.7;
+    transition: opacity 0.3s ease 0s;
+  }
+
+  &:focus {
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
   &.input--textarea {
     height: 100px;
   }
@@ -117,24 +142,108 @@
   height: 0px;
   position: absolute;
   left: 0px;
-  top: 100%;
   text-align: left;
+  overflow: hidden;
   transition: 0.3s;
+  color: var(--invalid);
   font-size: 14px;
   font-family: var(--font);
-  z-index: 10;
+  z-index: 20;
   pointer-events: none;
-  z-index: 30;
 
   span {
     display: inline-block;
     position: relative;
-    padding-left: 18px;
-    color: var(--white);
-    font-size: 10px;
-    line-height: 1;
-    top: -0px;
+    padding: 5px 14px;
+    color: var(--black);
+    font-weight: 500;
+    font-size: 11px;
+    background: var(--yellow);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    top: 0px;
     left: 0px;
-    margin: 0px;
+    margin-top: 5px;
+    &:before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--yellow);
+      position: absolute;
+      left: 9px;
+      top: -3px;
+      transform: scaleX(1.5) rotate(45deg);
+    }
+  }
+}
+
+.radio,
+.checkbox {
+  display: none;
+  + .label__text {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    width: 100%;
+    min-height: 26px;
+    padding: 0px;
+    padding-left: 40px;
+    color: inherit;
+    opacity: 1;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+
+    span {
+      display: inline;
+      font-size: 12px;
+      line-height: 1.2;
+      a {
+        display: inline;
+        width: auto;
+        margin: 0;
+        text-align: left;
+        color: var(--yellow);
+        @media (hover: hover) {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0px;
+      top: 50%;
+      transform: translate(0%, -50%);
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      border: 2px solid var(--white);
+      background: rgba(0, 0, 0, 0);
+      transition: border 0.3s;
+    }
+  }
+
+  &:checked {
+    + .label__text {
+      &:before {
+        background: var(--white) url('../img/svg/checkbox.svg') no-repeat center center;
+        background-size: 100% 100%;
+      }
+    }
+  }
+
+  &.invalid {
+    + .label__text {
+      color: var(--invalid);
+      &:before {
+        border: 2px solid var(--invalid);
+      }
+    }
   }
 }

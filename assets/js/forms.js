@@ -4,7 +4,12 @@ const validationRegEx = [
   {
     type: 'email',
     regex: /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/,
-    error: 'введите правильный email адрес',
+    error: 'не верный формат e-mail',
+  },
+  {
+    type: 'tel',
+    regex: /^\+7 \d{3} \d{3}-\d{2}-\d{2}$/,
+    error: 'не верный формат телефона',
   },
   {
     type: 'checkbox',
@@ -13,6 +18,11 @@ const validationRegEx = [
   {
     type: 'radio',
     error: 'Выберите вариант!',
+  },
+  {
+    inputmode: 'decimal',
+    regex: /^\d+(?:[.,]\d{1,2})?$/,
+    error: 'Введите сумму, например 100.00',
   },
 ];
 
@@ -54,6 +64,16 @@ const validateInput = input => {
     }
   }
 
+  const inputmodeValidation = validationRegEx.find(v => v.inputmode === input.inputMode);
+
+  if (inputmodeValidation) {
+    const regex = new RegExp(inputmodeValidation.regex);
+
+    if (!regex.test(value.trim())) {
+      return validationError(inputmodeValidation.error);
+    }
+  }
+
   removeErrorHTML(input);
   return true;
 };
@@ -63,7 +83,7 @@ const validateForm = form => {
   let errorsCount = 0;
 
   const inputs = form.querySelectorAll('[required]');
-  if (inputs.length === 0) return;
+  if (inputs.length === 0) return true;
 
   inputs.forEach(input => {
     const isInputValid = validateInput(input);
@@ -145,3 +165,43 @@ export const initForms = () => {
     true
   );
 };
+
+export function initPhoneInputs(mask = '+7 000 000-00-00') {
+  const inputs = document.querySelectorAll('[type="tel"]');
+
+  if (!inputs.length) return;
+
+  inputs.forEach(input => {
+    if (input.dataset.maskInitialized === 'true') return;
+
+    IMask(input, {
+      mask,
+    });
+
+    input.dataset.maskInitialized = 'true';
+  });
+}
+
+export function initDecimalInputs() {
+  const inputs = document.querySelectorAll('[inputmode="decimal"]');
+
+  if (!inputs.length) return;
+
+  inputs.forEach(input => {
+    if (input.dataset.decimalMaskInitialized === 'true') return;
+
+    IMask(input, {
+      mask: Number,
+      scale: 2,
+      signed: false,
+      thousandsSeparator: '',
+      padFractionalZeros: false,
+      normalizeZeros: true,
+      radix: '.',
+      mapToRadix: [','],
+      min: 0,
+    });
+
+    input.dataset.decimalMaskInitialized = 'true';
+  });
+}
