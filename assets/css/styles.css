@@ -1,12 +1,14 @@
 :root {
   --font: 'roboto-slab', sans-serif;
   --montserrat: 'montserrat', sans-serif;
+  --serif: 'robotoserif', sans-serif;
   --white: #ffffff;
   --black: #000000;
   --yellow: #e9cc29;
   --green: #88bf4a;
   --red: #e7102e;
   --red-dark: #b10000;
+  --red-light: #eb4561;
   --invalid: #ffe26b;
 }
 
@@ -194,6 +196,13 @@ button:disabled {
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "robotoserif";
+  src: url("../fonts/robotoserif-regular.woff2") format("woff2"), url("../fonts/robotoserif-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 .title {
   display: block;
   width: 100%;
@@ -233,11 +242,17 @@ button:disabled {
 .title.upper {
   text-transform: uppercase;
 }
+.title.title--20 {
+  font-size: clamp(14px, 1.3889vw, 20px);
+}
 .title.title--28 {
   font-size: clamp(22px, 1.9444vw, 50px);
 }
 .title.title--40 {
   font-size: clamp(26px, 2.7778vw, 40px);
+}
+.title.title--42 {
+  font-size: clamp(32px, 2.9167vw, 42px);
 }
 .title.title--46 {
   font-size: clamp(40px, 3.1944vw, 82px);
@@ -2103,13 +2118,164 @@ button:disabled {
 .prize-tab {
   min-height: 600px;
   border-radius: 50px;
-  background: var(--green);
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
   pointer-events: none;
+  opacity: 0;
 }
 .prize-tab.swiper-slide-active {
   pointer-events: all;
+  opacity: 1;
+}
+
+.main-prize {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  overflow: hidden;
+  background: var(--red-light);
+  min-height: 600px;
+  border-radius: 50px;
+}
+.main-prize.intro {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  gap: 34px;
+  background: var(--red-light) url("../img/prizes/main-prize.webp") no-repeat center center/contain;
+  padding: 30px;
+  padding-top: 40px;
+}
+.main-prize.intro .title--20 {
+  margin-top: auto;
+}
+
+.main-prize__image {
+  position: relative;
+  overflow: hidden;
+  width: 800px;
+  border-radius: 50px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.main-prize__image img {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+}
+.main-prize__image:after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 65px;
+  right: 28px;
+  bottom: 20px;
+  background: url("../img/svg/fsk.svg") no-repeat center center/contain;
+  z-index: 2;
+}
+
+.main-prize__text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 14px;
+  padding: 50px 52px;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+.main-prize__text .title {
+  text-align: left;
+}
+.main-prize__text .fskfamilyru {
+  margin-top: auto;
+  margin-left: auto;
+  border-bottom: 1px solid var(--white);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.main-prize__text p {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+.main-prize__text p .under {
+  text-decoration: underline;
+}
+.main-prize__text strong {
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.main-prize__text strong .under {
+  text-decoration: underline;
+}
+
+.garant-prizes {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 600px;
+  border-radius: 50px;
+  padding: 50px;
+  background: var(--green) url("../img/prizes/garant-bg.svg") no-repeat center center/cover;
+}
+.garant-prizes h3 {
+  font-weight: 500;
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.garant-prizes ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  margin-top: 60px;
+}
+.garant-prizes ul li p {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .section--soon {

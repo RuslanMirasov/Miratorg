@@ -4,10 +4,16 @@ const sliders = document.querySelectorAll('[data-slider]');
 
 const toBool = s => String(s).toLowerCase() === 'true';
 
+const getOwnElement = (sliderWrapper, selector) => {
+  return Array.from(sliderWrapper.querySelectorAll(selector)).find(el => el.closest('[data-slider]') === sliderWrapper);
+};
+
 export const initSliders = () => {
   if (sliders.length > 0) {
     sliders.forEach(sliderWrapper => {
-      const swiper = sliderWrapper.querySelector('.swiper');
+      const swiper = getOwnElement(sliderWrapper, '.swiper');
+      if (!swiper) return;
+
       const {
         effect = 'slide',
         speed = '600',
@@ -21,9 +27,9 @@ export const initSliders = () => {
         allowTouchMove = 'true',
       } = sliderWrapper.dataset;
 
-      const arrowPrev = sliderWrapper.querySelector('[data-arrow-prev]');
-      const arrowNext = sliderWrapper.querySelector('[data-arrow-next]');
-      const pagination = sliderWrapper.querySelector('[data-pagination]');
+      const arrowPrev = getOwnElement(sliderWrapper, '[data-arrow-prev]');
+      const arrowNext = getOwnElement(sliderWrapper, '[data-arrow-next]');
+      const pagination = getOwnElement(sliderWrapper, '[data-pagination]');
 
       const options = {
         allowTouchMove: toBool(allowTouchMove),

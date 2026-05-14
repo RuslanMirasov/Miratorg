@@ -34,12 +34,20 @@
     text-transform: uppercase;
   }
 
+  &.title--20 {
+    font-size: myclamp(14px, 20px, 1440px, 1440px);
+  }
+
   &.title--28 {
     font-size: myclamp(22px, 28px, 1440px, 2560px);
   }
 
   &.title--40 {
     font-size: myclamp(26px, 40px, 1440px, 1440px);
+  }
+
+  &.title--42 {
+    font-size: myclamp(32px, 42px, 1440px, 1440px);
   }
 
   &.title--46 {
