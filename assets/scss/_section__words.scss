@@ -1,0 +1,66 @@
+.section--words {
+  background: var(--white);
+}
+
+.words-headlines {
+  background: url('../img/bg.webp') no-repeat center bottom/cover;
+  padding-bottom: 184px;
+  padding-top: 94px;
+  mask-image: linear-gradient(#000 0 0), url('../img/words/mask-top.svg'), url('../img/words/mask-bottom.svg');
+  mask-repeat: no-repeat, no-repeat, no-repeat;
+  mask-size:
+    100% calc(100% + 2px),
+    100% 121px,
+    100% 112px;
+  mask-position:
+    center,
+    center top,
+    center calc(100% + 1px);
+  mask-composite: exclude, exclude;
+
+  .container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    gap: 30px;
+
+    .subtitle {
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    .image {
+      display: block;
+      position: relative;
+      width: 280px;
+      height: 280px;
+      border-radius: 280px;
+      overflow: hidden;
+      box-shadow: 0px 16px 20px rgba(0, 67, 41, 0.251);
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.words-banner {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 50px;
+  width: calc(100% - 40px);
+  max-width: 1400px;
+  background: var(--red) url('../img/words/banner-bg.webp') no-repeat center center/cover;
+  margin: 0 auto;
+  margin-top: -120px;
+  padding: 60px;
+  border-radius: 50px;
+}

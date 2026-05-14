@@ -58,4 +58,9 @@
     font-size: myclamp(40px, 60px, 1440px, 1440px);
     text-transform: uppercase;
   }
+
+  &.title--64 {
+    font-size: myclamp(40px, 64px, 1440px, 1440px);
+    text-transform: uppercase;
+  }
 }
