@@ -5,27 +5,55 @@
 .arrow {
   display: block;
   position: absolute;
-  width: 24px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
+  @media (max-width: 1279px) {
+    width: 50px;
+    height: 50px;
+  }
+  @media (max-width: 1023px) {
+    width: 40px;
+    height: 40px;
+  }
+  border-radius: 60px;
+  background: var(--green);
   overflow: hidden;
   cursor: pointer;
   transition: 0.3s;
   z-index: 4;
+
   &.swiper-button-disabled {
-    opacity: 0.2;
+    opacity: 0;
+    pointer-events: none;
   }
 
   &[data-arrow-prev] {
     left: 0px;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: url('../img/svg/arrow-left.svg') no-repeat center center;
+    background: var(--green) url('../img/svg/arrow-left.svg') no-repeat center center;
+    &.red {
+      background: var(--red) url('../img/svg/arrow-left.svg') no-repeat center center;
+    }
+    @media (hover: hover) {
+      &:hover {
+        background: var(--black) url('../img/svg/arrow-left.svg') no-repeat center center;
+      }
+    }
   }
   &[data-arrow-next] {
     right: 0px;
     top: 50%;
     transform: translate(50%, -50%);
-    background: url('../img/svg/arrow-right.svg') no-repeat center center;
+    background: var(--green) url('../img/svg/arrow-right.svg') no-repeat center center;
+    &.red {
+      background: var(--red) url('../img/svg/arrow-right.svg') no-repeat center center;
+    }
+    @media (hover: hover) {
+      &:hover {
+        background: var(--black) url('../img/svg/arrow-right.svg') no-repeat center center;
+      }
+    }
   }
 }
 

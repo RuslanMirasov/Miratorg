@@ -8,7 +8,7 @@
 
 .button {
   display: flex;
-  height: 50px;
+  height: 53px;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -19,6 +19,10 @@
   background: var(--red);
   font-family: var(--font);
   font-weight: 500;
+
+  @media (max-width: 1439px) {
+    height: 50px;
+  }
 
   span {
     display: block;
@@ -129,6 +133,7 @@
       background: var(--red);
     }
     span {
+      font-size: 16px;
       color: var(--black);
     }
     @media (hover: hover) {

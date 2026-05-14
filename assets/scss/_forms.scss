@@ -4,7 +4,7 @@
   --input-font-size: 14px;
   --input-font-weight: 400;
   --input-text-transform: auto;
-  --input-height: 46px;
+  --input-height: 36px;
   --input-padding: 0px 14px;
   --input-background: var(--white);
   --input-border: 2px solid var(--white);
@@ -19,9 +19,9 @@
   --form-gap: 14px;
 
   @media (max-width: 1439px) {
-    --input-height: 42px;
-    --input-font-size: 13px;
-    --input-border-radius: 10px;
+    --input-height: 36px;
+    --input-font-size: 14px;
+    --input-border-radius: 5px;
   }
 }
 

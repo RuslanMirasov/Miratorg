@@ -7,12 +7,19 @@
     <meta name="theme-color" content="#e7102e" />
     <meta name="description" content="Мираторг - Гриль охота" />
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/dropzone.min.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.min.css" />
     <title>Мираторг | Гриль охота</title>
   </head>
   <body>
     <div class="body">
+      <!--STYCKY BUTTON-->
+      <button class="stycky-button" data-stycky-button data-popup-open="how-to-get-arrows">
+        <span>Больше<br />стрел —<br />больше<br />призов!</span>
+      </button>
+
       <!--HEADER-->
       <header class="header">
         <div class="header__buttons">
@@ -47,22 +54,23 @@
             <li>
               <a href="#products" class="button small green"><span>Акция в СМ Мираторг</span></a>
             </li>
-            <li>
-              <button class="header__buttons" data-popup-open="auth">
-                <img src="./assets/img/svg/login.svg" alt="" />
-                <span>Вход</span>
-              </button>
-              <!-- <a href="./profile.html" class="header__buttons">
-                <img src="./assets/img/svg/profile.svg" alt="" />
-                <span>Личный кабинет</span>
-              </a> -->
-            </li>
           </ul>
         </nav>
 
         <button class="burger">
           <span>Меню бургер</span>
         </button>
+
+        <div class="header__auth">
+          <button class="header__buttons" data-popup-open="auth">
+            <img src="./assets/img/svg/login.svg" alt="" />
+            <span>Вход</span>
+          </button>
+          <!-- <a href="./profile.html" class="header__buttons">
+            <img src="./assets/img/svg/profile.svg" alt="" />
+            <span>Личный кабинет</span>
+          </a> -->
+        </div>
       </header>
 
       <main class="main">
@@ -70,12 +78,11 @@
         <section class="section section--hero">
           <div class="hero-images">
             <picture>
-              <source srcset="./assets/img/hero/family-mobil.webp" media="(max-width: 600px)" type="image/webp" />
-              <img src="./assets/img/hero/family.webp" alt="Мираторг" class="family" />
+              <source srcset="./assets/img/hero/hero-mobil.webp" media="(max-width: 600px)" type="image/webp" />
+              <img src="./assets/img/hero/hero.webp" alt="Мираторг" class="family" />
             </picture>
             <img src="./assets/img/hero/smoke.gif" alt="Мираторг" class="smoke" />
             <img src="./assets/img/svg/logo.svg" alt="Мираторг" class="logo" />
-            <img src="./assets/img/hero/dog.webp" alt="Мираторг" class="dog" />
           </div>
 
           <div class="hero-content">
@@ -103,22 +110,76 @@
         <!--SECTION HOW TO WIN-->
         <section class="section section--winn" id="how-to-winn">
           <div class="container">
-            <h2 class="title title--60">Как выиграть призы</h2>
+            <h2 class="title title--60 circles">Как выиграть призы</h2>
+
+            <div class="how-to-winn" data-slider data-slides-per-view="4,2,1">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="./assets/img/how-to-winn/1.webp" alt="" />
+                    <h3>КУПИ ПРОДУКЦИЮ <br />МИРАТОРГ</h3>
+                    <a href="#" class="button"><span>Продукция</span></a>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./assets/img/how-to-winn/2.webp" alt="" />
+                    <h3>РЕГИСТРИРУЙ ЧЕКИ <br />И КОПИ СТРЕЛЫ</h3>
+                    <button class="button" data-popup-open="cheque"><span>Зарегистрировать</span></button>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./assets/img/how-to-winn/3.webp" alt="" />
+                    <h3>ОБМЕНИВАЙ СТРЕЛЫ <br />НА ПРИЗЫ</h3>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./assets/img/how-to-winn/4.webp" alt="" />
+                    <h3>ПОЛУЧАЙ ШАНС <br />ВЫИГРАТЬ ТАУНХАУС</h3>
+                  </div>
+                </div>
+              </div>
+              <button class="arrow red" data-arrow-prev></button>
+              <button class="arrow red" data-arrow-next></button>
+            </div>
+          </div>
+        </section>
+
+        <!--PRIZES-->
+        <section class="section section--prizes" id="prizes">
+          <div class="container">
+            <div class="prizes">
+              <h2 class="title title--60 circles green">ПРИЗЫ</h2>
+              <menu class="prizes-navigation">
+                <li><button type="button" data-prizes-nav="0" class="active">Главный приз</button></li>
+                <li><button type="button" data-prizes-nav="1">Гарантированные призы</button></li>
+                <li><button type="button" data-prizes-nav="2">Витрина призов</button></li>
+                <li><button type="button" data-prizes-nav="3">Еженедельные призы</button></li>
+                <li><button type="button" data-prizes-nav="4">Ежемесячные призы</button></li>
+              </menu>
+              <div class="prizes-tabs" data-slider="prizes-tabs" data-allow-touch-move="false" data-space-between="60,30,20">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide prize-tab">1</div>
+                    <div class="swiper-slide prize-tab">2</div>
+                    <div class="swiper-slide prize-tab">3</div>
+                    <div class="swiper-slide prize-tab">4</div>
+                    <div class="swiper-slide prize-tab">5</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
 
       <!--FOOTER-->
-      <footer class="footer">
+      <footer class="footer footer--website">
         <div class="container">
-          <div class="footer__form">
+          <div class="footer__copy">
             <p class="copy">
               Сроки проведения акции с&nbsp;1 июня по&nbsp;31&nbsp;июля&nbsp;2026&nbsp;г. <br />
               Период покупок с&nbsp;1 июня&nbsp;2026&nbsp;г. по&nbsp;31 июля&nbsp;2026&nbsp;г.
             </p>
           </div>
 
-          <div class="footer-logo">
+          <div class="footer-logo no-margin">
             <img src="./assets/img/svg/logo.svg" alt="Мираторг" />
           </div>
 
@@ -145,6 +206,7 @@
               <li><button data-tab-target="auth-register">Регистрация</button></li>
             </ul>
 
+            <!--Login forms-->
             <div class="tab active" data-tab="auth-login">
               <div class="tabs" data-tabs="login-tabs">
                 <!--Login form-->
@@ -195,6 +257,7 @@
               </div>
             </div>
 
+            <!--Registration forms-->
             <div class="tab" data-tab="auth-register">
               <div class="tabs" data-tabs="register-tabs">
                 <!--Registration form-->
@@ -274,8 +337,13 @@
           <button class="popup-close" data-popup-close></button>
           <h2 class="popup-title">Мои данные</h2>
           <p class="popup-subtitle">Заполни 2 поля и получи <br /><span>XX</span> стрел</p>
-
-          <form action="#" class="form" novalidate onsubmit="onRegisterConfirmCodeSubmit(event)">
+          <script>
+            function onAddInfoFormSubmit(e) {
+              e.preventDefault();
+              window.location.href = './profile.html';
+            }
+          </script>
+          <form action="#" class="form" novalidate onsubmit="onAddInfoFormSubmit(event)">
             <label class="label">
               <span class="label__text">Фамилия</span>
               <input type="text" name="lastname" class="input" placeholder="Твоя фамилия" required />
@@ -350,6 +418,25 @@
         <div class="popup-content" id="cheque-by-camera">
           <button class="popup-close" data-popup-close></button>
           <h2 class="popup-title big">Регистрация чека</h2>
+          <p class="popup-subtitle">
+            Наведи камеру на&nbsp;QR-код, <br />
+            и&nbsp;он будет автоматически <br />
+            отсканирован
+          </p>
+
+          <div class="scanner">
+            <span class="scanner__error">Текст ошибки, если камера не&nbsp;поддерживается или не&nbsp;доступна на&nbsp;этом устройстве</span>
+          </div>
+
+          <select data-select name="cameras">
+            <option value="Camera 013552">Camera 013552</option>
+            <option value="Camera 013553">Camera 013553</option>
+          </select>
+
+          <div class="buttons">
+            <button type="button" class="button white full" data-popup-open="cheque-by-self"><span>Ввести данные чека вручную</span></button>
+            <a class="popup-link under" data-popup-open="cheque-by-photo">Загрузить фотографию чека</a>
+          </div>
         </div>
 
         <!--CHEQUE DOWNLOAD INSRTUCTION POPUP-->
@@ -463,10 +550,36 @@
           <br />
           <button type="button" class="button white full" data-popup-open="cheque"><span>Загрузить еще</span></button>
         </div>
+
+        <!--CHEQUE DOWNLOAD SUCCESS POPUP-->
+        <div class="popup-content" id="how-to-get-arrows">
+          <button class="popup-close" data-popup-close></button>
+          <h2 class="title title--40 upper circles">Как зарабатывать стрелы?</h2>
+          <ul class="how-to-get-arrows">
+            <li>
+              <span>+ 100 стрел</span>
+              <p>Приветственные <br />стрелы за&nbsp;регистрацию на&nbsp;сайте</p>
+            </li>
+            <li>
+              <span>+ 1 стрела</span>
+              <p>За&nbsp;каждый рубль <br />в&nbsp;чеке при&nbsp;покупке <br />продукции <br />Мираторг</p>
+            </li>
+            <li>
+              <span>+ 1 стрела</span>
+              <p>За игру<br />на сайте</p>
+            </li>
+            <li>
+              <span>+ 10 стрел</span>
+              <p>За&nbsp;отсканированный <br />QR на&nbsp;POSm <br />и&nbsp;остальных <br />анонсирующих <br />материалах</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <script src="./assets/js/iMask.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./assets/js/dropzone.min.js"></script>
     <script src="./assets/js/scripts.js" type="module" defer></script>
   </body>

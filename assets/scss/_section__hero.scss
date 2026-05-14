@@ -2,6 +2,99 @@
   display: flex;
   flex-direction: column;
   height: auto;
+  z-index: 2;
+  background: none;
+
+  .logo {
+    width: 26.8%;
+    left: 4.583333vw;
+    top: 6.5vw;
+    @media (max-width: 1279px) {
+      left: 5%;
+      top: 70px;
+    }
+    @media (max-width: 1023px) {
+      top: 4.5vw;
+    }
+    @media (max-width: 600px) {
+      left: 6.4%;
+      top: 20px;
+      width: 54.4%;
+    }
+    @media (max-width: 500px) {
+      left: 20px;
+    }
+  }
+
+  .house {
+    left: 6.5vw;
+    @media (min-width: 1280px) {
+      top: -34px;
+    }
+    @media (max-width: 1279px) {
+      left: 0vw;
+      max-width: 270px;
+    }
+  }
+
+  .hero-content {
+    align-content: center;
+    align-items: center;
+    margin-top: -40px;
+    background: linear-gradient(180deg, var(--red) 30%, rgba(0, 0, 0, 0) 31%);
+
+    @media (max-width: 1365px) {
+      margin-top: -20px;
+    }
+
+    @media (max-width: 1023px) {
+      margin-top: 0px;
+    }
+  }
+
+  .fsk {
+    left: 7vw;
+    @media (max-width: 1279px) {
+      width: auto;
+      left: 0px;
+      padding-right: 100px;
+      padding-left: 30px;
+      margin: 0;
+      margin-left: 7vw;
+    }
+  }
+
+  @media (max-width: 1279px) {
+    .house__image {
+      left: 0px;
+      right: 0px;
+      max-width: 110%;
+    }
+    .hero-products {
+      width: 390px;
+    }
+  }
+  @media (max-width: 1023px) {
+    .hero-products {
+      display: flex;
+      width: 280px;
+      margin-bottom: 20px;
+      margin-right: auto;
+      margin-top: -76px;
+    }
+    .house {
+      width: 360px;
+      max-width: 360px;
+      height: 240px;
+    }
+    .fsk {
+      width: auto;
+      left: 100px;
+      padding-right: 46px;
+      padding-left: 46px;
+      margin: 0;
+    }
+  }
 }
 
 .hero-title {
@@ -16,14 +109,6 @@
   @media (max-width: 1023px) {
     display: flex;
     width: auto;
-    padding: 14px 30px;
-    border-radius: 12px;
-    margin-top: -50px;
     margin-bottom: 10px;
-    background: var(--green);
-  }
-
-  @media (max-width: 600px) {
-    margin-top: -76px;
   }
 }

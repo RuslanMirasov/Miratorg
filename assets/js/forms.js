@@ -1,15 +1,28 @@
 const showErrors = true;
 
+export const initSelectFields = () => {
+  const allSelectEl = document.querySelectorAll('[data-select]');
+
+  if (allSelectEl.length === 0) return;
+
+  allSelectEl.forEach(select => {
+    new Choices(select, {
+      searchEnabled: false,
+      shouldSort: false,
+    });
+  });
+};
+
 const validationRegEx = [
   {
     type: 'email',
     regex: /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/,
-    error: 'не верный формат e-mail',
+    error: 'введите правильный email адрес',
   },
   {
     type: 'tel',
     regex: /^\+7 \d{3} \d{3}-\d{2}-\d{2}$/,
-    error: 'не верный формат телефона',
+    error: 'введите правильный телефон',
   },
   {
     type: 'checkbox',

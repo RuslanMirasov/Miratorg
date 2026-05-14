@@ -1,8 +1,10 @@
 import { popup } from './popup.js';
 import { initScrollManager } from './scrollManager.js';
-import { initDecimalInputs, initForms, initPhoneInputs } from './forms.js';
+import { initDecimalInputs, initForms, initPhoneInputs, initSelectFields } from './forms.js';
+import { initNavigationMenu, initDropzones, initStyckyButton } from './helpers.js';
+import { initSliders } from './sliders.js';
+import { initTabsSliderNavigation } from './goToSlide.js';
 import { initTimer } from './timer.js';
-import { initNavigationMenu, initDropzones } from './helpers.js';
 import { initTabs } from './tabs.js';
 
 popup.init();
@@ -13,11 +15,15 @@ initTimer('01.06.2026 00:00:00', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  initScrollManager();
+  initSliders();
+  initTabsSliderNavigation('prizes-tabs');
   initForms();
   initNavigationMenu();
+  initStyckyButton();
   initTabs();
   initPhoneInputs('+7 000 000-00-00');
+  initSelectFields();
   initDecimalInputs();
   initDropzones();
+  initScrollManager();
 });

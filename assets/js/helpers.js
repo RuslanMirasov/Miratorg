@@ -59,3 +59,32 @@ export const initDropzones = () => {
     });
   });
 };
+
+export const initStyckyButton = () => {
+  const styckyButton = document.querySelector('[data-stycky-button]');
+  const scrollContainer = document.querySelector('.body');
+
+  if (!styckyButton || !scrollContainer) return;
+
+  let throttleTimeout = null;
+
+  const updateButtonState = () => {
+    const scrollTop = scrollContainer.scrollTop;
+    const distanceToBottom = scrollContainer.scrollHeight - scrollContainer.clientHeight - scrollTop;
+
+    styckyButton.classList.toggle('active', scrollTop > 100);
+    styckyButton.classList.toggle('end', distanceToBottom <= 100);
+  };
+
+  const handleScroll = () => {
+    if (throttleTimeout) return;
+
+    throttleTimeout = setTimeout(() => {
+      throttleTimeout = null;
+      updateButtonState();
+    }, 100);
+  };
+
+  updateButtonState();
+  scrollContainer.addEventListener('scroll', handleScroll, { passive: true });
+};
