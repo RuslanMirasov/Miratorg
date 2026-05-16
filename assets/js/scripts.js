@@ -1,7 +1,7 @@
 import { popup } from './popup.js';
 import { initScrollManager } from './scrollManager.js';
 import { initDecimalInputs, initForms, initPhoneInputs, initSelectFields } from './forms.js';
-import { initNavigationMenu, initDropzones, initStyckyButton } from './helpers.js';
+import { initNavigationMenu, initDropzones, initStyckyButton, hidePreloader } from './helpers.js';
 import { initSliders } from './sliders.js';
 import { initTabsSliderNavigation } from './goToSlide.js';
 import { initTimer } from './timer.js';
@@ -16,6 +16,7 @@ initTimer('01.06.2026 00:00:00', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  hidePreloader();
   initSliders();
   initTabsSliderNavigation('prizes-tabs');
   initForms();

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#e7102e" />
+    <meta name="description" content="Мираторг - Охота за словами" />
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/dropzone.min.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.min.css" />
+    <title>Мираторг | Охота за словами</title>
+  </head>
+  <body>
+    <div class="body">
+      <!--PRELOADER-->
+      <div class="preloader" data-preloader>
+        <span>
+          <img src="./assets/img/svg/logo.svg" alt="Мираторг" />
+        </span>
+      </div>
+
+      <!--HEADER-->
+      <header class="header">
+        <div class="header__buttons">
+          <a href="./" aria-label="">
+            <img src="./assets/img/svg/miratorg.svg" alt="" class="logo-miratorg" />
+          </a>
+          <a href="./" aria-label="">
+            <img src="./assets/img/svg/grill-logo.svg" alt="" class="logo-grill" />
+          </a>
+        </div>
+
+        <nav class="navigation">
+          <ul class="menu">
+            <li>
+              <button class="button medium green-white" data-popup-open="cheque"><span>Загрузить чек</span></button>
+            </li>
+            <li>
+              <a href="./game.html" class="menu__link"><span>Игра</span></a>
+            </li>
+            <li>
+              <a href="./#prizes" class="menu__link"><span>Призы</span></a>
+            </li>
+            <li>
+              <a href="./#winners" class="menu__link"><span>Победители</span></a>
+            </li>
+            <li>
+              <a href="./#rules" class="menu__link"><span>Правила</span></a>
+            </li>
+            <li>
+              <a href="./products.html" class="button small green"><span>Продукты</span></a>
+            </li>
+            <li>
+              <a href="#" class="button small green"><span>Акция в СМ Мираторг</span></a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="burger">
+          <span>Меню бургер</span>
+        </button>
+
+        <div class="header__auth">
+          <button class="header__buttons" data-popup-open="auth">
+            <img src="./assets/img/svg/login.svg" alt="" />
+            <span>Вход</span>
+          </button>
+          <!-- <a href="./profile.html" class="header__buttons">
+            <img src="./assets/img/svg/profile.svg" alt="" />
+            <span>Личный кабинет</span>
+          </a> -->
+        </div>
+      </header>
+
+      <main class="main">
+        <!--SECTION HERO-->
+        <section class="section section--game">
+          <div class="container">
+            <button class="game__button go-back"></button>
+            <button class="game__button help"></button>
+            <div class="game">Тут разметка игры...</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./assets/js/scripts.js" type="module" defer></script>
+  </body>
+</html>

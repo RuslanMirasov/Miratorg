@@ -168,6 +168,75 @@ button:disabled {
   overflow: visible;
 }
 
+.preloader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 200;
+  background: var(--red);
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.preloader.hidden {
+  pointer-events: none;
+  opacity: 0;
+}
+.preloader.hidden span {
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+.preloader span {
+  width: 30%;
+  height: 170px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  z-index: 3;
+}
+@media (max-width: 1023px) {
+  .preloader span {
+    width: 180px;
+  }
+}
+.preloader span img {
+  position: absolute;
+  width: 100%;
+  -webkit-animation: bounce 3s ease-out infinite;
+          animation: bounce 3s ease-out infinite;
+}
+
 @font-face {
   font-family: "roboto-slab";
   src: url("../fonts/robotoslab-regular.woff2") format("woff2"), url("../fonts/robotoslab-regular.woff") format("woff");
@@ -1974,6 +2043,7 @@ button:disabled {
   margin-top: -110px;
   margin-bottom: -110px;
   z-index: 0;
+  scroll-margin-top: -86px;
   background: var(--white);
 }
 
@@ -2623,6 +2693,7 @@ button:disabled {
 }
 #winners {
   z-index: 2;
+  scroll-margin-top: 86px;
 }
 
 .winners {
@@ -3487,6 +3558,66 @@ button:disabled {
   .fsk p {
     font-size: 32px;
   }
+}
+
+.section--game {
+  background: url("../img/bg.webp") no-repeat center center/cover;
+  margin-top: 64px;
+  height: calc(100vh - 64px);
+  padding: 50px;
+}
+.section--game .container {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.game__button {
+  width: 70px;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  cursor: pointer;
+  position: absolute;
+  overflow: hidden;
+  top: 0px;
+  z-index: 5;
+}
+.game__button.go-back {
+  left: 0px;
+  border-radius: 70px;
+  background: var(--white) url("../img/svg/arrow-left-green.svg") no-repeat center center;
+  background-size: 20px 20px;
+}
+.game__button.help {
+  right: 0px;
+  border-radius: 20px;
+  background: var(--white) url("../img/svg/lamp.svg") no-repeat center center;
+  background-size: 40px 50px;
+}
+
+.game {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 4px solid red;
+  overflow: hidden;
 }
 
 .header--soon {

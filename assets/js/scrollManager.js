@@ -2,12 +2,55 @@ export const initScrollManager = () => {
   const scroller = document.querySelector('.body');
   if (!scroller) return;
 
+  const scrollStateKey = 'miratorgScrollKey';
+  const storagePrefix = 'miratorg:scroll:';
+  let saveRafId = 0;
+  let scrollRafId = 0;
+  let skipNextHashChange = false;
+  let currentHash = window.location.hash;
+
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
 
-  const storageKey = `joy-colony:scroll:${window.location.pathname}${window.location.search}`;
-  let saveRafId = 0;
+  const getNavigationType = () => {
+    const navigation = performance.getEntriesByType?.('navigation')?.[0];
+    if (navigation?.type) return navigation.type;
+
+    if (performance.navigation?.type === 1) return 'reload';
+    if (performance.navigation?.type === 2) return 'back_forward';
+
+    return 'navigate';
+  };
+
+  const createScrollKey = () => `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+
+  const getHistoryState = () => {
+    return history.state && typeof history.state === 'object' ? history.state : {};
+  };
+
+  const writeHistoryScrollKey = (key, method = 'replace') => {
+    const state = {
+      ...getHistoryState(),
+      [scrollStateKey]: key,
+    };
+
+    history[`${method}State`](state, '', window.location.href);
+  };
+
+  const ensureScrollKey = () => {
+    const state = getHistoryState();
+
+    if (state[scrollStateKey]) {
+      return state[scrollStateKey];
+    }
+
+    const key = createScrollKey();
+    writeHistoryScrollKey(key);
+    return key;
+  };
+
+  let scrollKey = ensureScrollKey();
 
   const getHashTarget = hash => {
     const id = decodeURIComponent(String(hash || '').replace(/^#/, ''));
@@ -19,28 +62,50 @@ export const initScrollManager = () => {
   const getTargetTop = target => {
     const scrollerRect = scroller.getBoundingClientRect();
     const targetRect = target.getBoundingClientRect();
+    const targetStyles = getComputedStyle(target);
+    const scrollMarginTop = parseFloat(targetStyles.scrollMarginTop) || 0;
 
-    return targetRect.top - scrollerRect.top + scroller.scrollTop;
+    return targetRect.top - scrollerRect.top + scroller.scrollTop - scrollMarginTop;
   };
 
   const scrollToTarget = target => {
-    let attempts = 0;
-    const maxAttempts = 12;
+    if (scrollRafId) cancelAnimationFrame(scrollRafId);
 
-    const tryScroll = () => {
+    const getClampedTargetTop = () => {
       const maxTop = Math.max(0, scroller.scrollHeight - scroller.clientHeight);
-      const top = Math.min(Math.max(0, getTargetTop(target)), maxTop);
+      return Math.min(Math.max(0, getTargetTop(target)), maxTop);
+    };
 
-      scroller.scrollTop = top;
+    const animate = () => {
+      const startTop = scroller.scrollTop;
+      const duration = 600;
+      const startTime = performance.now();
 
-      attempts += 1;
-      if (attempts < maxAttempts) {
-        requestAnimationFrame(tryScroll);
-      }
+      const easeInOut = progress => {
+        return progress < 0.5 ? 4 * progress * progress * progress : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+      };
+
+      const tick = currentTime => {
+        const targetTop = getClampedTargetTop();
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        const easedProgress = easeInOut(progress);
+
+        scroller.scrollTop = startTop + (targetTop - startTop) * easedProgress;
+
+        if (progress < 1) {
+          scrollRafId = requestAnimationFrame(tick);
+          return;
+        }
+
+        scroller.scrollTop = targetTop;
+        scrollRafId = 0;
+      };
+
+      scrollRafId = requestAnimationFrame(tick);
     };
 
     requestAnimationFrame(() => {
-      requestAnimationFrame(tryScroll);
+      requestAnimationFrame(animate);
     });
   };
 
@@ -52,8 +117,10 @@ export const initScrollManager = () => {
     return true;
   };
 
-  const getSavedTop = () => {
-    const saved = sessionStorage.getItem(storageKey);
+  const getStorageKey = (key = scrollKey) => `${storagePrefix}${key}`;
+
+  const getSavedTop = (key = scrollKey) => {
+    const saved = sessionStorage.getItem(getStorageKey(key));
     if (saved === null) return null;
 
     const top = Number(saved);
@@ -62,56 +129,109 @@ export const initScrollManager = () => {
 
   const saveScrollTop = () => {
     saveRafId = 0;
-    sessionStorage.setItem(storageKey, String(scroller.scrollTop));
+    sessionStorage.setItem(getStorageKey(), String(scroller.scrollTop));
   };
 
   const requestSaveScrollTop = () => {
     if (!saveRafId) saveRafId = requestAnimationFrame(saveScrollTop);
   };
 
-  const restoreScrollTop = () => {
-    if (window.location.hash) {
-      scrollToHash(window.location.hash);
-      return;
-    }
-
-    const savedTop = getSavedTop();
-    if (savedTop === null) return;
-
+  const setScrollTop = top => {
     let attempts = 0;
     const maxAttempts = 12;
 
-    const tryRestore = () => {
+    const trySet = () => {
       const maxTop = Math.max(0, scroller.scrollHeight - scroller.clientHeight);
-      scroller.scrollTop = Math.min(savedTop, maxTop);
+      const nextTop = Math.min(Math.max(0, top), maxTop);
+
+      scroller.scrollTop = nextTop;
 
       attempts += 1;
-      if (scroller.scrollTop < savedTop && attempts < maxAttempts) {
-        requestAnimationFrame(tryRestore);
+      if (scroller.scrollTop < nextTop && attempts < maxAttempts) {
+        requestAnimationFrame(trySet);
       }
     };
 
     requestAnimationFrame(() => {
-      requestAnimationFrame(tryRestore);
+      requestAnimationFrame(trySet);
     });
+  };
+
+  const restoreNativeLikeScroll = () => {
+    const navigationType = getNavigationType();
+    const savedTop = getSavedTop();
+
+    if ((navigationType === 'reload' || navigationType === 'back_forward') && savedTop !== null) {
+      setScrollTop(savedTop);
+      return;
+    }
+
+    if (window.location.hash && scrollToHash(window.location.hash)) return;
+
+    setScrollTop(0);
   };
 
   scroller.addEventListener('scroll', requestSaveScrollTop, { passive: true });
   document.addEventListener('click', event => {
-    const link = event.target.closest('a[href^="#"]');
+    const link = event.target.closest('a[href]');
     if (!link) return;
 
-    const hash = link.getAttribute('href');
+    const href = link.getAttribute('href');
+    if (!href || href === '#') return;
+
+    const url = new URL(href, window.location.href);
+    const isSamePage = url.origin === window.location.origin && url.pathname === window.location.pathname && url.search === window.location.search;
+    const hash = url.hash;
+
     if (!hash || hash === '#') return;
+    if (!isSamePage) return;
 
     if (!scrollToHash(hash)) return;
 
     event.preventDefault();
-    history.pushState(null, '', hash);
+    saveScrollTop();
+
+    if (hash === window.location.hash) return;
+
+    scrollKey = createScrollKey();
+    history.pushState(
+      {
+        ...getHistoryState(),
+        [scrollStateKey]: scrollKey,
+      },
+      '',
+      hash
+    );
+    currentHash = hash;
   });
+
+  window.addEventListener('popstate', event => {
+    saveScrollTop();
+    skipNextHashChange = currentHash !== window.location.hash;
+    currentHash = window.location.hash;
+
+    scrollKey = event.state?.[scrollStateKey] || ensureScrollKey();
+
+    const savedTop = getSavedTop();
+    if (savedTop !== null) {
+      setScrollTop(savedTop);
+      return;
+    }
+
+    if (window.location.hash && scrollToHash(window.location.hash)) return;
+
+    setScrollTop(0);
+  });
+
   window.addEventListener('hashchange', () => {
+    if (skipNextHashChange) {
+      skipNextHashChange = false;
+      return;
+    }
+
+    currentHash = window.location.hash;
     scrollToHash(window.location.hash);
   });
   window.addEventListener('pagehide', saveScrollTop);
-  restoreScrollTop();
+  restoreNativeLikeScroll();
 };
