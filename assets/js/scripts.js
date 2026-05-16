@@ -6,6 +6,7 @@ import { initSliders } from './sliders.js';
 import { initTabsSliderNavigation } from './goToSlide.js';
 import { initTimer } from './timer.js';
 import { initTabs } from './tabs.js';
+import { initAccordeons } from './accordeon.js';
 
 popup.init();
 window.popup = popup;
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigationMenu();
   initStyckyButton();
   initTabs();
+  initAccordeons();
   initPhoneInputs('+7 000 000-00-00');
   initSelectFields();
   initDecimalInputs();

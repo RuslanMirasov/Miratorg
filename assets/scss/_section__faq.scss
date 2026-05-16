@@ -1,0 +1,166 @@
+.faq {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 30px 50px 0px 50px;
+
+  .white {
+    color: var(--white);
+  }
+
+  .red {
+    color: var(--red);
+  }
+}
+
+.faq__list {
+  display: flex;
+  flex: 1;
+  gap: 2px;
+  flex-direction: column;
+}
+
+.question {
+  position: relative;
+  background: var(--red);
+  border-radius: 20px;
+  padding: 16px 60px 16px 20px;
+  color: var(--white);
+  p {
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+  &:before {
+    background: var(--red) url('../img/svg/arrow-down.svg') no-repeat center center;
+    right: 14px !important;
+    background-size: 18px 9px !important;
+  }
+}
+
+.answer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  gap: 14px;
+  padding: 16px 20px;
+
+  p {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    display: block;
+    margin-top: 4px;
+    margin-bottom: -8px;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  b,
+  strong {
+    font-weight: 500;
+  }
+  ul {
+    list-style: disc;
+    display: block;
+    margin: -4px 0px;
+    color: var(--green);
+    padding-left: 1.3em;
+    li {
+      padding: 2px 0px;
+      > * {
+        color: var(--black);
+      }
+    }
+  }
+}
+
+.faq__sidebar {
+  display: block;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  max-width: 436px;
+  flex-shrink: 0;
+  padding: 32px;
+  background: var(--green);
+  border-radius: 20px;
+
+  > p {
+    display: block;
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .form {
+    position: relative;
+    max-width: 372px;
+    margin-top: 24px;
+    margin-bottom: 5px;
+    gap: 10px;
+    .input {
+      height: 46px;
+      border-radius: 12px;
+      padding: 0px 16px;
+      &.textarea {
+        height: 70px;
+        padding-top: 12px;
+        + .placeholder {
+          height: 46px;
+          background: red;
+        }
+      }
+    }
+
+    fieldset {
+      margin-top: 14px;
+      margin-bottom: 14px;
+      .label__text {
+        font-weight: 400;
+      }
+      a {
+        color: var(--red);
+      }
+    }
+
+    .button {
+      margin: 0 auto;
+      min-width: 198px;
+      color: var(--white);
+    }
+
+    .radio + .label__text,
+    .checkbox + .label__text {
+      span {
+        font-size: 14px;
+      }
+
+      &:before {
+        width: 24px;
+        height: 24px;
+        top: 0px;
+        transform: translate(0px, 0px);
+      }
+    }
+  }
+}
+
+.accordeon.active {
+  .faq__sidebar {
+    transition: top 0s linear 0.5s;
+    top: 80px;
+  }
+}

@@ -38,6 +38,10 @@
     font-size: myclamp(14px, 20px, 1440px, 1440px);
   }
 
+  &.title--26 {
+    font-size: myclamp(26px, 26px, 1440px, 1440px);
+  }
+
   &.title--28 {
     font-size: myclamp(22px, 28px, 1440px, 2560px);
   }
@@ -63,4 +67,10 @@
     font-size: myclamp(40px, 64px, 1440px, 1440px);
     text-transform: uppercase;
   }
+}
+
+.subtitle {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 400;
 }
