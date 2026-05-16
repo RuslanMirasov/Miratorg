@@ -1,3 +1,7 @@
+#winners {
+  z-index: 2;
+}
+
 .winners {
   display: flex;
   position: relative;
@@ -10,4 +14,217 @@
   align-content: center;
   gap: 40px;
   padding-top: 30px;
+}
+
+.winners-filters {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  gap: 12px;
+
+  .choices {
+    background: none;
+    border-radius: 22px;
+    width: 100%;
+    min-width: 220px;
+    height: 44px !important;
+    background: #eef2ec !important;
+    margin: 0;
+    z-index: 10;
+    font-weight: 400;
+    &.is-open {
+      border-radius: 22px 22px 0px 0px !important;
+      .choices__inner {
+        border-radius: 22px 22px 0px 0px !important;
+      }
+    }
+  }
+  .choices__inner {
+    font-weight: 400;
+  }
+  .choices[data-type*='select-one']::after {
+    right: 12px;
+    background: #eef2ec url('../img/svg/select-red.svg') no-repeat center center;
+  }
+  .choices__list.choices__list--single {
+    background: #eef2ec !important;
+    padding: 0px 0px 0px 16px !important;
+  }
+  .choices__list.choices__list--single > .choices__item {
+    height: 44px;
+    text-wrap: nowrap;
+  }
+
+  .choices__list--dropdown {
+    left: 0px;
+    width: 100% !important;
+    border-radius: 0px 0px 22px 22px !important;
+    font-weight: 400 !important;
+    background: #eef2ec !important;
+    .choices__item {
+      background: #eef2ec;
+      opacity: 1;
+      &.is-highlighted {
+        background: rgba(0, 0, 0, 0.1) !important;
+      }
+    }
+  }
+
+  .form {
+    margin: 0;
+    max-width: 220px;
+
+    .input {
+      background: #eef2ec;
+      height: 44px;
+      border-radius: 44px;
+      padding: 0px 50px 0px 16px;
+    }
+  }
+
+  .search-submit {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background: #eef2ec url('../img/svg/search.svg') no-repeat center center;
+    right: 8px;
+    top: 2px;
+    border-radius: 44px;
+    font-size: 0;
+    color: rgba(0, 0, 0, 0);
+  }
+}
+
+.table {
+  position: relative;
+  text-align: left;
+  width: 100%;
+  border-spacing: 0;
+  border: none;
+  table-layout: fixed;
+  thead {
+    min-height: 60px;
+    border-radius: 60px;
+    color: var(--white);
+
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    th {
+      text-wrap: nowrap;
+      background: var(--green);
+    }
+  }
+
+  th,
+  td {
+    width: 22%;
+    height: 60px;
+    &:first-child {
+      border-radius: 60px 0px 0px 60px;
+      padding-left: 36px;
+      width: 28%;
+    }
+    &:last-child {
+      border-radius: 0px 60px 60px 0px;
+      padding-right: 36px;
+      width: 28%;
+    }
+  }
+  tbody {
+    color: var(--black);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    tr {
+      &:nth-child(2n + 2) {
+        background: #eef2ec;
+      }
+      td {
+        &:first-child {
+          padding-left: 128px;
+        }
+      }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 10px;
+  li {
+    display: flex;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    &:first-child,
+    &:last-child {
+      width: 40px;
+      height: 40px;
+    }
+    &:first-child {
+      margin-right: 24px;
+    }
+    &:last-child {
+      margin-left: 24px;
+    }
+  }
+}
+
+.pagination-btn {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #eef2ec;
+  border-radius: 50px;
+  line-height: 1;
+  color: var(--black);
+  font-weight: 400;
+  font-size: 16px;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  &.active {
+    background-color: var(--red);
+    color: var(--white);
+  }
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--red);
+      color: var(--white);
+    }
+  }
+
+  &.prev,
+  &.next {
+    background-color: var(--red);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--black);
+      }
+    }
+    &:disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
 }

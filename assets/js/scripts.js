@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStyckyButton();
   initTabs();
   initAccordeons();
-  initPhoneInputs('+7 000 000-00-00');
+  initPhoneInputs('+7 000 000 00 00');
   initSelectFields();
   initDecimalInputs();
   initDropzones();

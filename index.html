@@ -694,7 +694,115 @@
                 <h2 class="title title--60 circles">ПОБЕДИТЕЛИ</h2>
               </div>
               <div class="section--accordeon__body" data-accordeon-body>
-                <div class="winners">sssssssss</div>
+                <div class="winners">
+                  <!--filters-->
+                  <div class="winners-filters">
+                    <form action="#">
+                      <select data-select name="weeks">
+                        <option value="all">Все недели</option>
+                        <option value="16.05.2026 - 23.06.2026">16.05.2026 - 23.06.2026</option>
+                        <option value="16.05.2026 - 23.06.2026">17.05.2026 - 24.06.2026</option>
+                        <option value="16.05.2026 - 23.06.2026">19.05.2026 - 26.06.2026</option>
+                      </select>
+                    </form>
+
+                    <script>
+                      const onSearchFormSubmit = e => {
+                        e.preventDefault();
+                        alert('Поиск по телефону');
+                        e.target.reset();
+                      };
+                    </script>
+                    <form action="#" class="form" novalidate onsubmit="onSearchFormSubmit(event)">
+                      <label class="label">
+                        <input type="tel" name="search" class="input" placeholder="Поиск по телефону" required />
+                      </label>
+                      <button type="submit" class="search-submit">Поиск</button>
+                    </form>
+                  </div>
+
+                  <!--table-->
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Дата<span> розыгрыша</span></th>
+                        <th>Имя<span> участника</span></th>
+                        <th>Телефон</th>
+                        <th><span>Наименование</span> приз<span>а</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>26.09.2025</td>
+                        <td>Маргарита</td>
+                        <td>+7 035 *** ** 11</td>
+                        <td>ХХХХХХХХХ</td>
+                      </tr>
+                      <tr>
+                        <td>26.09.2025</td>
+                        <td>Пантелеймон</td>
+                        <td>+7 959 *** ** 12</td>
+                        <td>Набор кухонных принадлежностей для&nbsp;гриля</td>
+                      </tr>
+                      <tr>
+                        <td>26.09.2025</td>
+                        <td>Иван</td>
+                        <td>+7 036 *** ** 11</td>
+                        <td>ХХХХХХХХХ</td>
+                      </tr>
+                      <tr>
+                        <td>26.09.2025</td>
+                        <td>Иван</td>
+                        <td>+7 036 *** ** 11</td>
+                        <td>ХХХХХХХХХ</td>
+                      </tr>
+                      <tr>
+                        <td>26.09.2025</td>
+                        <td>Иван</td>
+                        <td>+7 036 *** ** 11</td>
+                        <td>ХХХХХХХХХ</td>
+                      </tr>
+                      <tr>
+                        <td>26.09.2025</td>
+                        <td>Иван</td>
+                        <td>+7 036 *** ** 11</td>
+                        <td>ХХХХХХХХХ</td>
+                      </tr>
+                      <tr>
+                        <td>26.09.2025</td>
+                        <td>Иван</td>
+                        <td>+7 036 *** ** 11</td>
+                        <td>ХХХХХХХХХ</td>
+                      </tr>
+                      <tr>
+                        <td>26.09.2025</td>
+                        <td>Иван</td>
+                        <td>+7 036 *** ** 11</td>
+                        <td>ХХХХХХХХХ</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <!--pagination-->
+                  <ul class="pagination">
+                    <li>
+                      <button href="#" class="pagination-btn prev" disabled>
+                        <img src="./assets/img/svg/prev.svg" alt="" />
+                      </button>
+                    </li>
+                    <li><a href="#" class="pagination-btn active">1</a></li>
+                    <li><a href="#" class="pagination-btn">2</a></li>
+                    <li><a href="#" class="pagination-btn">3</a></li>
+                    <li><a href="#" class="pagination-btn">4</a></li>
+                    <li><a href="#" class="pagination-btn">5</a></li>
+                    <li><a href="#" class="pagination-btn">6</a></li>
+                    <li>
+                      <button class="pagination-btn next">
+                        <img src="./assets/img/svg/next.svg" alt="" />
+                      </button>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

@@ -21,7 +21,7 @@ const validationRegEx = [
   },
   {
     type: 'tel',
-    regex: /^\+7 \d{3} \d{3}-\d{2}-\d{2}$/,
+    regex: /^\+7 \d{3} \d{3} \d{2} \d{2}$/,
     error: 'введите правильный телефон',
   },
   {

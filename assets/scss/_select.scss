@@ -23,6 +23,9 @@ $select_padding: 0px 14px;
   z-index: 10;
   &.is-open {
     border-radius: $select_border_radius $select_border_radius 0px 0px;
+    .choices__inner {
+      border-radius: $select_border_radius $select_border_radius 0px 0px;
+    }
   }
 }
 .choices[data-type*='select-one'] .choices__input {
@@ -36,7 +39,7 @@ $select_padding: 0px 14px;
   width: calc(100% - 40px);
   text-align: $select_text_align;
   border: none;
-  padding: 0;
+  padding: 0 !important;
   border-radius: 0px 0px $select_border_radius $select_border_radius;
   font-size: $select_font_size;
   font-weight: $select_font_weight;
@@ -72,7 +75,7 @@ $select_padding: 0px 14px;
   border-top: none !important;
   font-size: $select_font_size !important;
   font-weight: 500;
-  text-align: center;
+  text-align: left;
   background: $select_background !important;
   &.is-active {
     background: none;
