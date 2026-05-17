@@ -5,6 +5,11 @@
   z-index: 0;
   scroll-margin-top: -86px;
   background: var(--white);
+  color: var(--white);
+
+  &.arrows-exchange {
+    background: none;
+  }
 }
 
 .prizes {
@@ -288,6 +293,7 @@
   line-height: 1;
   transform: rotate(-8deg);
   color: var(--white);
+  z-index: 4;
   &.red {
     background: url('../img/svg/cloud-red.svg') no-repeat center center/cover;
   }
@@ -352,6 +358,7 @@
   min-height: 600px;
   border-radius: 50px;
   background: var(--red-light);
+  color: var(--white);
   padding: 40px 0px 28px 0px;
   &.green {
     background: var(--green);

@@ -3,7 +3,7 @@
   flex-direction: column;
   height: auto;
   z-index: 2;
-  background: none;
+  background: linear-gradient(var(--red) 80%, rgba(0, 0, 0, 0) 81%);
 
   .logo {
     width: 26.8%;
@@ -42,6 +42,7 @@
     align-items: center;
     margin-top: -40px;
     background: linear-gradient(180deg, var(--red) 30%, rgba(0, 0, 0, 0) 31%);
+    color: var(--white);
 
     @media (max-width: 1365px) {
       margin-top: -20px;
