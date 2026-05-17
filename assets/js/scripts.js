@@ -1,12 +1,12 @@
-import { popup } from './popup.js';
-import { initScrollManager } from './scrollManager.js';
-import { initDecimalInputs, initForms, initPhoneInputs, initSelectFields } from './forms.js';
-import { initNavigationMenu, initDropzones, initStyckyButton, hidePreloader } from './helpers.js';
-import { initSliders } from './sliders.js';
-import { initTabsSliderNavigation } from './goToSlide.js';
-import { initTimer } from './timer.js';
-import { initTabs } from './tabs.js';
-import { initAccordeons } from './accordeon.js';
+import { popup } from './modules/popup.js';
+import { initScrollManager } from './modules/scrollManager.js';
+import { initDecimalInputs, initForms, initPhoneInputs, initSelectFields } from './modules/forms.js';
+import { initNavigationMenu, initDropzones, initStyckyButton, hidePreloader } from './modules/helpers.js';
+import { initSliders } from './modules/sliders.js';
+import { initTabsSliderNavigation } from './modules/goToSlide.js';
+import { initTimer } from './modules/timer.js';
+import { initTabs } from './modules/tabs.js';
+import { initAccordeons } from './modules/accordeon.js';
 
 popup.init();
 window.popup = popup;
