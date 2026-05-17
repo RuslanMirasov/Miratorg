@@ -2859,6 +2859,8 @@ button:disabled {
 .table td:first-child {
   border-radius: 60px 0px 0px 60px;
   padding-left: 36px;
+  padding-right: 100%;
+  text-align: right;
   width: 28%;
 }
 .table th:last-child,
@@ -3914,13 +3916,19 @@ button:disabled {
 .my-cheques .table {
   margin-top: 32px;
 }
+.my-cheques .table th span {
+  display: block;
+  min-width: 80px;
+}
 .my-cheques .table th,
 .my-cheques .table td {
   width: 25%;
 }
 .my-cheques .table th:first-child,
 .my-cheques .table td:first-child {
+  text-align: right;
   padding-left: 36px;
+  padding-right: 100%;
   width: 25%;
 }
 .my-cheques .table th:last-child,

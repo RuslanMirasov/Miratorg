@@ -131,6 +131,8 @@
     &:first-child {
       border-radius: 60px 0px 0px 60px;
       padding-left: 36px;
+      padding-right: 100%;
+      text-align: right;
       width: 28%;
     }
     &:last-child {
