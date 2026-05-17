@@ -3591,6 +3591,9 @@ button:disabled {
   min-height: calc(100vh - 64px);
   padding: 50px;
 }
+.section--game.no--bg {
+  background: none;
+}
 .section--game .container {
   position: relative;
   max-width: 100%;
@@ -5235,29 +5238,29 @@ a.dz-remove {
     gap: 60px;
   }
 }
-.footer.footer--website {
+.footer.footer--page {
   background: none;
   border: none;
   border-radius: 0px;
   padding: 0;
   margin-top: -2px;
 }
-.footer.footer--website .container {
+.footer.footer--page .container {
   background: var(--red);
   padding-top: 60px;
   padding-bottom: 60px;
   border-radius: 50px 50px 0px 0px;
 }
 @media (max-width: 1023px) {
-  .footer.footer--website {
+  .footer.footer--page {
     border-top: none;
   }
-  .footer.footer--website .container {
+  .footer.footer--page .container {
     padding-top: 46px;
     padding-bottom: 46px;
     gap: 50px;
   }
-  .footer.footer--website .footer-menu {
+  .footer.footer--page .footer-menu {
     -webkit-box-ordinal-group: 5;
         -ms-flex-order: 4;
             order: 4;

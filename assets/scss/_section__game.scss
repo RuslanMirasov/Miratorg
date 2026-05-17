@@ -6,6 +6,10 @@
   min-height: calc(100vh - 64px);
   padding: 50px;
 
+  &.no--bg {
+    background: none;
+  }
+
   .container {
     position: relative;
     max-width: 100%;
