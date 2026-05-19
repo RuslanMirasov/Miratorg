@@ -295,11 +295,11 @@
   align-items: center;
   position: fixed;
   z-index: 19;
-  gap: myclamp(2px, 8px, 1440px, 1440px);
-  width: myclamp(84px, 150px, 1440px, 1440px);
-  height: myclamp(84px, 150px, 1440px, 1440px);
-  left: myclamp(10px, 32px, 1440px, 1440px);
-  bottom: myclamp(10px, 32px, 1440px, 1440px);
+  gap: 8px; //2
+  width: 150px; //84
+  height: 150px; //84
+  left: 32px; //10
+  bottom: 32px; //10
   border-radius: 150px;
   cursor: pointer;
   transition: transform 0.7s ease-in-out 0s;
@@ -311,7 +311,7 @@
     font-family: var(--font);
     font-weight: 700;
     text-transform: uppercase;
-    font-size: myclamp(11px, 20px, 1440px, 1440px);
+    font-size: 20px; // 11
     line-height: 1;
   }
 
@@ -320,7 +320,7 @@
     content: '';
     display: block;
     position: relative;
-    width: myclamp(34px, 60px, 1440px, 1440px);
+    width: 60px; //34
     height: 10px;
     background: url('../img/svg/fork.svg') no-repeat center center/contain;
   }
@@ -333,6 +333,37 @@
     transform: translate(0px, 0px);
     &.end {
       transform: translate(0px, 200px);
+    }
+  }
+
+  @media (max-width: 1439px) {
+    gap: 2px; //2
+    width: 100px; //84
+    height: 100px; //84
+    left: 10px; //10
+    bottom: 10px; //10
+
+    span {
+      font-size: 14px; // 11
+    }
+
+    &:before,
+    &:after {
+      width: 40px; //34
+    }
+  }
+
+  @media (max-width: 1279px) {
+    width: 84px;
+    height: 84px;
+
+    span {
+      font-size: 11px;
+    }
+
+    &:before,
+    &:after {
+      width: 34px;
     }
   }
 }

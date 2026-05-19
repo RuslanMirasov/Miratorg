@@ -34,6 +34,13 @@ const unregisterNamedSwiper = key => {
   delete window.swipers[key];
 };
 
+const updateAutoHeightParents = sliderWrapper => {
+  const parent = sliderWrapper.parentElement?.closest('[data-slider]');
+  if (!parent) return;
+  const instance = instances.get(parent);
+  instance.updateAutoHeight(0);
+};
+
 const destroySlider = sliderWrapper => {
   const instance = instances.get(sliderWrapper);
   if (!instance) return;
@@ -60,6 +67,7 @@ const initSlider = sliderWrapper => {
     initialSlide = '0,0,0',
     direction = 'horizontal',
     allowTouchMove = 'true',
+    autoHeight = 'false',
   } = sliderWrapper.dataset;
 
   const arrowPrev = getOwnElement(sliderWrapper, '[data-arrow-prev]');
@@ -68,6 +76,7 @@ const initSlider = sliderWrapper => {
 
   const options = {
     allowTouchMove: toBool(allowTouchMove),
+    autoHeight: toBool(autoHeight),
     effect,
     speed,
     loop,
@@ -113,6 +122,7 @@ const initSlider = sliderWrapper => {
 
   const instance = new Swiper(swiper, options);
   instances.set(sliderWrapper, instance);
+  instance.on('slideChange', () => updateAutoHeightParents(sliderWrapper));
 
   const key = getSliderKey(sliderWrapper);
   if (key) {

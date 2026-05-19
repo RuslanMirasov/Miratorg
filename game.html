@@ -39,7 +39,7 @@
               <button class="button medium green-white" data-popup-open="cheque"><span>Загрузить чек</span></button>
             </li>
             <li>
-              <a href="./game.html" class="menu__link"><span>Игра</span></a>
+              <a href="./game.html" class="menu__link active"><span>Игра</span></a>
             </li>
             <li>
               <a href="./#prizes" class="menu__link"><span>Призы</span></a>
@@ -81,10 +81,101 @@
           <div class="container">
             <!--buttons-->
             <a href="./" class="game__button go-back">Назад</a>
-            <button class="game__button help">Подсказка</button>
+            <button class="game__button help" data-game-help>Подсказка</button>
 
             <!--БЛОК ДЛЯ ВСТАВКИ ИГРЫ-->
-            <div class="game"></div>
+            <div class="game">
+              <div class="game-canvas" data-game-canvas>
+                <table class="game-matrix" data-game-matrix>
+                  <tr>
+                    <td>*</td>
+                    <td>*</td>
+                    <td class="letter active"><span>н</span></td>
+                    <td class="letter"><span>о</span></td>
+                    <td class="letter"><span>г</span></td>
+                    <td class="letter"><span>и</span></td>
+                    <td>*</td>
+                    <td>*</td>
+                  </tr>
+                  <tr>
+                    <td>*</td>
+                    <td>*</td>
+                    <td class="letter active"><span>о</span></td>
+                    <td>*</td>
+                    <td class="letter"><span>о</span></td>
+                    <td>*</td>
+                    <td>*</td>
+                    <td class="letter active"><span>р</span></td>
+                  </tr>
+                  <tr>
+                    <td class="letter active"><span>н</span></td>
+                    <td class="letter active"><span>о</span></td>
+                    <td class="letter active"><span>с</span></td>
+                    <td class="letter active"><span>о</span></td>
+                    <td class="letter active"><span>р</span></td>
+                    <td class="letter active"><span>о</span></td>
+                    <td class="letter active"><span>г</span></td>
+                    <td class="letter active"><span>и</span></td>
+                  </tr>
+                  <tr>
+                    <td class="letter"><span>о</span></td>
+                    <td>*</td>
+                    <td class="letter active"><span>о</span></td>
+                    <td>*</td>
+                    <td class="letter"><span>н</span></td>
+                    <td>*</td>
+                    <td>*</td>
+                    <td class="letter active"><span>н</span></td>
+                  </tr>
+                  <tr>
+                    <td class="letter"><span>с</span></td>
+                    <td>*</td>
+                    <td class="letter active"><span>р</span></td>
+                    <td>*</td>
+                    <td>*</td>
+                    <td>*</td>
+                    <td>*</td>
+                    <td class="letter active"><span>г</span></td>
+                  </tr>
+                  <tr>
+                    <td>*</td>
+                    <td>*</td>
+                    <td class="letter active"><span>о</span></td>
+                    <td class="letter"><span>г</span></td>
+                    <td class="letter"><span>н</span></td>
+                    <td class="letter"><span>и</span></td>
+                    <td>*</td>
+                    <td>*</td>
+                  </tr>
+                  <tr>
+                    <td class="letter"><span>р</span></td>
+                    <td class="letter"><span>о</span></td>
+                    <td class="letter active"><span>г</span></td>
+                    <td>*</td>
+                    <td>*</td>
+                    <td>*</td>
+                    <td>*</td>
+                    <td>*</td>
+                  </tr>
+                </table>
+
+                <ul class="game-pad" data-game-pad>
+                  <li data-number="1"><span>г</span></li>
+                  <li data-number="2"><span>н</span></li>
+                  <li data-number="3"><span>о</span></li>
+                  <li data-number="4"><span>о</span></li>
+                  <li>
+                    <button data-game-revers>
+                      <img src="./assets/img/svg/revers.svg" alt="" />
+                    </button>
+                  </li>
+                  <li data-number="5"><span>и</span></li>
+                  <li data-number="6"><span>р</span></li>
+                  <li data-number="7"><span>о</span></li>
+                  <li data-number="8"><span>с</span></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
       </main>
