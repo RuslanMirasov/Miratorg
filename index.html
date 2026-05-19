@@ -611,7 +611,7 @@
         <!--SECTION MARKETS-->
         <section class="section section--accordeon" id="markets">
           <div class="container">
-            <div class="accordeon active" data-accordeon>
+            <div class="accordeon" data-accordeon>
               <div class="section--accordeon__header" data-accordeon-header>
                 <h2 class="title title--60 circles">ГДЕ КУПИТЬ</h2>
               </div>
@@ -703,7 +703,7 @@
         <!--SECTION WINNERS-->
         <section class="section section--accordeon" id="winners">
           <div class="container">
-            <div class="accordeon active" data-accordeon>
+            <div class="accordeon" data-accordeon>
               <div class="section--accordeon__header" data-accordeon-header>
                 <h2 class="title title--60 circles">ПОБЕДИТЕЛИ</h2>
               </div>
@@ -711,6 +711,14 @@
                 <div class="winners">
                   <!--filters-->
                   <div class="winners-filters">
+                    <script>
+                      const onSearchFormSubmit = e => {
+                        e.preventDefault();
+                        alert('Поиск по телефону');
+                        e.target.reset();
+                      };
+                    </script>
+
                     <form action="#">
                       <select data-select name="weeks">
                         <option value="all">Все недели</option>
@@ -720,13 +728,6 @@
                       </select>
                     </form>
 
-                    <script>
-                      const onSearchFormSubmit = e => {
-                        e.preventDefault();
-                        alert('Поиск по телефону');
-                        e.target.reset();
-                      };
-                    </script>
                     <form action="#" class="form" novalidate onsubmit="onSearchFormSubmit(event)">
                       <label class="label">
                         <input type="tel" name="search" class="input" placeholder="Поиск по телефону" required />
@@ -749,50 +750,50 @@
                       <tr>
                         <td>26.09.2025</td>
                         <td>Маргарита</td>
-                        <td>+7 035 *** ** 11</td>
-                        <td>ХХХХХХХХХ</td>
+                        <td>+7035*****11</td>
+                        <td>Сертификат Левел Тревел на 10&nbsp;000 рублей</td>
                       </tr>
                       <tr>
                         <td>26.09.2025</td>
-                        <td>Пантелеймон</td>
-                        <td>+7 959 *** ** 12</td>
+                        <td>Аркадий</td>
+                        <td>+7959*****12</td>
                         <td>Набор кухонных принадлежностей для&nbsp;гриля</td>
                       </tr>
                       <tr>
                         <td>26.09.2025</td>
-                        <td>Иван</td>
-                        <td>+7 036 *** ** 11</td>
-                        <td>ХХХХХХХХХ</td>
+                        <td>Пантелеймон</td>
+                        <td>+7036*****11</td>
+                        <td>Сертификат ОЗОН на&nbsp;3000&nbsp;рублей</td>
                       </tr>
                       <tr>
                         <td>26.09.2025</td>
                         <td>Иван</td>
-                        <td>+7 036 *** ** 11</td>
-                        <td>ХХХХХХХХХ</td>
+                        <td>+7036*****11</td>
+                        <td>Беспроводные наушники Apple</td>
                       </tr>
                       <tr>
                         <td>26.09.2025</td>
                         <td>Иван</td>
-                        <td>+7 036 *** ** 11</td>
-                        <td>ХХХХХХХХХ</td>
+                        <td>+7036*****11</td>
+                        <td>Угольный гриль SnS&nbsp;Kettle Black&nbsp;Edition</td>
                       </tr>
                       <tr>
                         <td>26.09.2025</td>
                         <td>Иван</td>
-                        <td>+7 036 *** ** 11</td>
-                        <td>ХХХХХХХХХ</td>
+                        <td>+7036*****11</td>
+                        <td>Промокод на подписку ИВИ годовая</td>
                       </tr>
                       <tr>
                         <td>26.09.2025</td>
                         <td>Иван</td>
-                        <td>+7 036 *** ** 11</td>
-                        <td>ХХХХХХХХХ</td>
+                        <td>+7036*****11</td>
+                        <td>Промокод на&nbsp;скидку 10%&nbsp;Траектории</td>
                       </tr>
                       <tr>
                         <td>26.09.2025</td>
                         <td>Иван</td>
-                        <td>+7 036 *** ** 11</td>
-                        <td>ХХХХХХХХХ</td>
+                        <td>+7036*****11</td>
+                        <td>Белкакар 200 рублей</td>
                       </tr>
                     </tbody>
                   </table>
@@ -825,7 +826,7 @@
         <!--SECTION FAQ-->
         <section class="section section--accordeon" id="faq">
           <div class="container">
-            <div class="accordeon active" data-accordeon>
+            <div class="accordeon" data-accordeon>
               <div class="section--accordeon__header" data-accordeon-header>
                 <h2 class="title title--60 circles">ВОПРОС-ОТВЕТ</h2>
               </div>
@@ -833,7 +834,7 @@
                 <div class="faq">
                   <div class="faq__list">
                     <div data-accordeon>
-                      <div class="question" data-accordeon-header><p>Какая продукция Мираторг участвует в акции “Гриль-охота”?</p></div>
+                      <div class="question" data-accordeon-header><p>Какая продукция Мираторг участвует в акции “Гриль&#8209;охота”?</p></div>
                       <div data-accordeon-body>
                         <div class="answer">
                           <p>

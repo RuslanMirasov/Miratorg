@@ -124,6 +124,7 @@
   display: flex;
   position: relative;
   flex: 1;
+  min-width: 50%;
   gap: 20px;
   background: var(--green);
   color: var(--white);

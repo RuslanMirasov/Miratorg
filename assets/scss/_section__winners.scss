@@ -84,6 +84,15 @@
       height: 44px;
       border-radius: 44px;
       padding: 0px 50px 0px 16px;
+      &::placeholder {
+        color: var(--black);
+        opacity: 1;
+      }
+      &:focus {
+        &::placeholder {
+          opacity: 0;
+        }
+      }
     }
   }
 
@@ -111,7 +120,6 @@
     min-height: 60px;
     border-radius: 60px;
     color: var(--white);
-
     font-size: 18px;
     line-height: 1;
     font-weight: 700;
@@ -228,6 +236,137 @@
     &:disabled {
       opacity: 0.3;
       pointer-events: none;
+    }
+  }
+}
+
+@media (max-width: 1439px) {
+  .winners {
+    max-width: calc(100% - 60px);
+    gap: 30px;
+  }
+
+  .winners-filters {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 1023px) {
+  #winners {
+    scroll-margin-top: 70px;
+  }
+
+  .table {
+    thead {
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      &:first-child {
+        padding-left: 20px;
+        width: 26%;
+      }
+      &:last-child {
+        padding-right: 20px;
+        width: 30%;
+      }
+    }
+    tbody {
+      font-size: 12px;
+      tr {
+        td {
+          &:first-child {
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .winners {
+    max-width: 100%;
+  }
+
+  .winners-filters {
+    justify-content: space-evenly;
+    margin: -10px 0px;
+    .choices {
+      min-width: 300px;
+    }
+
+    form {
+      order: 2;
+    }
+
+    .form {
+      max-width: 300px;
+      order: 1;
+    }
+  }
+
+  .table {
+    thead {
+      font-size: 12px;
+      th {
+        height: 40px;
+        text-wrap: wrap;
+        span {
+          display: none;
+        }
+        &:last-child {
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    th,
+    td {
+      width: 22%;
+      padding: 6px 3px;
+      text-wrap: wrap;
+
+      &:first-child {
+        padding-left: 14px;
+        padding-right: 2px;
+        width: 22%;
+        text-align: left;
+      }
+      &:last-child {
+        padding-right: 14px;
+        width: 34%;
+      }
+    }
+    tbody {
+      font-size: 10px;
+      tr {
+        td {
+          &:first-child {
+            padding-left: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .pagination {
+    gap: 8px;
+    li {
+      width: 30px;
+      height: 30px;
+      &:first-child,
+      &:last-child {
+        width: 38px;
+        height: 38px;
+      }
+      &:first-child {
+        margin-right: 10px;
+      }
+      &:last-child {
+        margin-left: 10px;
+      }
     }
   }
 }

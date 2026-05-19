@@ -66,23 +66,23 @@ export const initStyckyButton = () => {
 
   if (!styckyButton || !scrollContainer) return;
 
-  let throttleTimeout = null;
+  let rafId = 0;
 
   const updateButtonState = () => {
     const scrollTop = scrollContainer.scrollTop;
-    const distanceToBottom = scrollContainer.scrollHeight - scrollContainer.clientHeight - scrollTop;
+    const maxScrollTop = Math.max(0, scrollContainer.scrollHeight - scrollContainer.clientHeight);
 
-    styckyButton.classList.toggle('active', scrollTop > 100);
-    styckyButton.classList.toggle('end', distanceToBottom <= 100);
+    styckyButton.classList.toggle('active', scrollTop > 0);
+    styckyButton.classList.toggle('end', scrollTop >= maxScrollTop);
   };
 
   const handleScroll = () => {
-    if (throttleTimeout) return;
+    if (rafId) return;
 
-    throttleTimeout = setTimeout(() => {
-      throttleTimeout = null;
+    rafId = requestAnimationFrame(() => {
+      rafId = 0;
       updateButtonState();
-    }, 100);
+    });
   };
 
   updateButtonState();
