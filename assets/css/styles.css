@@ -349,7 +349,7 @@ button:disabled {
 }
 
 .subtitle {
-  font-size: 24px;
+  font-size: clamp(20px, 1.6667vw, 24px);
   line-height: 1.2;
   font-weight: 400;
   text-align: center;
@@ -3115,6 +3115,78 @@ button:disabled {
   border-radius: 50px;
 }
 
+@media (max-width: 1439px) {
+  .words-headlines {
+    -webkit-mask-size: 100% calc(100% + 2px), 1440px 121px, 1440px 112px;
+            mask-size: 100% calc(100% + 2px), 1440px 121px, 1440px 112px;
+  }
+  .words-headlines .container {
+    gap: 30px;
+  }
+  .words-headlines .container .image {
+    width: 200px;
+    height: 200px;
+  }
+  .words-banner {
+    gap: 40px;
+    max-width: 1160px;
+    padding: 50px;
+  }
+}
+@media (max-width: 1279px) {
+  .words-headlines {
+    padding-top: 80px;
+  }
+  .words-headlines .container {
+    gap: 30px;
+  }
+  .words-headlines .container .image {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .words-headlines {
+    padding-top: 50px;
+    padding-bottom: 220px;
+    -webkit-mask-size: 100% calc(100% + 2px), 1024px 121px, 1024px 112px;
+            mask-size: 100% calc(100% + 2px), 1024px 121px, 1024px 112px;
+  }
+  .words-headlines .container .image {
+    width: 280px;
+    height: 280px;
+  }
+  .words-headlines .container .title {
+    max-width: 200px;
+  }
+  .words-banner {
+    gap: 40px;
+    background: var(--red);
+    margin-top: -170px;
+    padding: 24px;
+    border-radius: 30px;
+  }
+  .words-banner .title {
+    display: block;
+    position: relative;
+    font-size: 28px;
+  }
+  .words-banner .title:before {
+    content: "";
+    display: block;
+    margin: 20px auto 40px auto;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    width: 136px;
+    height: 20px;
+    background: url("../img/svg/fork.svg") no-repeat center center/contain;
+    -webkit-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  .words-banner .button {
+    width: 100%;
+  }
+}
 .section--markets {
   color: var(--white);
   padding: 80px 0px;

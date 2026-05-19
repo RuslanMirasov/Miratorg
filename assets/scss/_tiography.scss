@@ -70,7 +70,7 @@
 }
 
 .subtitle {
-  font-size: 24px;
+  font-size: myclamp(20px, 24px, 1440px, 1440px);
   line-height: 1.2;
   font-weight: 400;
   text-align: center;
