@@ -95,6 +95,16 @@
       }
     }
   }
+
+  .words-banner {
+    max-width: 984px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .words-banner {
+    max-width: 728px;
+  }
 }
 
 @media (max-width: 767px) {
