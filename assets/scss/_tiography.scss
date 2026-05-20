@@ -4,6 +4,9 @@
   margin: 0 auto;
   line-height: 1.1;
   text-align: center;
+  &.red {
+    color: var(--red);
+  }
   &.circles {
     display: flex;
     justify-content: center;

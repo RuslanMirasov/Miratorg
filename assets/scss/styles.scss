@@ -8,6 +8,7 @@
   --black: #000000;
   --yellow: #e9cc29;
   --green: #88bf4a;
+  --green-dark: #5b941b;
   --red: #e7102e;
   --red-dark: #b10000;
   --red-light: #eb4561;
@@ -36,6 +37,7 @@
 @import 'section__soon';
 @import 'section__game';
 @import 'section__profile';
+@import 'section__products';
 @import 'soon';
 @import 'popup';
 @import 'dropzone';
