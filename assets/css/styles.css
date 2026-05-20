@@ -5608,9 +5608,9 @@ button:disabled {
   margin: 30px 0px;
 }
 .products__filters li a {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
