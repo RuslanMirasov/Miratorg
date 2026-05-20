@@ -81,6 +81,7 @@
 
     .input {
       background: #eef2ec;
+      border: 2px solid #eef2ec;
       height: 44px;
       border-radius: 44px;
       padding: 0px 50px 0px 16px;
@@ -311,7 +312,7 @@
     thead {
       font-size: 12px;
       th {
-        height: 40px;
+        height: 50px;
         text-wrap: wrap;
         span {
           display: none;

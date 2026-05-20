@@ -64,6 +64,7 @@ const initSlider = sliderWrapper => {
     slidesPerGroup = '1,1,1',
     loop = false,
     centered = false,
+    centeredSlidesBounds = true,
     initialSlide = '0,0,0',
     direction = 'horizontal',
     allowTouchMove = 'true',
@@ -80,8 +81,8 @@ const initSlider = sliderWrapper => {
     effect,
     speed,
     loop,
-    centeredSlides: centered,
-    centeredSlidesBounds: centered,
+    centeredSlides: toBool(centered),
+    centeredSlidesBounds: toBool(centeredSlidesBounds),
     direction,
     breakpoints: {
       0: {

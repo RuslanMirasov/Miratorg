@@ -1,5 +1,7 @@
 .section--profile {
   padding: 32px 0px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 64px;
 
   .button {
@@ -21,10 +23,31 @@
     margin-top: 50px;
   }
   @media (max-width: 1279px) {
+    max-width: 1024px;
     margin-top: 40px;
+    padding: 20px 0px;
   }
   @media (max-width: 1023px) {
+    max-width: 768px;
     margin-top: 0px;
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  @media (max-width: 767px) {
+    .container {
+      padding: 0px 10px;
+      > .button {
+        height: 62px;
+        border-radius: 12px;
+        margin-top: 0;
+        width: 100%;
+        span {
+          font-size: 20px;
+        }
+      }
+    }
   }
 }
 
@@ -166,8 +189,12 @@
 .my-cheques {
   width: 100%;
   margin-top: 40px;
-  .title--40 {
+  .title {
+    font-size: 40px;
     color: var(--red);
+    @media (max-width: 767px) {
+      font-size: 32px;
+    }
   }
   .table {
     margin-top: 32px;
@@ -224,6 +251,7 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+    font-size: 40px;
     gap: 24px;
     &:before,
     &:after {
@@ -303,11 +331,241 @@
     }
   }
   .arrow {
+    top: auto;
+    bottom: 225px;
     &[data-arrow-prev] {
       transform: translate(0px, -50%);
     }
     &[data-arrow-next] {
       transform: translate(0px, -50%);
     }
+  }
+}
+
+@media (max-width: 1439px) {
+  .my-prize {
+    padding-top: 20px;
+    scroll-margin: 60px;
+  }
+
+  .my_prize__inner {
+    padding: 40px 30px 0px 30px;
+    .prize-slider {
+      min-height: auto;
+      padding: 40px 0px;
+      h3 {
+        text-transform: uppercase;
+      }
+    }
+    .arrow {
+      bottom: 165px;
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  .profile-banner {
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+  .profile-banner__image {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+  }
+  .profile-banner__text {
+    .title {
+      font-size: 36px;
+    }
+    .subtitle {
+      font-size: 14px;
+    }
+  }
+  .my_prize__inner {
+    padding: 40px 20px 0px 20px;
+    .prize-slider {
+      padding: 40px 0px 24px 0px;
+      .swiper-pagination {
+        display: flex;
+      }
+      .arrow {
+        bottom: 135px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .profile-banner {
+    width: 100%;
+  }
+  .user-info {
+    width: 100%;
+
+    .info {
+      align-items: flex-start;
+    }
+  }
+  .logout {
+    margin-top: 20px;
+  }
+  .my-cheques {
+    .table {
+      margin-top: 30px;
+      th span {
+        min-width: 8px;
+      }
+      th,
+      td {
+        width: 25%;
+        &:first-child {
+          text-align: left;
+          //padding-left: 20px;
+          padding-right: 2px;
+          width: 25%;
+        }
+        &:last-child {
+          //padding-right: 20px;
+          width: 25%;
+        }
+      }
+    }
+    .pagination {
+      margin-top: 30px;
+    }
+  }
+  .my-arrows {
+    padding: 40px 20px;
+    ul {
+      gap: 20px;
+      li {
+        max-width: 330px;
+        gap: 24px;
+        border-radius: 20px;
+        padding: 20px;
+        padding-bottom: 22px;
+        strong {
+          font-size: 62px;
+        }
+        p {
+          min-height: 44px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .my-prize {
+    padding-top: 0px;
+    scroll-margin: 80px;
+  }
+
+  .my_prize__inner {
+    padding: 40px 0px 0px 0px;
+
+    .prize-slider {
+      .arrow {
+        position: relative;
+        left: 50%;
+        bottom: auto;
+        top: auto;
+        transform: translate(-50%, 0%);
+        &:disabled {
+          opacity: 0.2;
+        }
+
+        &[data-arrow-prev] {
+          margin-top: 20px;
+          margin-left: -30px;
+        }
+        &[data-arrow-next] {
+          margin-top: -40px;
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .section--profile {
+    padding-bottom: 0px;
+  }
+  .user-info {
+    padding: 20px 15px;
+    gap: 15px;
+    .info {
+      .title {
+        font-size: 18px;
+      }
+
+      .button {
+        margin-top: 5px;
+        span {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  .avatar {
+    width: 50px;
+    height: 50px;
+    background-size: 50% 50%;
+  }
+  .profile-banner__image {
+    width: 120px;
+    height: 120px;
+    margin: 10px auto;
+  }
+  .profile-banner {
+    padding: 20px 15px 30px 15px;
+  }
+  .my-cheques {
+    .table {
+      th span {
+        display: none;
+      }
+      th,
+      td {
+        &:first-child {
+          width: 27%;
+          padding-left: 16px;
+          span {
+            display: block;
+          }
+        }
+        &:last-child {
+          width: 23%;
+          padding-right: 16px;
+        }
+      }
+    }
+  }
+  .my-arrows {
+    padding: 30px;
+    gap: 30px;
+
+    .title {
+      font-size: 32px;
+      flex-direction: column;
+      gap: 14px;
+      &:after {
+        content: none;
+      }
+    }
+    ul {
+      gap: 20px;
+      li {
+        max-width: 100%;
+      }
+    }
+  }
+  .my-prize {
+    scroll-margin: 70px;
+  }
+  .prize-slider > h3 {
+    font-size: 24px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0px 20px;
   }
 }
