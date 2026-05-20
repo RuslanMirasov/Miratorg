@@ -188,6 +188,12 @@
     &:last-child {
       width: 40px;
       height: 40px;
+      a {
+        &.disabled {
+          opacity: 0.2;
+          pointer-events: none;
+        }
+      }
     }
     &:first-child {
       margin-right: 24px;

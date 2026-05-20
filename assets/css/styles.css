@@ -3646,6 +3646,10 @@ button:disabled {
   width: 40px;
   height: 40px;
 }
+.pagination li:first-child a.disabled, .pagination li:last-child a.disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
 .pagination li:first-child {
   margin-right: 24px;
 }
@@ -5508,6 +5512,12 @@ button:disabled {
   padding-top: 64px;
   min-height: 100vh;
 }
+.section--products .container {
+  max-width: 1410px;
+}
+.section--products #products {
+  scroll-margin: 100px;
+}
 @media (max-width: 1439px) {
   .section--products {
     padding-top: 50px;
@@ -5517,6 +5527,28 @@ button:disabled {
   }
   .section--products .products {
     padding: 50px 0px;
+  }
+  .section--products #products {
+    scroll-margin: 80px;
+  }
+}
+@media (max-width: 1023px) {
+  .section--products {
+    padding-top: 0px;
+  }
+  .section--products .products {
+    padding: 40px 0px 50px 0px;
+  }
+  .section--products #products {
+    scroll-margin: 80px;
+  }
+}
+@media (max-width: 767px) {
+  .section--products .products {
+    padding: 32px 0px 50px 0px;
+  }
+  .section--products #products {
+    scroll-margin: 60px;
   }
 }
 
@@ -5529,6 +5561,9 @@ button:disabled {
   height: 1px;
   background: var(--green);
   border: none;
+}
+.products .title {
+  font-size: clamp(32px, 2.7778vw, 40px);
 }
 .products .subtitle {
   display: block;
@@ -5579,7 +5614,7 @@ button:disabled {
   position: relative;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 33px;
+  min-height: 34px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -5595,6 +5630,8 @@ button:disabled {
   font-weight: 500;
   padding: 6px 18px;
   border-radius: 40px;
+  text-align: center;
+  cursor: pointer;
   -webkit-transition: background 0.3s ease 0s, color 0.3s ease 0s;
   transition: background 0.3s ease 0s, color 0.3s ease 0s;
 }
@@ -5606,6 +5643,17 @@ button:disabled {
 .products__filters li a.active {
   background: var(--green);
   color: var(--white);
+  pointer-events: none;
+}
+@media (max-width: 767px) {
+  .products__filters {
+    margin: 20px 0px;
+  }
+  .products__filters li a {
+    font-size: 11px;
+    padding: 4px 10px;
+    min-height: 24px;
+  }
 }
 
 .products-list {
@@ -5619,6 +5667,7 @@ button:disabled {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-top: 20px;
   gap: 30px;
 }
 .products-list li {

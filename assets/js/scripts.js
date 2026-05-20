@@ -7,7 +7,8 @@ import { initTabsSliderNavigation } from './modules/goToSlide.js';
 import { initTimer } from './modules/timer.js';
 import { initTabs } from './modules/tabs.js';
 import { initAccordeons } from './modules/accordeon.js';
-import { initWordsGame } from './modules/words-game.js';
+import { initProducts } from './modules/products.js';
+//import { initWordsGame } from './modules/words-game.js';
 
 popup.init();
 window.popup = popup;
@@ -30,5 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initDecimalInputs();
   initDropzones();
   initScrollManager();
-  initWordsGame();
+  initProducts();
+  //initWordsGame();
 });
