@@ -4546,12 +4546,7 @@ button:disabled {
   right: 0px;
   border-radius: 20px;
   background: var(--white) url("../img/svg/lamp.svg") no-repeat center center;
-  background-size: 40px 50px;
-}
-@media (hover: hover) {
-  .game__button.help:hover {
-    background: var(--invalid) url("../img/svg/lamp.svg") no-repeat center center;
-  }
+  background-size: 55% auto;
 }
 @media (max-width: 1439px) {
   .game__button {
@@ -4563,7 +4558,6 @@ button:disabled {
   }
   .game__button.help {
     border-radius: 16px;
-    background-size: 30px 40px;
   }
 }
 @media (max-width: 767px) {
@@ -4573,7 +4567,6 @@ button:disabled {
   }
   .game__button.help {
     border-radius: 14px;
-    background-size: 25px 35px;
   }
 }
 
