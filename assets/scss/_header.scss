@@ -106,6 +106,9 @@
   }
 
   li {
+    &.extra {
+      display: none;
+    }
     .menu__link {
       font-size: 16px;
       font-weight: 500;
@@ -125,7 +128,7 @@
     &:first-child {
       margin-right: auto;
     }
-    &:last-child {
+    &.last {
       margin-right: auto;
     }
   }
@@ -273,16 +276,43 @@
     align-content: center;
     gap: 30px;
     li {
+      order: 1;
+      &.extra {
+        display: flex;
+      }
       &:first-child {
+        order: 2;
         margin-right: 0;
         margin-top: auto;
+        + li {
+          margin-top: auto;
+        }
+        .button {
+          min-width: 290px;
+          height: 54px;
+          background: var(--white);
+          span {
+            color: var(--black);
+            line-height: 1.1;
+          }
+        }
       }
-      &:last-child {
+      &.last {
         margin-right: 0;
-        margin-bottom: auto;
       }
       .menu__link {
-        font-size: 20px;
+        font-size: 22px;
+        font-weight: 500;
+      }
+
+      .button.small {
+        height: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        span {
+          font-size: 22px;
+          font-weight: 500;
+        }
       }
     }
   }
