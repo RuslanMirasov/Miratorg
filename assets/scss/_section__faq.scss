@@ -4,6 +4,12 @@
   align-items: flex-start;
   padding: 30px 50px 0px 50px;
 
+  .active {
+    .question {
+      border-radius: 20px 20px 0px 0px;
+    }
+  }
+
   .white {
     color: var(--white);
   }
@@ -26,6 +32,7 @@
   border-radius: 20px;
   padding: 16px 50px 16px 20px;
   color: var(--white);
+  transition: 0.5s border-radius ease 0s;
   p {
     font-size: 18px;
     line-height: 1.2;
@@ -80,6 +87,14 @@
       padding: 2px 0px;
       > * {
         color: var(--black);
+      }
+    }
+  }
+  a {
+    font-weight: 500;
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
       }
     }
   }

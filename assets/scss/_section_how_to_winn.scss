@@ -1,31 +1,45 @@
 .section--winn {
   padding: 11.8vw 0px 110px 0px;
   background: url('../img/how-to-winn/bg.svg') no-repeat center center/cover;
-  mask-image: linear-gradient(#000 0 0), url('../img/how-to-winn/mask-top.svg'), url('../img/how-to-winn/mask-bottom.svg');
-  mask-repeat: no-repeat, no-repeat, no-repeat;
+  mask-image: linear-gradient(#000 0 0), url('../img/how-to-winn/mask-top.svg');
+  mask-repeat: no-repeat, no-repeat;
   mask-size:
     100% calc(100% + 2px),
-    100% 7.638888vw,
-    100% 103px;
+    100% 7.638888vw;
   mask-position:
     center,
-    center top,
-    center bottom;
+    center -2px;
   mask-composite: exclude, exclude;
   z-index: 1;
   margin-top: -7.2vw;
   color: var(--white);
 
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 3;
+    width: 100%;
+    height: 100px;
+    background: url('../img/how-to-winn/mask-bottom.svg') no-repeat center center;
+    background-size: 100% 100%;
+    pointer-events: none;
+  }
+
   @media (max-width: 1439px) {
     mask-size:
       100% 100%,
-      100% 7.638888vw,
-      1440px 103px;
+      100% 7.638888vw;
   }
 
   @media (max-width: 1279px) {
     margin-top: -70px;
     padding: 140px 0px 80px 0px;
+    &:after {
+      background-size: 1280px 100%;
+    }
   }
 
   @media (max-width: 1023px) {
@@ -38,8 +52,11 @@
     padding: 70px 0px 60px 0px;
     mask-size:
       100% 100%,
-      100% 24px,
-      768px 102px;
+      105vw 25px;
+
+    &:after {
+      background-size: 768px 100%;
+    }
 
     .title {
       flex-direction: column;

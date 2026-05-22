@@ -219,7 +219,10 @@
     tbody {
       tr {
         &:nth-child(2n + 2) {
-          background: #ffffff;
+          background: transparent;
+          td {
+            background: #ffffff;
+          }
         }
       }
     }
@@ -328,6 +331,7 @@
     padding: 40px 0px;
     h3 {
       text-transform: uppercase;
+      font-size: myclamp(24px, 32px, 1440px, 1440px);
     }
   }
   .arrow {
@@ -520,6 +524,12 @@
     padding: 20px 15px 30px 15px;
   }
   .my-cheques {
+    .title {
+      &:before,
+      &:after {
+        content: none;
+      }
+    }
     .table {
       th span {
         display: none;
@@ -561,6 +571,10 @@
   }
   .my-prize {
     scroll-margin: 70px;
+
+    .prize-slider > h3 {
+      max-width: 60%;
+    }
   }
   .prize-slider > h3 {
     font-size: 24px;

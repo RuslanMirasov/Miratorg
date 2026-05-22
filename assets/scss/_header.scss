@@ -312,6 +312,9 @@
         span {
           font-size: 22px;
           font-weight: 500;
+          @supports (-webkit-touch-callout: none) {
+            padding-bottom: 3px;
+          }
         }
       }
     }

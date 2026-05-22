@@ -670,6 +670,10 @@ button:disabled {
   background: var(--white) url("../img/svg/checkbox.svg") no-repeat center center;
   background-size: 100% 100%;
 }
+.radio.invalid + .label__text + .inputError,
+.checkbox.invalid + .label__text + .inputError {
+  top: 30px;
+}
 .radio.invalid + .label__text,
 .checkbox.invalid + .label__text {
   color: var(--invalid);
@@ -1385,6 +1389,11 @@ button:disabled {
     font-size: 22px;
     font-weight: 500;
   }
+  @supports (-webkit-touch-callout: none) {
+    .menu li .button.small span {
+      padding-bottom: 3px;
+    }
+  }
 }
 .stycky-button {
   display: -webkit-box;
@@ -1975,32 +1984,48 @@ button:disabled {
 .section--winn {
   padding: 11.8vw 0px 110px 0px;
   background: url("../img/how-to-winn/bg.svg") no-repeat center center/cover;
-  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000)), url("../img/how-to-winn/mask-top.svg"), url("../img/how-to-winn/mask-bottom.svg");
-  -webkit-mask-image: linear-gradient(#000 0 0), url("../img/how-to-winn/mask-top.svg"), url("../img/how-to-winn/mask-bottom.svg");
-          mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000)), url("../img/how-to-winn/mask-top.svg"), url("../img/how-to-winn/mask-bottom.svg");
-          mask-image: linear-gradient(#000 0 0), url("../img/how-to-winn/mask-top.svg"), url("../img/how-to-winn/mask-bottom.svg");
-  -webkit-mask-repeat: no-repeat, no-repeat, no-repeat;
-          mask-repeat: no-repeat, no-repeat, no-repeat;
-  -webkit-mask-size: 100% calc(100% + 2px), 100% 7.638888vw, 100% 103px;
-          mask-size: 100% calc(100% + 2px), 100% 7.638888vw, 100% 103px;
-  -webkit-mask-position: center, center top, center bottom;
-          mask-position: center, center top, center bottom;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000)), url("../img/how-to-winn/mask-top.svg");
+  -webkit-mask-image: linear-gradient(#000 0 0), url("../img/how-to-winn/mask-top.svg");
+          mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000)), url("../img/how-to-winn/mask-top.svg");
+          mask-image: linear-gradient(#000 0 0), url("../img/how-to-winn/mask-top.svg");
+  -webkit-mask-repeat: no-repeat, no-repeat;
+          mask-repeat: no-repeat, no-repeat;
+  -webkit-mask-size: 100% calc(100% + 2px), 100% 7.638888vw;
+          mask-size: 100% calc(100% + 2px), 100% 7.638888vw;
+  -webkit-mask-position: center, center -2px;
+          mask-position: center, center -2px;
   -webkit-mask-composite: xor, xor;
           mask-composite: exclude, exclude;
   z-index: 1;
   margin-top: -7.2vw;
   color: var(--white);
 }
+.section--winn:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  z-index: 3;
+  width: 100%;
+  height: 100px;
+  background: url("../img/how-to-winn/mask-bottom.svg") no-repeat center center;
+  background-size: 100% 100%;
+  pointer-events: none;
+}
 @media (max-width: 1439px) {
   .section--winn {
-    -webkit-mask-size: 100% 100%, 100% 7.638888vw, 1440px 103px;
-            mask-size: 100% 100%, 100% 7.638888vw, 1440px 103px;
+    -webkit-mask-size: 100% 100%, 100% 7.638888vw;
+            mask-size: 100% 100%, 100% 7.638888vw;
   }
 }
 @media (max-width: 1279px) {
   .section--winn {
     margin-top: -70px;
     padding: 140px 0px 80px 0px;
+  }
+  .section--winn:after {
+    background-size: 1280px 100%;
   }
 }
 @media (max-width: 1023px) {
@@ -2013,8 +2038,11 @@ button:disabled {
   .section--winn {
     margin-top: 0px;
     padding: 70px 0px 60px 0px;
-    -webkit-mask-size: 100% 100%, 100% 24px, 768px 102px;
-            mask-size: 100% 100%, 100% 24px, 768px 102px;
+    -webkit-mask-size: 100% 100%, 105vw 25px;
+            mask-size: 100% 100%, 105vw 25px;
+  }
+  .section--winn:after {
+    background-size: 768px 100%;
   }
   .section--winn .title {
     -webkit-box-orient: vertical;
@@ -3571,6 +3599,9 @@ button:disabled {
   line-height: 1.2;
 }
 .table tbody tr:nth-child(2n+2) {
+  background: transparent;
+}
+.table tbody tr:nth-child(2n+2) td {
   background: #eef2ec;
 }
 .table tbody tr td:first-child {
@@ -3794,6 +3825,9 @@ button:disabled {
           align-items: flex-start;
   padding: 30px 50px 0px 50px;
 }
+.faq .active .question {
+  border-radius: 20px 20px 0px 0px;
+}
 .faq .white {
   color: var(--white);
 }
@@ -3821,6 +3855,8 @@ button:disabled {
   border-radius: 20px;
   padding: 16px 50px 16px 20px;
   color: var(--white);
+  -webkit-transition: 0.5s border-radius ease 0s;
+  transition: 0.5s border-radius ease 0s;
 }
 .question p {
   font-size: 18px;
@@ -3880,6 +3916,14 @@ button:disabled {
 }
 .answer ul li > * {
   color: var(--black);
+}
+.answer a {
+  font-weight: 500;
+}
+@media (hover: hover) {
+  .answer a:hover {
+    text-decoration: underline;
+  }
 }
 
 .faq__sidebar {
@@ -5096,6 +5140,9 @@ button:disabled {
   width: 25%;
 }
 .my-cheques .table tbody tr:nth-child(2n+2) {
+  background: transparent;
+}
+.my-cheques .table tbody tr:nth-child(2n+2) td {
   background: #ffffff;
 }
 .my-cheques .pagination {
@@ -5237,6 +5284,7 @@ button:disabled {
 }
 .my_prize__inner .prize-slider h3 {
   text-transform: uppercase;
+  font-size: clamp(24px, 2.2222vw, 32px);
 }
 .my_prize__inner .arrow {
   top: auto;
@@ -5421,6 +5469,9 @@ button:disabled {
   .profile-banner {
     padding: 20px 15px 30px 15px;
   }
+  .my-cheques .title:before, .my-cheques .title:after {
+    content: none;
+  }
   .my-cheques .table th span {
     display: none;
   }
@@ -5461,6 +5512,9 @@ button:disabled {
   }
   .my-prize {
     scroll-margin: 70px;
+  }
+  .my-prize .prize-slider > h3 {
+    max-width: 60%;
   }
   .prize-slider > h3 {
     font-size: 24px;
@@ -6576,10 +6630,10 @@ button:disabled {
           transform: translateX(76%) rotate(-14deg);
 }
 .how-to-get-arrows li:nth-child(3):after {
-  top: 94%;
-  -webkit-transform: translateX(-36%) rotate(-20deg);
-      -ms-transform: translateX(-36%) rotate(-20deg);
-          transform: translateX(-36%) rotate(-20deg);
+  top: 108%;
+  -webkit-transform: translateX(-36%) rotate(-13deg);
+      -ms-transform: translateX(-36%) rotate(-13deg);
+          transform: translateX(-36%) rotate(-13deg);
 }
 .how-to-get-arrows li:nth-child(4):before {
   content: none;

@@ -157,7 +157,10 @@
     line-height: 1.2;
     tr {
       &:nth-child(2n + 2) {
-        background: #eef2ec;
+        background: transparent;
+        td {
+          background: #eef2ec;
+        }
       }
       td {
         &:first-child {
