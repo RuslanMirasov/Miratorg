@@ -9,6 +9,11 @@
 
   &.arrows-exchange {
     background: none;
+    @media (max-width: 767px) {
+      .title--60 {
+        font-size: 32px;
+      }
+    }
   }
 }
 

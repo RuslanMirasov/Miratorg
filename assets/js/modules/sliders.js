@@ -4,6 +4,10 @@ const sliders = document.querySelectorAll('[data-slider]');
 const instances = new WeakMap();
 
 const toBool = s => String(s).toLowerCase() === 'true';
+const toSwiperValue = value => {
+  const normalizedValue = String(value).trim();
+  return normalizedValue === 'auto' ? 'auto' : Number(normalizedValue);
+};
 
 const getOwnElement = (sliderWrapper, selector) => {
   return Array.from(sliderWrapper.querySelectorAll(selector)).find(el => el.closest('[data-slider]') === sliderWrapper);
@@ -86,19 +90,19 @@ const initSlider = sliderWrapper => {
     direction,
     breakpoints: {
       0: {
-        slidesPerView: Number(slidesPerView.split(',')[2]),
+        slidesPerView: toSwiperValue(slidesPerView.split(',')[2]),
         slidesPerGroup: Number(slidesPerGroup.split(',')[2]),
         spaceBetween: Number(spaceBetween.split(',')[2]),
         initialSlide: Number(initialSlide.split(',')[2]),
       },
       768: {
-        slidesPerView: Number(slidesPerView.split(',')[1]),
+        slidesPerView: toSwiperValue(slidesPerView.split(',')[1]),
         slidesPerGroup: Number(slidesPerGroup.split(',')[1]),
         spaceBetween: Number(spaceBetween.split(',')[1]),
         initialSlide: Number(initialSlide.split(',')[1]),
       },
       1280: {
-        slidesPerView: Number(slidesPerView.split(',')[0]),
+        slidesPerView: toSwiperValue(slidesPerView.split(',')[0]),
         slidesPerGroup: Number(slidesPerGroup.split(',')[0]),
         spaceBetween: Number(spaceBetween.split(',')[0]),
         initialSlide: Number(initialSlide.split(',')[0]),
