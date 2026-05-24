@@ -26,17 +26,21 @@
     left: 6.4%;
     top: 6.4vw;
     width: 54.4%;
+    &.logo--sm {
+      width: 58%;
+      left: 0%;
+    }
   }
 }
 
 .dog {
   position: absolute;
-  width: 19.583333%;
-  left: 31.7%;
-  top: 14vw;
-  transform: rotate(-2.5deg);
-  z-index: 2;
-  @media (max-width: 600px) {
+  width: 28vw;
+  right: 50%;
+  bottom: 0px;
+  transform: translate(-55%, 0%);
+  z-index: 3;
+  @media (min-width: 600px) {
     display: none;
   }
 }
@@ -227,6 +231,73 @@
     height: 252px;
     max-width: 340px;
   }
+
+  .fsk {
+    margin-left: auto;
+    margin-bottom: 0.6vw;
+    padding-bottom: myclamp(26px, 30px, 1440px, 2560px);
+    padding-right: 11vw;
+    left: 8.8vw;
+    background: var(--green);
+    border-radius: myclamp(12px, 12px, 1440px, 2560px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
+    @media (max-width: 1365px) {
+      padding-right: 13vw;
+    }
+    @media (max-width: 1279px) {
+      width: 220px;
+      left: 0px;
+      padding-right: 30px;
+      margin-right: -30px;
+    }
+
+    @media (max-width: 1023px) {
+      width: 270px;
+      left: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+      margin-right: -30px;
+      padding-bottom: 34px;
+      margin-bottom: 0px;
+    }
+
+    img {
+      position: absolute;
+      transform: translate(0%, -50%);
+      top: 100%;
+      height: myclamp(40px, 48px, 1440px, 2560px);
+      @media (max-width: 1023px) {
+        height: 48px;
+      }
+    }
+
+    span {
+      font-size: myclamp(10px, 12px, 1440px, 2560px);
+      @media (max-width: 1023px) {
+        font-size: 12px;
+      }
+
+      &.absolute {
+        position: absolute;
+        top: 132%;
+        font-size: myclamp(12px, 16px, 1440px, 2560px);
+        @media (max-width: 1023px) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    p {
+      font-size: myclamp(26px, 32px, 1440px, 2560px);
+      line-height: 1;
+      font-weight: 700;
+      text-transform: uppercase;
+      @media (max-width: 1023px) {
+        font-size: 32px;
+      }
+    }
+  }
 }
 
 .house__image {
@@ -252,77 +323,17 @@
   display: flex;
   position: relative;
   width: 100%;
-  margin-left: auto;
-  margin-bottom: 0.6vw;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
   z-index: 2;
-  background: var(--green);
-  border-radius: myclamp(12px, 12px, 1440px, 2560px);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
   padding: myclamp(8px, 8px, 1440px, 2560px);
-  padding-bottom: myclamp(26px, 30px, 1440px, 2560px);
-  padding-right: 11vw;
-  left: 8.8vw;
   text-align: center;
-  @media (max-width: 1365px) {
-    padding-right: 13vw;
-  }
-
-  @media (max-width: 1279px) {
-    width: 220px;
-    left: 0px;
-    padding-right: 30px;
-    margin-right: -30px;
-  }
-
-  @media (max-width: 1023px) {
-    width: 270px;
-    left: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-right: -30px;
-    padding-bottom: 34px;
-    margin-bottom: 0px;
-  }
-
-  img {
-    position: absolute;
-    transform: translate(0%, -50%);
-    top: 100%;
-    height: myclamp(40px, 48px, 1440px, 2560px);
-    @media (max-width: 1023px) {
-      height: 48px;
-    }
-  }
 
   span {
     display: block;
-    font-size: myclamp(10px, 12px, 1440px, 2560px);
     font-weight: 700;
-    @media (max-width: 1023px) {
-      font-size: 12px;
-    }
-
-    &.absolute {
-      position: absolute;
-      top: 132%;
-      font-size: myclamp(12px, 16px, 1440px, 2560px);
-      @media (max-width: 1023px) {
-        font-size: 14px;
-      }
-    }
-  }
-
-  p {
-    font-size: myclamp(26px, 32px, 1440px, 2560px);
-    line-height: 1;
-    font-weight: 700;
-    text-transform: uppercase;
-    @media (max-width: 1023px) {
-      font-size: 32px;
-    }
   }
 }

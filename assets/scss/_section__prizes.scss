@@ -109,6 +109,13 @@
     .title--20 {
       margin-top: auto;
     }
+
+    &.intro--sofa {
+      background: var(--red-light) url('../img/prizes/main-prize2.webp') no-repeat center center/contain;
+    }
+    &.intro--money {
+      background: var(--red-light) url('../img/prizes/main-prize3.webp') no-repeat center center/contain;
+    }
   }
 }
 
@@ -279,6 +286,11 @@
   }
   &.red-image {
     background: var(--red-light) url('../img/prizes/month-bg.svg') no-repeat center center/cover;
+    &[data-slides-per-view='2,2,1'] {
+      .swiper {
+        max-width: 1000px;
+      }
+    }
   }
 
   > h3 {
@@ -846,6 +858,16 @@
 
   .main-prize {
     min-height: 430px;
+    &.intro {
+      &.intro--sofa,
+      &.intro--money {
+        padding-bottom: 20px;
+      }
+      &.intro--money {
+        background: var(--red-light) url('../img/prizes/main-prize3.webp') no-repeat center center/cover;
+        background-size: auto 70%;
+      }
+    }
   }
 
   .main-prize__image {

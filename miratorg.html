@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="theme-color" content="#e7102e" />
-    <meta name="description" content="Мираторг - Гриль охота" />
+    <meta name="description" content="Мираторг - СМ" />
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="./assets/css/choices.min.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/dropzone.min.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.min.css?v=1.2" />
-    <title>Мираторг | Гриль охота</title>
+    <title>Мираторг | СМ</title>
   </head>
   <body>
     <div class="body body--page">
@@ -23,7 +23,7 @@
       </div>
 
       <!--STYCKY BUTTON-->
-      <button class="stycky-button" data-stycky-button data-popup-open="how-to-get-arrows">
+      <button class="stycky-button" data-stycky-button data-popup-open="how-to-get-arrows-sm">
         <span>Больше<br />стрел —<br />больше<br />призов!</span>
       </button>
 
@@ -44,13 +44,10 @@
               <button class="button medium green-white" data-popup-open="cheque"><span>Загрузить чек</span></button>
             </li>
             <li>
-              <a href="./game.html" class="menu__link"><span>Игра</span></a>
+              <a href="#prizes" class="menu__link"><span>Призы</span></a>
             </li>
             <li>
-              <a href="./#prizes" class="menu__link"><span>Призы</span></a>
-            </li>
-            <li>
-              <a href="./#winners" class="menu__link"><span>Победители</span></a>
+              <a href="#winners" class="menu__link"><span>Победители</span></a>
             </li>
             <li>
               <a href="./#rules" class="menu__link"><span>Правила</span></a>
@@ -59,10 +56,10 @@
               <a href="./products.html" class="button small green"><span>Продукты</span></a>
             </li>
             <li class="last">
-              <a href="./miratorg.html" class="button small green"><span>Акция в СМ Мираторг</span></a>
+              <a href="./" class="button small green"><span>Акция Гриль-Охота</span></a>
             </li>
             <li class="extra">
-              <button class="button small green" data-popup-open="how-to-get-arrows"><span>Как заработать стрелы?</span></button>
+              <button class="button small green" data-popup-open="how-to-get-arrows-sm"><span>Как заработать стрелы?</span></button>
             </li>
           </ul>
         </nav>
@@ -72,14 +69,14 @@
         </button>
 
         <div class="header__auth">
-          <button class="header__buttons" data-popup-open="auth">
+          <!-- <button class="header__buttons" data-popup-open="auth">
             <img src="./assets/img/svg/login.svg" alt="" />
             <span>Вход</span>
-          </button>
-          <!-- <a href="./profile.html" class="header__buttons">
+          </button> -->
+          <a href="./profile-sm.html" class="header__buttons">
             <img src="./assets/img/svg/profile.svg" alt="" />
             <span>Личный кабинет</span>
-          </a> -->
+          </a>
         </div>
       </header>
 
@@ -92,26 +89,22 @@
               <img src="./assets/img/hero/hero.webp" alt="Мираторг" class="family" />
             </picture>
             <img src="./assets/img/hero/smoke.gif" alt="Мираторг" class="smoke" />
-            <img src="./assets/img/svg/logo.svg" alt="Мираторг" class="logo" />
+            <img src="./assets/img/svg/logo-sm.svg" alt="Мираторг" class="logo logo--sm" />
+            <img src="./assets/img/hero/dog.webp" alt="Мираторг" class="dog" />
           </div>
 
           <div class="hero-content">
-            <div class="hero-products">
-              <img src="./assets/img/hero/product-1.webp" alt="Мираторг" />
-              <img src="./assets/img/hero/product-2.webp" alt="Мираторг" />
-            </div>
-
-            <div class="hero-title">
-              <h1 class="title title--46 upper">Открывай<br />сезон охоты</h1>
-            </div>
-
-            <div class="house">
-              <img src="./assets/img/hero/house.webp" alt="" class="house__image" />
-              <div class="fsk">
-                <span>ГЛАВНАЯ ДОБЫЧА —</span>
-                <p>ТАУНХАУС</p>
-                <img src="./assets/img/hero/fsk.svg" alt="" />
-                <span class="absolute">и тысячи других призов</span>
+            <div class="container">
+              <div class="hero-title">
+                <h1 class="title title--46 upper">Открывай<br />сезон охоты</h1>
+              </div>
+              <div class="sofa">
+                <div class="fsk">
+                  <img src="./assets/img/hero/sofa.webp" alt="" />
+                  <span>ГЛАВНАЯ ДОБЫЧА —</span>
+                  <p>Набор садовой мебели</p>
+                  <b>и тысячи других призов</b>
+                </div>
               </div>
             </div>
           </div>
@@ -121,26 +114,29 @@
             <div class="container">
               <h2 class="title title--60 circles">Как выиграть призы</h2>
 
-              <div class="how-to-winn" data-slider data-slides-per-view="4,2,1">
+              <div class="how-to-winn how-to-winn--sm" data-slider data-slides-per-view="4,2,1">
                 <div class="swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="./assets/img/how-to-winn/1.webp" alt="" />
-                      <h3>КУПИ ПРОДУКЦИЮ <br />МИРАТОРГ</h3>
-                      <a href="./products.html" class="button"><span>Продукция</span></a>
+                      <img src="./assets/img/how-to-winn/5.webp" alt="" />
+                      <h3>Совершайте покупку <br />В&nbsp;супермаркетах <br />МИРАТОРГ от&nbsp;1500&nbsp;₽</h3>
                     </div>
+
                     <div class="swiper-slide">
                       <img src="./assets/img/how-to-winn/2.webp" alt="" />
                       <h3>РЕГИСТРИРУЙ ЧЕКИ <br />И КОПИ СТРЕЛЫ</h3>
                       <button class="button" data-popup-open="cheque"><span>Зарегистрировать</span></button>
                     </div>
+
                     <div class="swiper-slide">
-                      <img src="./assets/img/how-to-winn/3.webp" alt="" />
-                      <h3>ОБМЕНИВАЙ СТРЕЛЫ <br />НА ПРИЗЫ</h3>
+                      <img src="./assets/img/how-to-winn/6.webp" alt="" />
+                      <h3>Удваивай стрелы <br />за&nbsp;продукцию <br />партнёров в&nbsp;чеке</h3>
+                      <a href="./products.html" class="button"><span>Продукция</span></a>
                     </div>
+
                     <div class="swiper-slide">
-                      <img src="./assets/img/how-to-winn/4.webp" alt="" />
-                      <h3>ПОЛУЧАЙ ШАНС <br />ВЫИГРАТЬ ТАУНХАУС</h3>
+                      <img src="./assets/img/how-to-winn/7.webp" alt="" />
+                      <h3>копите стрелы <br />и&nbsp;обменивайте их <br />на&nbsp;шансы выиграть <br />призы!</h3>
                     </div>
                   </div>
                 </div>
@@ -161,9 +157,8 @@
               <menu class="prizes-navigation">
                 <li><button type="button" data-prizes-nav="0" class="active">Главный приз</button></li>
                 <li><button type="button" data-prizes-nav="1">Гарантированные призы</button></li>
-                <li><button type="button" data-prizes-nav="2">Витрина призов</button></li>
-                <li><button type="button" data-prizes-nav="3">Еженедельные призы</button></li>
-                <li><button type="button" data-prizes-nav="4">Ежемесячные призы</button></li>
+                <li><button type="button" data-prizes-nav="2">Еженедельные призы</button></li>
+                <li><button type="button" data-prizes-nav="3">Ежемесячные призы</button></li>
               </menu>
 
               <div class="prizes-tabs" data-slider="prizes-tabs" data-allow-touch-move="false" data-space-between="60,30,20" data-auto-height="true">
@@ -174,357 +169,28 @@
                       <div class="swiper">
                         <div class="swiper-wrapper">
                           <!--main prize slide 1-->
-                          <div class="swiper-slide main-prize intro">
-                            <h3 class="title title--42">ТАУНХАУС</h3>
-                            <img src="./assets/img/svg/fsk.svg" alt="" width="200" />
+                          <div class="swiper-slide main-prize intro intro--sofa">
+                            <h3 class="title title--42">НАБОР САДОВОЙ <br />МЕБЕЛИ</h3>
                             <b class="title title--20">В розыгрыше участвует каждый принятый чек</b>
-                          </div>
-
-                          <!--main prize slide 2-->
-                          <div class="swiper-slide main-prize">
-                            <div class="main-prize__text small--inMobil">
-                              <h3 class="title title--42">ТАУНХАУС</h3>
-                              <p>
-                                Таунхаус — это популярный в&nbsp;Европе формат загородного жилья, объединяющий преимущества простоты обслуживания
-                                стандартной квартиры с&nbsp;приватностью и&nbsp;простором собственного загородного дома.
-                              </p>
-                              <p>
-                                Победителю розыгрыша будет предложен на&nbsp;выбор таунхаус в&nbsp;мультиформатном жилом комплексе
-                                <a href="https://dubrovici.fskfamily.ru/?utm_source=miratorg" target="_blank">«Дубровицы Клаб»</a>, расположенном
-                                в&nbsp;Подольске, или в&nbsp;ЖК
-                                <a href="https://martemyanovo.fskfamily.ru/?utm_source=miratorg" target="_blank">«Мартемьяново Клаб»</a>, который
-                                строится в&nbsp;25&nbsp;минутах от&nbsp;Москвы на&nbsp;Киевском шоссе.
-                              </p>
-                              <a href="https://fskfamily.ru/?utm_source=miratorg" target="_blank" class="fskfamilyru">fskfamily.ru</a>
-                            </div>
-                            <div class="main-prize__image">
-                              <img src="./assets/img/prizes/mp-1.webp" alt="" />
-                            </div>
-                          </div>
-
-                          <!--main prize slide 3-->
-                          <div class="swiper-slide main-prize">
-                            <div class="main-prize__text">
-                              <h3 class="title title--42">ТАУНХАУС</h3>
-                              <strong>больше времени на природе</strong>
-                              <p>
-                                Таунхаус от&nbsp;<a href="https://fskfamily.ru/?utm_source=miratorg" target="_blank">«ФСК Загород»</a> — трёхуровневая
-                                квартира с&nbsp;собственным входом и&nbsp;небольшим двориком площадью до&nbsp;3&nbsp;соток.&nbsp;
-                              </p>
-                              <a href="https://fskfamily.ru/?utm_source=miratorg" target="_blank" class="fskfamilyru">fskfamily.ru</a>
-                            </div>
-                            <div class="main-prize__image">
-                              <img src="./assets/img/prizes/mp-2.webp" alt="" />
-                            </div>
-                          </div>
-
-                          <!--main prize slide 4-->
-                          <div class="swiper-slide main-prize">
-                            <div class="main-prize__text">
-                              <h3 class="title title--42">ТАУНХАУС</h3>
-                              <strong>тишина и приватность</strong>
-                              <p>
-                                В&nbsp;одной секции блокированной застройки — до&nbsp;10&nbsp;таунхаусов, таким образом, у&nbsp;вас будет
-                                не&nbsp;более двух соседей, и&nbsp;не&nbsp;будет шума от&nbsp;посторонних.
-                              </p>
-                              <a href="https://fskfamily.ru/?utm_source=miratorg" target="_blank" class="fskfamilyru">fskfamily.ru</a>
-                            </div>
-                            <div class="main-prize__image">
-                              <img src="./assets/img/prizes/mp-3.webp" alt="" />
-                            </div>
-                          </div>
-
-                          <!--main prize slide 5-->
-                          <div class="swiper-slide main-prize">
-                            <div class="main-prize__text">
-                              <h3 class="title title--42">ТАУНХАУС</h3>
-                              <strong>решен вопрос с парковкой</strong>
-                              <p>
-                                Во&nbsp;всех таунхаусах
-                                <a href="https://fskfamily.ru/?utm_source=miratorg" target="_blank">«ФСК Загород»</a> со&nbsp;стороны фасада
-                                предусмотрено два&nbsp;личных машиноместа и&nbsp;тамбур для&nbsp;хранения велосипедов или коляски.
-                              </p>
-                              <p>
-                                На каждом этаже предусмотрены отдельные помещения, которые можно оборудовать в&nbsp;постирочную, кладовую
-                                или&nbsp;гардеробную.
-                              </p>
-                              <a href="https://fskfamily.ru/?utm_source=miratorg" target="_blank" class="fskfamilyru">fskfamily.ru</a>
-                            </div>
-                            <div class="main-prize__image">
-                              <img src="./assets/img/prizes/mp-4.webp" alt="" />
-                            </div>
-                          </div>
-
-                          <!--main prize slide 6-->
-                          <div class="swiper-slide main-prize">
-                            <div class="main-prize__text small--inMobil">
-                              <h3 class="title title--42">ТАУНХАУС</h3>
-                              <strong>места хватит для всех</strong>
-                              <p>
-                                На&nbsp;3&nbsp;этажах таунхауса площадью от&nbsp;118 квадртаных метров размещена просторная кухня-гостиная,
-                                4&nbsp;спальни и&nbsp;3&nbsp;сан.&nbsp;узла, а&nbsp;также большое число мест для&nbsp;хранения — кладовые,
-                                гардеробные, удобные ниши.
-                              </p>
-                              <p>
-                                Таунхаус сдается без&nbsp;отделки, поэтому пространство можно адаптировать под&nbsp;индивидуальные потребности -
-                                оборудовать кабинет или&nbsp;мастерскую, выделить каждому ребенку личную комнату или&nbsp;органзиовать на&nbsp;весь
-                                этаж прострную мастер-спальню.
-                              </p>
-
-                              <a href="https://fskfamily.ru/?utm_source=miratorg" target="_blank" class="fskfamilyru">fskfamily.ru</a>
-                            </div>
-                            <div class="main-prize__image">
-                              <img src="./assets/img/prizes/mp-5.webp" alt="" />
-                            </div>
-                          </div>
-
-                          <!--main prize slide 7-->
-                          <div class="swiper-slide main-prize">
-                            <div class="main-prize__text small--inMobil">
-                              <h3 class="title title--42">ТАУНХАУС</h3>
-                              <strong>места хватит для всех</strong>
-                              <p>
-                                В жилых комлпексах <a href="https://fskfamily.ru/?utm_source=miratorg" target="_blank">«ФСК Загород»</a> созданы все
-                                условия для&nbsp;комфортной жизни: есть собственная муниципальная школа и&nbsp;детский сад, детские и&nbsp;спортивные
-                                площадки, торговая галерея и&nbsp;спортзал. Под&nbsp;благоустройство отводится более 30%&nbsp;территории.
-                              </p>
-                              <p>
-                                Для формирования дружного комьюнити в каждом проекте строится соседский центр с бесплатным тренажёрным залом, детской
-                                комнатой и коворкингом.
-                              </p>
-                              <p>
-                                ТАУНХАУС ОТ&nbsp;«ФСК ЗАГОРОД» —<br />
-                                КАК&nbsp;В&nbsp;ГОРОДЕ, ТОЛЬКО ЛУЧШЕ
-                              </p>
-
-                              <a href="https://fskfamily.ru/?utm_source=miratorg" target="_blank" class="fskfamilyru">fskfamily.ru</a>
-                            </div>
-                            <div class="main-prize__image">
-                              <img src="./assets/img/prizes/mp-6.webp" alt="" />
-                            </div>
                           </div>
                         </div>
                       </div>
-                      <button class="arrow" data-arrow-prev></button>
-                      <button class="arrow" data-arrow-next></button>
+                      <!-- <button class="arrow" data-arrow-prev></button>
+                      <button class="arrow" data-arrow-next></button> -->
                     </div>
 
                     <!--GARANTY PRIZES-->
-                    <div class="swiper-slide prize-tab">
-                      <div
-                        class="prize-slider green-image large"
-                        data-slider
-                        data-slides-per-view="3,2,1"
-                        data-slides-per-group="3,2,1"
-                        data-space-between="30,30,20"
-                      >
-                        <h3>Получай за загрузку чеков</h3>
-                        <div class="swiper">
-                          <div class="swiper-wrapper">
-                            <!--PRIZE 1-->
-                            <div class="swiper-slide prize-slide">
-                              <div class="image">
-                                <img src="./assets/img/prizes/gp-1.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Промокод Wink на&nbsp;30&nbsp;дней</p>
-                            </div>
-
-                            <!--PRIZE 2-->
-                            <div class="swiper-slide prize-slide">
-                              <div class="image">
-                                <img src="./assets/img/prizes/gp-2.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Белкакар 200&nbsp;₽</p>
-                            </div>
-
-                            <!--PRIZE 3-->
-                            <div class="swiper-slide prize-slide">
-                              <div class="image">
-                                <img src="./assets/img/prizes/gp-3.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Промокод на&nbsp;скидку 10%&nbsp;Траектории</p>
-                            </div>
+                    <div class="swiper-slide prize-tab" data-slider data-space-between="60,30,20" data-loop="true" data-auto-height="true">
+                      <div class="swiper">
+                        <div class="swiper-wrapper">
+                          <!--main prize slide 1-->
+                          <div class="swiper-slide main-prize intro intro--money">
+                            <b class="title title--20">Деньги на телефон</b>
                           </div>
                         </div>
-                        <button class="arrow white" data-arrow-prev></button>
-                        <button class="arrow white" data-arrow-next></button>
-                        <div class="swiper-pagination" data-pagination></div>
                       </div>
-                    </div>
-
-                    <!--PRIZES LIST-->
-                    <div class="swiper-slide prize-tab">
-                      <div class="prize-slider" data-slider data-slides-per-view="3,2,1" data-slides-per-group="3,2,1" data-space-between="30,30,20">
-                        <h3>Зарабатывай стрелы и&nbsp;обменивай на&nbsp;призы</h3>
-                        <div class="swiper">
-                          <div class="swiper-wrapper">
-                            <!--PRIZE 1-->
-                            <div class="swiper-slide prize-slide">
-                              <span class="arrows-sum">XX XXX</span>
-                              <div class="image">
-                                <img src="./assets/img/prizes/wink.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Промокод на&nbsp;подписку ВИНК&nbsp;годовая</p>
-                              <div class="prize-slide__footer">
-                                <button class="button full" data-popup-open="arrows-exchange">
-                                  <span>Обменять за XX ХХХ стрел</span>
-                                </button>
-                              </div>
-                            </div>
-
-                            <!--PRIZE 2-->
-                            <div class="swiper-slide prize-slide">
-                              <span class="arrows-sum">XX XXX</span>
-                              <div class="image">
-                                <img src="./assets/img/prizes/traektoria.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Сертификат на&nbsp;спортснаряжение</p>
-                              <div class="prize-slide__footer">
-                                <div class="arrows-count">
-                                  <div class="arrows-count__bar">
-                                    <div class="arrows-count__range" style="width: 0%"></div>
-                                  </div>
-                                  <span>50 стрел</span>
-                                  <span>из 100</span>
-                                </div>
-                              </div>
-                            </div>
-
-                            <!--PRIZE 3-->
-                            <div class="swiper-slide prize-slide">
-                              <span class="arrows-sum">XX XXX</span>
-                              <div class="image">
-                                <img src="./assets/img/prizes/grillbaza.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Лопатка для пиццы Grillbaza</p>
-                              <div class="prize-slide__footer">
-                                <div class="arrows-count">
-                                  <div class="arrows-count__bar">
-                                    <div class="arrows-count__range" style="width: 100%"></div>
-                                  </div>
-                                  <span>50 стрел</span>
-                                  <span>из 100</span>
-                                </div>
-                              </div>
-                            </div>
-
-                            <!--PRIZE 4-->
-                            <div class="swiper-slide prize-slide">
-                              <span class="arrows-sum">XX XXX</span>
-                              <div class="image">
-                                <img src="./assets/img/prizes/grillbaza2.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Набор для&nbsp;шашлыка Grillbaza</p>
-                              <div class="prize-slide__footer">
-                                <button class="button full" data-popup-open="arrows-exchange">
-                                  <span>Обменять на шанс в розыгрыше</span>
-                                </button>
-                              </div>
-                            </div>
-
-                            <!--PRIZE 5-->
-                            <div class="swiper-slide prize-slide">
-                              <span class="arrows-sum">XX XXX</span>
-                              <div class="image">
-                                <img src="./assets/img/prizes/grillbaza3.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Щётка для&nbsp;гриля Grillbaza, короткая</p>
-                              <div class="prize-slide__footer">
-                                <button class="button full" data-popup-open="arrows-exchange">
-                                  <span>Обменять на шанс в розыгрыше</span>
-                                </button>
-                              </div>
-                            </div>
-
-                            <!--PRIZE 6-->
-                            <div class="swiper-slide prize-slide">
-                              <span class="arrows-sum">XX XXX</span>
-                              <div class="image">
-                                <img src="./assets/img/prizes/grillbaza4.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Набор кисточек для&nbsp;соусов&nbsp;Grillbaza</p>
-                              <div class="prize-slide__footer">
-                                <button class="button full" data-popup-open="arrows-exchange">
-                                  <span>Обменять за XX ХХХ стрел</span>
-                                </button>
-                              </div>
-                            </div>
-
-                            <!--PRIZE 7-->
-                            <div class="swiper-slide prize-slide">
-                              <span class="arrows-sum">XX XXX</span>
-                              <div class="image">
-                                <img src="./assets/img/prizes/belkacar.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Белкакар 500 рублей</p>
-                              <div class="prize-slide__footer">
-                                <button class="button full" data-popup-open="arrows-exchange">
-                                  <span>Обменять за XX ХХХ стрел</span>
-                                </button>
-                              </div>
-                            </div>
-
-                            <!--PRIZE 8-->
-                            <div class="swiper-slide prize-slide">
-                              <span class="arrows-sum">XX XXX</span>
-                              <div class="image">
-                                <img src="./assets/img/prizes/ozon500.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Промокод ОЗОН 500&nbsp;рублей</p>
-                              <div class="prize-slide__footer">
-                                <button class="button full" data-popup-open="arrows-exchange">
-                                  <span>Обменять за XX ХХХ стрел</span>
-                                </button>
-                              </div>
-                            </div>
-
-                            <!--PRIZE 9-->
-                            <div class="swiper-slide prize-slide">
-                              <span class="arrows-sum">XX XXX</span>
-                              <div class="image">
-                                <img src="./assets/img/prizes/zy500.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Промокод ЗЯ&nbsp;500&nbsp;рублей</p>
-                              <div class="prize-slide__footer">
-                                <button class="button full" data-popup-open="arrows-exchange">
-                                  <span>Обменять за XX ХХХ стрел</span>
-                                </button>
-                              </div>
-                            </div>
-
-                            <!--PRIZE 10-->
-                            <div class="swiper-slide prize-slide">
-                              <span class="arrows-sum">XX XXX</span>
-                              <div class="image">
-                                <img src="./assets/img/prizes/giftery.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Сертификат Гифтери 500&nbsp;рублей</p>
-                              <div class="prize-slide__footer">
-                                <button class="button full" data-popup-open="arrows-exchange">
-                                  <span>Обменять за XX ХХХ стрел</span>
-                                </button>
-                              </div>
-                            </div>
-
-                            <!--PRIZE 11-->
-                            <div class="swiper-slide prize-slide">
-                              <span class="arrows-sum">XX XXX</span>
-                              <div class="image">
-                                <img src="./assets/img/prizes/go.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Сертификат Яндекс&nbsp;Go 100&nbsp;рублей</p>
-                              <div class="prize-slide__footer">
-                                <button class="button full" data-popup-open="arrows-exchange">
-                                  <span>Обменять за XX ХХХ стрел</span>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <button class="arrow" data-arrow-prev></button>
-                        <button class="arrow" data-arrow-next></button>
-                        <div class="swiper-pagination" data-pagination></div>
-                      </div>
+                      <!-- <button class="arrow" data-arrow-prev></button>
+                      <button class="arrow" data-arrow-next></button> -->
                     </div>
 
                     <!--WEECKLY PRIZES-->
@@ -543,9 +209,9 @@
                             <div class="swiper-slide prize-slide">
                               <span class="arrows-sum red">XX XXX</span>
                               <div class="image">
-                                <img src="./assets/img/prizes/traektoria.webp" alt="" />
+                                <img src="./assets/img/prizes/forester-mangal.webp" alt="" />
                               </div>
-                              <p class="prize-name">Сертификат на&nbsp;спортснаряжение</p>
+                              <p class="prize-name">Forester Мангал ДАЧНЫЙ С&nbsp;КРЫШКОЙ</p>
                               <div class="prize-slide__footer">
                                 <button class="button full" data-popup-open="arrows-exchange">
                                   <span>Обменять за XX ХХХ стрел</span>
@@ -557,9 +223,9 @@
                             <div class="swiper-slide prize-slide">
                               <span class="arrows-sum red">XX XXX</span>
                               <div class="image">
-                                <img src="./assets/img/prizes/llvltrvt.webp" alt="" />
+                                <img src="./assets/img/prizes/forester-kazan.webp" alt="" />
                               </div>
-                              <p class="prize-name">Сертификат Левел&nbsp;Тревел на&nbsp;1000&nbsp;рублей</p>
+                              <p class="prize-name">Forester Казан чугунный с&nbsp;крышкой-сковородой 9,5&nbsp;л</p>
                               <div class="prize-slide__footer">
                                 <div class="arrows-count">
                                   <div class="arrows-count__bar">
@@ -575,9 +241,9 @@
                             <div class="swiper-slide prize-slide">
                               <span class="arrows-sum red">XX XXX</span>
                               <div class="image">
-                                <img src="./assets/img/prizes/ozon3000.webp" alt="" />
+                                <img src="./assets/img/prizes/forester-vok.webp" alt="" />
                               </div>
-                              <p class="prize-name">Сертификат ОЗОН на&nbsp;3000&nbsp;рублей</p>
+                              <p class="prize-name">Forester Вок-сковорода из нержавеющей стали, 33&nbsp;см</p>
                               <div class="prize-slide__footer">
                                 <div class="arrows-count">
                                   <div class="arrows-count__bar">
@@ -586,20 +252,6 @@
                                   <span>50 стрел</span>
                                   <span>из 100</span>
                                 </div>
-                              </div>
-                            </div>
-
-                            <!--PRIZE 4-->
-                            <div class="swiper-slide prize-slide">
-                              <span class="arrows-sum red">XX XXX</span>
-                              <div class="image">
-                                <img src="./assets/img/prizes/appleairpods.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Беспроводные наушники&nbsp;Apple</p>
-                              <div class="prize-slide__footer">
-                                <button class="button full" data-popup-open="arrows-exchange">
-                                  <span>Обменять за XX ХХХ стрел</span>
-                                </button>
                               </div>
                             </div>
                           </div>
@@ -615,8 +267,8 @@
                       <div
                         class="prize-slider red-image big"
                         data-slider
-                        data-slides-per-view="3,2,1"
-                        data-slides-per-group="3,2,1"
+                        data-slides-per-view="2,2,1"
+                        data-slides-per-group="2,2,1"
                         data-space-between="30,30,20"
                       >
                         <h3>Для участия в&nbsp;розыгрыше необходимо обменять стрелы на&nbsp;билеты</h3>
@@ -626,9 +278,9 @@
                             <div class="swiper-slide prize-slide">
                               <span class="arrows-sum">XX XXX</span>
                               <div class="image">
-                                <img src="./assets/img/prizes/monthp-1.webp" alt="" />
+                                <img src="./assets/img/prizes/forester-ochag.webp" alt="" />
                               </div>
-                              <p class="prize-name">Гриль SnS Kettle <br />Black&nbsp;Edition</p>
+                              <p class="prize-name">Forester Очаг-мангал-печь под&nbsp;казан</p>
                               <div class="prize-slide__footer">
                                 <button class="button green full" data-popup-open="arrows-exchange">
                                   <span>Обменять за XX ХХХ стрел</span>
@@ -640,9 +292,9 @@
                             <div class="swiper-slide prize-slide">
                               <span class="arrows-sum">XX XXX</span>
                               <div class="image">
-                                <img src="./assets/img/prizes/monthp-2.webp" alt="" />
+                                <img src="./assets/img/prizes/forester-table.webp" alt="" />
                               </div>
-                              <p class="prize-name">Гриль SnS Travel Kettle</p>
+                              <p class="prize-name">Forester Уличный стол со&nbsp;шкафчиком</p>
                               <div class="prize-slide__footer">
                                 <div class="arrows-count">
                                   <div class="arrows-count__bar">
@@ -651,52 +303,6 @@
                                   <span>50 стрел</span>
                                   <span>из 100</span>
                                 </div>
-                              </div>
-                            </div>
-
-                            <!--PRIZE 3-->
-                            <div class="swiper-slide prize-slide">
-                              <span class="arrows-sum">XX XXX</span>
-                              <div class="image">
-                                <img src="./assets/img/prizes/monthp-3.webp" alt="" />
-                              </div>
-                              <p class="prize-name">iPhone 17</p>
-                              <div class="prize-slide__footer">
-                                <div class="arrows-count">
-                                  <div class="arrows-count__bar">
-                                    <div class="arrows-count__range" style="width: 100%"></div>
-                                  </div>
-                                  <span>50 стрел</span>
-                                  <span>из 100</span>
-                                </div>
-                              </div>
-                            </div>
-
-                            <!--PRIZE 4-->
-                            <!-- <div class="swiper-slide prize-slide">
-                              <span class="arrows-sum">XX XXX</span>
-                              <div class="image">
-                                <img src="./assets/img/prizes/monthp-4.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Сертификат в&nbsp;М.Видео <br />на&nbsp;30&nbsp;000&nbsp;рублей</p>
-                              <div class="prize-slide__footer">
-                                <button class="button green full" data-popup-open="arrows-exchange">
-                                  <span>Обменять на шанс в розыгрыше</span>
-                                </button>
-                              </div>
-                            </div> -->
-
-                            <!--PRIZE 5-->
-                            <div class="swiper-slide prize-slide">
-                              <span class="arrows-sum">XX XXX</span>
-                              <div class="image">
-                                <img src="./assets/img/prizes/monthp-5.webp" alt="" />
-                              </div>
-                              <p class="prize-name">Сертификат в&nbsp;DNS <br />на&nbsp;30&nbsp;000&nbsp;рублей</p>
-                              <div class="prize-slide__footer">
-                                <button class="button green full" data-popup-open="arrows-exchange">
-                                  <span>Обменять на шанс в розыгрыше</span>
-                                </button>
                               </div>
                             </div>
                           </div>
@@ -985,8 +591,10 @@
                       <div data-accordeon-body>
                         <div class="answer">
                           <p>
-                            Ознакомиться со&nbsp;списком товаров, покупка которых учитывается в&nbsp;акции, можно <br />на странице
-                            <a href="./products.html" class="red">"Продукты, участвующие в&nbsp;акции"</a>.
+                            Любая продукция, приобретённая в&nbsp;супермаркетах Мираторг. Если в&nbsp;чеке присутстуют товары пратнёров,
+                            то&nbsp;стрелы за&nbsp;чек удваиваются. Ознакомиться со&nbsp;списком товаров партнёров, покупка которых удваивает
+                            количество стрел, можно на&nbsp;странице
+                            <a href="./products.html" class="red">"Продукты партнёров, удваивающие стрелы"</a>.
                           </p>
                         </div>
                       </div>
@@ -1127,7 +735,7 @@
           </div>
 
           <div class="footer-logo no-margin">
-            <img src="./assets/img/svg/logo.svg" alt="Мираторг" />
+            <img src="./assets/img/svg/logo-sm.svg" alt="Мираторг" />
           </div>
 
           <menu class="footer-menu">
@@ -1499,7 +1107,7 @@
         </div>
 
         <!--CHEQUE DOWNLOAD SUCCESS POPUP-->
-        <div class="popup-content" id="how-to-get-arrows">
+        <div class="popup-content" id="how-to-get-arrows-sm">
           <button class="popup-close" data-popup-close></button>
           <h2 class="title title--40 upper circles">Как зарабатывать стрелы?</h2>
           <ul class="how-to-get-arrows">
@@ -1509,15 +1117,13 @@
             </li>
             <li>
               <span>+ 1 стрела</span>
-              <p>За&nbsp;каждый рубль <br />в&nbsp;чеке при&nbsp;покупке <br />продукции <br />Мираторг</p>
+              <p>
+                За каждый рубль <br />в&nbsp;чеке от&nbsp;1500&nbsp;рублей <br />при&nbsp;покупке продукции <br />в&nbsp;супермаркетах <br />Мираторг.
+              </p>
             </li>
             <li>
-              <span>+ 1 стрела</span>
-              <p>За игру<br />на сайте</p>
-            </li>
-            <li>
-              <span>+ 10 стрел</span>
-              <p>За&nbsp;отсканированный <br />QR на&nbsp;POSm <br />и&nbsp;остальных <br />анонсирующих <br />материалах</p>
+              <span>Стрелы чека x2</span>
+              <p>За товары партнёров <br />в&nbsp;чеке</p>
             </li>
           </ul>
         </div>

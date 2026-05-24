@@ -411,6 +411,115 @@ $popup_transition: 0.5s;
   }
 }
 
+#how-to-get-arrows-sm {
+  border-radius: myclamp(20px, 40px, 1440px, 1440px);
+  max-width: 940px;
+  padding: 54px 20px;
+  background: var(--green);
+  li {
+    &:nth-child(1) {
+      &:before {
+        transform: translateX(-60%) rotate(22.15deg);
+        @media (max-width: 1365px) {
+          transform: translateX(-60%) rotate(22.15deg);
+        }
+      }
+      &:after {
+        transform: translateX(0%) rotate(16.61deg);
+      }
+    }
+
+    &:nth-child(2) {
+      &:before {
+        bottom: 126%;
+        transform: translateX(0%) rotate(8.48deg);
+      }
+      &:after {
+        content: '';
+        top: 112%;
+        transform: translateX(0%) rotate(-16.61deg);
+      }
+    }
+
+    &:nth-child(3) {
+      &:before {
+        bottom: 126%;
+        transform: translateX(55%) rotate(-14deg);
+      }
+      &:after {
+        top: 114%;
+        transform: translateX(0%) rotate(13deg);
+      }
+    }
+  }
+
+  @media (max-width: 1365px) {
+    padding: 40px 20px;
+  }
+
+  @media (max-width: 1279px) {
+    max-width: 620px;
+    li {
+      min-width: 200px;
+      &:nth-child(1) {
+        margin-top: -20px;
+        &:before {
+          transform: translateX(0%) rotate(11.15deg);
+          bottom: 120%;
+        }
+      }
+      &:nth-child(2) {
+        margin-top: 80px;
+        &:after {
+          transform: translateX(0%) rotate(-11.15deg) scaleX(-1);
+        }
+      }
+      &:nth-child(3) {
+        width: 265px;
+        flex: none;
+        margin-right: auto;
+        margin-top: -60px;
+        &:before,
+        &:after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    max-width: 375px;
+    padding: 30px 20px;
+    .how-to-get-arrows {
+      margin-bottom: 0px;
+    }
+    li {
+      min-width: 200px;
+      &:nth-child(1) {
+        margin-top: 0px;
+        &:before {
+          transform: translateX(0%) rotate(11.15deg);
+          bottom: 120%;
+        }
+      }
+      &:nth-child(2) {
+        margin-top: 0px;
+        &:after {
+          content: none;
+        }
+      }
+      &:nth-child(3) {
+        width: 100%;
+        margin-top: 0px;
+        &:before,
+        &:after {
+          content: none;
+        }
+      }
+    }
+  }
+}
+
 .how-to-get-arrows {
   display: flex;
   width: 100%;

@@ -5,6 +5,31 @@
   z-index: 2;
   background: linear-gradient(var(--red) 80%, rgba(0, 0, 0, 0) 81%);
 
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-content: flex-end;
+    max-width: myclamp(1200px, 1200px, 1440px, 2560px);
+    padding-bottom: 2vw;
+    margin-top: -3vw;
+    @media (max-width: 1439px) {
+      max-width: 1000px;
+    }
+    @media (max-width: 1023px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      padding-bottom: 0px;
+      margin-top: 0px;
+      .hero-title {
+        max-height: 90px;
+      }
+    }
+  }
+
   .logo {
     width: 26.8%;
     left: 4.583333vw;
@@ -35,6 +60,18 @@
       left: 0vw;
       max-width: 270px;
     }
+
+    .fsk {
+      left: 7vw;
+      @media (max-width: 1279px) {
+        width: auto;
+        left: 0px;
+        padding-right: 100px;
+        padding-left: 30px;
+        margin: 0;
+        margin-left: 7vw;
+      }
+    }
   }
 
   .hero-content {
@@ -50,18 +87,6 @@
 
     @media (max-width: 1023px) {
       margin-top: 0px;
-    }
-  }
-
-  .fsk {
-    left: 7vw;
-    @media (max-width: 1279px) {
-      width: auto;
-      left: 0px;
-      padding-right: 100px;
-      padding-left: 30px;
-      margin: 0;
-      margin-left: 7vw;
     }
   }
 
@@ -87,13 +112,14 @@
       width: 360px;
       max-width: 360px;
       height: 240px;
-    }
-    .fsk {
-      width: auto;
-      left: 100px;
-      padding-right: 46px;
-      padding-left: 46px;
-      margin: 0;
+
+      .fsk {
+        width: auto;
+        left: 100px;
+        padding-right: 46px;
+        padding-left: 46px;
+        margin: 0;
+      }
     }
   }
 }
@@ -111,5 +137,130 @@
     display: flex;
     width: auto;
     margin-bottom: 10px;
+  }
+}
+
+.sofa {
+  display: block;
+  position: relative;
+  padding: 0px myclamp(216px, 216px, 1440px, 2560px);
+
+  .fsk {
+    width: myclamp(344px, 344px, 1440px, 2560px);
+    padding: myclamp(20px, 20px, 1440px, 2560px) 20px;
+    gap: myclamp(5px, 5px, 1440px, 2560px);
+
+    transform: translate(30%, 52%);
+    > * {
+      z-index: 2;
+    }
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0px;
+      top: 0px;
+      inset: 0;
+      background: var(--green);
+      border-radius: myclamp(20px, 20px, 1440px, 2560px);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+      z-index: 2;
+    }
+    img {
+      position: absolute;
+      z-index: 1;
+      width: myclamp(777px, 777px, 1440px, 2560px);
+      transform: translate(1%, -30%);
+    }
+
+    span {
+      font-size: myclamp(12px, 12px, 1440px, 2560px);
+      line-height: 1;
+    }
+    p {
+      font-size: myclamp(30px, 30px, 1440px, 2560px);
+      font-weight: 700;
+      line-height: 1;
+    }
+    b {
+      font-size: myclamp(16px, 16px, 1440px, 2560px);
+      font-weight: 700;
+      line-height: 1;
+    }
+  }
+}
+
+@media (max-width: 1439px) {
+  .sofa {
+    padding: 0px 150px 0px 0px;
+
+    .fsk {
+      width: 310px;
+      padding: 20px;
+      transform: translate(30%, 40%);
+
+      img {
+        width: 700px;
+        transform: translate(1%, -36%);
+      }
+
+      span {
+        font-size: 12px;
+      }
+      p {
+        font-size: 28px;
+      }
+      b {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  .sofa {
+    padding: 0px 150px 0px 0px;
+
+    .fsk {
+      width: 280px;
+      transform: translate(0%, 40%);
+
+      img {
+        width: 620px;
+        transform: translate(1%, -36%);
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .sofa {
+    padding: 0px;
+
+    .fsk {
+      width: 340px;
+      transform: translate(0%, 40px);
+      margin-top: 40px;
+
+      img {
+        position: relative;
+        z-index: 3;
+        margin-top: -75px;
+        width: 332px;
+        transform: translate(0%, -5px);
+      }
+
+      span {
+        font-size: 12px;
+      }
+      p {
+        font-size: 30px;
+      }
+      b {
+        font-size: 16px;
+      }
+    }
   }
 }
