@@ -7335,6 +7335,32 @@ button:disabled {
   }
 }
 
+.popup-ol {
+  text-align: left;
+  font-weight: 400;
+  font-size: clamp(16px, 1.6667vw, 24px);
+  line-height: 1.4;
+  list-style: decimal;
+  padding-left: 1.2em;
+}
+.popup-ol li {
+  padding: 10px 0px;
+}
+
+#how-to-play {
+  max-width: 640px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 20px;
+}
+#how-to-play .buttons {
+  margin-top: 10px;
+}
+#how-to-play .buttons .button {
+  width: 100%;
+  max-width: 310px;
+}
+
 .dropzone {
   display: -webkit-box;
   display: -ms-flexbox;

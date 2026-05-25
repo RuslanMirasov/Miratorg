@@ -84,7 +84,7 @@
           <div class="container">
             <!--buttons-->
             <a href="./" class="game__button go-back">Назад</a>
-            <button class="game__button help" data-game-help>Подсказка</button>
+            <button class="game__button help" data-popup-open="how-to-play">Подсказка</button>
 
             <!--БЛОК ДЛЯ ВСТАВКИ ИГРЫ-->
             <div class="game">
@@ -188,6 +188,21 @@
     <!--POPUPS-->
     <div class="backdrop" data-backdrop>
       <div class="popup" data-popup>
+        <!--CHEQUE DOWNLOAD BY SELF POPUP-->
+        <div class="popup-content" id="how-to-play">
+          <button class="popup-close" data-popup-close></button>
+          <h2 class="title title--40">Как играть</h2>
+          <ol class="popup-ol">
+            <li>Составляйте слова из&nbsp;букв.</li>
+            <li>Проводите пальцем по&nbsp;буквам в&nbsp;нужном порядке, чтобы получилось слово.</li>
+            <li>Каждую букву можно использовать только&nbsp;один&nbsp;раз.</li>
+            <li>За&nbsp;отгадывание всех слов начисляется 10&nbsp;стрел. Не&nbsp;более 50 стрел в&nbsp;неделю.</li>
+          </ol>
+          <div class="buttons">
+            <button class="button white" data-popup-close><span>Начать</span></button>
+          </div>
+        </div>
+
         <!--AUTH POPUP-->
         <div class="popup-content" id="auth">
           <button class="popup-close" data-popup-close></button>
@@ -573,5 +588,12 @@
     <script src="./assets/js/plugins/swiper-bundle.min.js"></script>
     <script src="./assets/js/plugins/dropzone.min.js"></script>
     <script src="./assets/js/scripts.js" type="module" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+          window.popup.open('how-to-play');
+        }, 800);
+      });
+    </script>
   </body>
 </html>
