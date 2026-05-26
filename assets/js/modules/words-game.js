@@ -139,5 +139,5 @@ export const initWordsGame = () => {
 
   GAME_WRAPPER.innerHTML = '';
 
-  loadGameLavel(2);
+  loadGameLavel(1);
 };

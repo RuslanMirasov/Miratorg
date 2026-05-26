@@ -10,20 +10,41 @@
 }
 
 .words-headlines {
+  position: relative;
   background: url('../img/bg.webp') no-repeat center bottom/cover;
   padding-bottom: 184px;
   padding-top: 94px;
-  mask-image: linear-gradient(#000 0 0), url('../img/words/mask-top.svg'), url('../img/words/mask-bottom.svg');
-  mask-repeat: no-repeat, no-repeat, no-repeat;
-  mask-size:
-    100% calc(100% + 2px),
-    100% 121px,
-    100% 112px;
-  mask-position:
-    center,
-    center top,
-    center calc(100% + 1px);
-  mask-composite: exclude, exclude;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    top: 0px;
+    width: 100%;
+    min-width: 768px;
+    height: 100px;
+    pointer-events: none;
+    z-index: 5;
+    background: url('../img/words/mask-top.svg') no-repeat center top;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    bottom: 0px;
+    width: 100%;
+    min-width: 768px;
+    height: 100px;
+    pointer-events: none;
+    z-index: 1;
+    background: url('../img/words/mask-bottom.svg') no-repeat center bottom;
+  }
 
   .container {
     display: flex;
@@ -34,6 +55,7 @@
     align-items: center;
     align-content: center;
     gap: 30px;
+    z-index: 2;
 
     .image {
       display: block;
@@ -64,7 +86,20 @@
   margin: 0 auto;
   padding: 60px;
   border-radius: 50px;
+  z-index: 2;
   color: var(--white);
+  &:not(.green) {
+    .title {
+      line-height: 1.2;
+      margin-top: auto;
+    }
+  }
+
+  .button {
+    width: 100%;
+    max-width: 290px;
+    margin-top: auto;
+  }
   &.red {
     min-height: 440px;
     margin-top: 40px;
@@ -78,6 +113,7 @@
     .miratorg-sm-link {
       width: 100%;
       max-width: 696px;
+      min-width: 280px;
       margin: auto 0px;
     }
   }
@@ -222,17 +258,21 @@
       background: var(--red);
     }
     &.green {
-      width: calc(100% - 20px);
+      width: 100%;
       min-height: 310px;
       padding-top: 45px;
       padding-bottom: 80px;
       .title {
         display: flex;
         flex-direction: row;
-        max-width: 270px;
+        &.title--64 {
+          gap: 12px;
+          font-size: 40px;
+          max-width: 100%;
+        }
       }
       .miratorg-sm-link {
-        max-width: 230px;
+        max-width: 280px;
       }
     }
   }

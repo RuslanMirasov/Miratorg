@@ -414,6 +414,26 @@
       }
     }
   }
+
+  &.monthly {
+    padding-bottom: 14px;
+    .prize-slide {
+      background: none;
+      color: var(--white);
+      padding: 0px;
+      border-radius: 0px;
+      margin: auto;
+      margin-top: 16px;
+      max-width: 368px;
+
+      .image {
+        width: auto;
+        height: 320px;
+        margin-bottom: 10px;
+        margin-top: -16px;
+      }
+    }
+  }
 }
 
 // 1280
@@ -545,7 +565,7 @@
 
     .prize-name {
       min-height: 50px;
-      font-size: 20px;
+      font-size: 18px;
     }
 
     &.big {
@@ -580,6 +600,21 @@
         }
         .prize-name {
           margin-bottom: 0px;
+        }
+      }
+    }
+
+    &.monthly {
+      padding-bottom: 14px;
+      .prize-slide {
+        margin-top: 16px;
+        max-width: 300px;
+
+        .image {
+          width: auto;
+          height: 265px;
+          margin-bottom: 10px;
+          margin-top: -16px;
         }
       }
     }
@@ -687,6 +722,18 @@
 
     .prize-slide__footer {
       margin-top: 12px;
+    }
+
+    &.monthly {
+      padding-bottom: 16px;
+      .prize-slide {
+        .image {
+          width: auto;
+          height: 240px;
+          margin-bottom: 10px;
+          margin-top: -10px;
+        }
+      }
     }
   }
 }
@@ -849,6 +896,18 @@
       padding: 20px;
       border-radius: 30px;
     }
+
+    &.monthly {
+      padding-bottom: 60px;
+      .prize-slide {
+        .image {
+          width: auto;
+          height: 240px;
+          margin-bottom: 10px;
+          margin-top: -10px;
+        }
+      }
+    }
   }
 }
 
@@ -946,6 +1005,29 @@
         }
         .prize-name {
           margin-bottom: 0px;
+        }
+      }
+    }
+
+    &.monthly {
+      padding-bottom: 80px;
+      .prize-slide {
+        max-width: 500px;
+        .image {
+          width: auto;
+          height: 240px;
+          margin-bottom: 20px;
+          margin-top: -10px;
+        }
+        .prize-name {
+          max-width: 240px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 10px;
+          min-height: auto;
+        }
+        .prize-slide__footer {
+          margin-top: 12px;
         }
       }
     }

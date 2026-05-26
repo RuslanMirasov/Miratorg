@@ -193,6 +193,7 @@
     width: auto;
     flex: 1;
     margin-top: 0px;
+    margin-left: 40px;
 
     .table {
       th {
@@ -201,8 +202,12 @@
         }
       }
     }
+    @media (max-width: 1279px) {
+      margin-left: 10px;
+    }
     @media (max-width: 1023px) {
       margin-top: 32px;
+      margin-left: 0px;
       .table {
         th {
           span {
@@ -352,6 +357,10 @@
   .prize-slider {
     min-height: auto;
     padding: 40px 0px;
+    background: var(--red);
+    &.green {
+      background: var(--green);
+    }
     h3 {
       text-transform: uppercase;
       font-size: myclamp(24px, 32px, 1440px, 1440px);
