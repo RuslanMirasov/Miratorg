@@ -7670,7 +7670,7 @@ a.dz-remove {
 
 .footer-logo {
   display: block;
-  width: clamp(232px, 16.1111vw, 232px);
+  width: clamp(180px, 16.1111vw, 232px);
 }
 @media (max-width: 1023px) {
   .footer-logo {
