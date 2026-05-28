@@ -387,6 +387,10 @@
   align-content: center;
   gap: 20px;
   margin-bottom: auto;
+
+  .logout {
+    margin-top: 20px;
+  }
 }
 
 @media (max-width: 1439px) {

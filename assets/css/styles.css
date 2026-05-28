@@ -1867,13 +1867,13 @@ button:disabled {
           align-items: flex-end;
   -ms-flex-line-pack: end;
       align-content: flex-end;
-  max-width: clamp(1200px, 83.3333vw, 2133px);
-  padding-bottom: 2vw;
-  margin-top: -3vw;
+  max-width: clamp(950px, 65.9722vw, 1689px);
+  padding-bottom: 1vw;
+  margin-top: -2vw;
 }
 @media (max-width: 1439px) {
   .section--hero .container {
-    max-width: 1000px;
+    max-width: 950px;
   }
 }
 @media (max-width: 1023px) {
@@ -2028,15 +2028,15 @@ button:disabled {
 .sofa {
   display: block;
   position: relative;
-  padding: 0px clamp(216px, 15vw, 384px);
+  padding: 0px;
 }
 .sofa .fsk {
   width: clamp(344px, 23.8889vw, 612px);
   padding: clamp(20px, 1.3889vw, 36px) 20px;
   gap: clamp(5px, 0.3472vw, 9px);
-  -webkit-transform: translate(30%, 52%);
-      -ms-transform: translate(30%, 52%);
-          transform: translate(30%, 52%);
+  -webkit-transform: translate(0%, 40%);
+      -ms-transform: translate(0%, 40%);
+          transform: translate(0%, 40%);
 }
 .sofa .fsk > * {
   z-index: 2;
@@ -2059,10 +2059,10 @@ button:disabled {
 .sofa .fsk img {
   position: absolute;
   z-index: 1;
-  width: clamp(777px, 53.9583vw, 1381px);
-  -webkit-transform: translate(1%, -30%);
-      -ms-transform: translate(1%, -30%);
-          transform: translate(1%, -30%);
+  width: clamp(600px, 41.6667vw, 1067px);
+  -webkit-transform: translate(34%, -42%);
+      -ms-transform: translate(34%, -42%);
+          transform: translate(34%, -42%);
 }
 .sofa .fsk span {
   font-size: clamp(12px, 0.8333vw, 21px);
@@ -2091,10 +2091,10 @@ button:disabled {
             transform: translate(30%, 40%);
   }
   .sofa .fsk img {
-    width: 700px;
-    -webkit-transform: translate(1%, -36%);
-        -ms-transform: translate(1%, -36%);
-            transform: translate(1%, -36%);
+    width: 550px;
+    -webkit-transform: translate(34%, -42%);
+        -ms-transform: translate(34%, -42%);
+            transform: translate(34%, -42%);
   }
   .sofa .fsk span {
     font-size: 12px;
@@ -2117,10 +2117,10 @@ button:disabled {
             transform: translate(0%, 40%);
   }
   .sofa .fsk img {
-    width: 620px;
-    -webkit-transform: translate(1%, -36%);
-        -ms-transform: translate(1%, -36%);
-            transform: translate(1%, -36%);
+    width: 500px;
+    -webkit-transform: translate(34%, -42%);
+        -ms-transform: translate(34%, -42%);
+            transform: translate(34%, -42%);
   }
 }
 @media (max-width: 1023px) {
@@ -2132,16 +2132,16 @@ button:disabled {
     -webkit-transform: translate(0%, 40px);
         -ms-transform: translate(0%, 40px);
             transform: translate(0%, 40px);
-    margin-top: 40px;
+    margin-top: 80px;
   }
   .sofa .fsk img {
     position: relative;
     z-index: 3;
-    margin-top: -75px;
-    width: 332px;
-    -webkit-transform: translate(0%, -5px);
-        -ms-transform: translate(0%, -5px);
-            transform: translate(0%, -5px);
+    margin-top: -120px;
+    width: 250px;
+    -webkit-transform: translate(0%, -10px) scaleX(-1);
+        -ms-transform: translate(0%, -10px) scaleX(-1);
+            transform: translate(0%, -10px) scaleX(-1);
   }
   .sofa .fsk span {
     font-size: 12px;
@@ -2259,32 +2259,12 @@ button:disabled {
 .how-to-winn.how-to-winn--sm .swiper-slide h3 {
   min-height: 96px;
 }
-.how-to-winn.how-to-winn--sm .swiper-slide:nth-child(1) img {
-  -webkit-transform: translate(0%, -5%) scale(1.3);
-      -ms-transform: translate(0%, -5%) scale(1.3);
-          transform: translate(0%, -5%) scale(1.3);
-}
-.how-to-winn.how-to-winn--sm .swiper-slide:nth-child(2) img {
-  -webkit-transform: translate(0%, 30%);
-      -ms-transform: translate(0%, 30%);
-          transform: translate(0%, 30%);
-}
-.how-to-winn.how-to-winn--sm .swiper-slide:nth-child(3) img {
-  -webkit-transform: translate(0%, 20%);
-      -ms-transform: translate(0%, 20%);
-          transform: translate(0%, 20%);
-}
 @media (max-width: 767px) {
   .how-to-winn.how-to-winn--sm {
     padding: 0px;
   }
   .how-to-winn.how-to-winn--sm .swiper-slide h3 {
     min-height: 1px;
-  }
-  .how-to-winn.how-to-winn--sm .swiper-slide:nth-child(1) img {
-    -webkit-transform: translate(0%, -2%) scale(1.1);
-        -ms-transform: translate(0%, -2%) scale(1.1);
-            transform: translate(0%, -2%) scale(1.1);
   }
 }
 .how-to-winn .swiper-slide {
@@ -2315,12 +2295,9 @@ button:disabled {
   position: relative;
   width: 100%;
   max-width: 242px;
+  margin: 0 auto;
+  margin-bottom: -50px;
   z-index: 0;
-}
-.how-to-winn .swiper-slide:nth-child(2) img {
-  -webkit-transform: translate(0%, 30%);
-      -ms-transform: translate(0%, 30%);
-          transform: translate(0%, 30%);
 }
 .how-to-winn .swiper-slide h3 {
   font-size: 24px;
@@ -5786,6 +5763,9 @@ button:disabled {
       align-content: center;
   gap: 20px;
   margin-bottom: auto;
+}
+.profile-info .logout {
+  margin-top: 20px;
 }
 
 @media (max-width: 1439px) {

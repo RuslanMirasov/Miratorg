@@ -11,11 +11,11 @@
     justify-content: space-between;
     align-items: flex-end;
     align-content: flex-end;
-    max-width: myclamp(1200px, 1200px, 1440px, 2560px);
-    padding-bottom: 2vw;
-    margin-top: -3vw;
+    max-width: myclamp(950px, 950px, 1440px, 2560px);
+    padding-bottom: 1vw;
+    margin-top: -2vw;
     @media (max-width: 1439px) {
-      max-width: 1000px;
+      max-width: 950px;
     }
     @media (max-width: 1023px) {
       flex-direction: column;
@@ -143,14 +143,13 @@
 .sofa {
   display: block;
   position: relative;
-  padding: 0px myclamp(216px, 216px, 1440px, 2560px);
+  padding: 0px;
 
   .fsk {
     width: myclamp(344px, 344px, 1440px, 2560px);
     padding: myclamp(20px, 20px, 1440px, 2560px) 20px;
     gap: myclamp(5px, 5px, 1440px, 2560px);
-
-    transform: translate(30%, 52%);
+    transform: translate(0%, 40%);
     > * {
       z-index: 2;
     }
@@ -171,8 +170,8 @@
     img {
       position: absolute;
       z-index: 1;
-      width: myclamp(777px, 777px, 1440px, 2560px);
-      transform: translate(1%, -30%);
+      width: myclamp(600px, 600px, 1440px, 2560px);
+      transform: translate(34%, -42%);
     }
 
     span {
@@ -202,8 +201,8 @@
       transform: translate(30%, 40%);
 
       img {
-        width: 700px;
-        transform: translate(1%, -36%);
+        width: 550px;
+        transform: translate(34%, -42%);
       }
 
       span {
@@ -228,8 +227,8 @@
       transform: translate(0%, 40%);
 
       img {
-        width: 620px;
-        transform: translate(1%, -36%);
+        width: 500px;
+        transform: translate(34%, -42%);
       }
     }
   }
@@ -242,14 +241,14 @@
     .fsk {
       width: 340px;
       transform: translate(0%, 40px);
-      margin-top: 40px;
+      margin-top: 80px;
 
       img {
         position: relative;
         z-index: 3;
-        margin-top: -75px;
-        width: 332px;
-        transform: translate(0%, -5px);
+        margin-top: -120px;
+        width: 250px;
+        transform: translate(0%, -10px) scaleX(-1);
       }
 
       span {
