@@ -19,6 +19,9 @@
     margin: 0 auto;
     margin-top: 60px;
     overflow: visible;
+    &.no-margin {
+      margin-top: 0px;
+    }
 
     .swiper-slide {
       border-radius: 30px;
@@ -59,6 +62,9 @@
   .partners {
     padding-bottom: 100px;
     .swiper {
+      &.no-margin {
+        margin-top: 40px;
+      }
       .swiper-wrapper {
         width: 100%;
         max-width: 100%;

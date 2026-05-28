@@ -6251,6 +6251,9 @@ button:disabled {
   margin-top: 60px;
   overflow: visible;
 }
+.partners .swiper.no-margin {
+  margin-top: 0px;
+}
 .partners .swiper .swiper-slide {
   border-radius: 30px;
   overflow: hidden;
@@ -6281,6 +6284,9 @@ button:disabled {
 @media (min-width: 1280px) {
   .partners {
     padding-bottom: 100px;
+  }
+  .partners .swiper.no-margin {
+    margin-top: 40px;
   }
   .partners .swiper .swiper-wrapper {
     width: 100%;
