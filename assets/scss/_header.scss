@@ -399,4 +399,8 @@
       width: 34px;
     }
   }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 }

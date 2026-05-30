@@ -1486,6 +1486,11 @@ button:disabled {
     width: 34px;
   }
 }
+@media (max-width: 767px) {
+  .stycky-button {
+    display: none;
+  }
+}
 
 .tabs {
   width: 100%;
@@ -2304,6 +2309,7 @@ button:disabled {
   text-transform: uppercase;
 }
 .how-to-winn .swiper-slide .button {
+  min-width: 190px;
   margin-top: 10px;
 }
 .how-to-winn .swiper-slide:before {
