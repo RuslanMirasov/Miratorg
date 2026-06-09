@@ -1,4 +1,5 @@
 const PRODUCTS_JSON_URL = './assets/json/products.json';
+const PRODUCTS_JSON_PROMO_URL = './assets/json/products_promo.json';
 const PRODUCTS_IMAGE_PATH = './assets/img/products';
 const ALL_VALUE = 'all';
 const DEFAULT_PAGE = 1;
@@ -29,7 +30,7 @@ const renderProduct = product => {
           />
         </div>
         <h2>${name}</h2>
-        <span class="product__weight">${weight}</span>
+        <!--<span class="product__weight">${weight}</span>-->
       </article>
     </li>
   `;
@@ -98,6 +99,8 @@ const getPaginationPages = (currentPage, totalPages) => {
 };
 
 const setActiveLink = (wrapper, selector, activeValue) => {
+  if (!wrapper) return;
+
   wrapper.querySelectorAll(selector).forEach(link => {
     link.classList.toggle('active', link.dataset.category === activeValue || link.dataset.segment === activeValue);
   });
@@ -118,6 +121,8 @@ const getFilteredProducts = (products, params) => {
 };
 
 const renderCategorys = (categorysEl, categories) => {
+  if (!categorysEl) return;
+
   const allCategory = '<li><a data-category="all" class="active">Все</a></li>';
   const categoryItems = categories
     .map(category => {
@@ -131,6 +136,8 @@ const renderCategorys = (categorysEl, categories) => {
 };
 
 const renderSegments = (segmentsEl, segments) => {
+  if (!segmentsEl) return;
+
   const allSegment = '<li><a data-segment="all" class="active">Все</a></li>';
   const segmentItems = segments
     .map(segment => {
@@ -181,35 +188,44 @@ const getSafePage = (page, totalPages) => {
   return Math.min(Math.max(page, DEFAULT_PAGE), totalPages);
 };
 
+const getProductsURL = productsList => {
+  if (productsList.dataset.productsSource === 'promo') return PRODUCTS_JSON_PROMO_URL;
+
+  return PRODUCTS_JSON_URL;
+};
+
 const renderFromURL = ({ products, productsList, categorysEl, segmentsEl, paginationEl }) => {
   const params = getURLParams();
-  const categoryProducts = getProductsByCategory(products, params.category);
-  const segments = getProductSegments(categoryProducts);
-  const activeSegment = params.segment === ALL_VALUE || segments.includes(params.segment) ? params.segment : ALL_VALUE;
+  const activeCategory = categorysEl ? params.category : ALL_VALUE;
+  const categoryProducts = getProductsByCategory(products, activeCategory);
+  const segments = segmentsEl ? getProductSegments(categoryProducts) : [];
+  const activeSegment = segmentsEl && (params.segment === ALL_VALUE || segments.includes(params.segment)) ? params.segment : ALL_VALUE;
 
-  if (activeSegment !== params.segment) {
+  if (segmentsEl && activeSegment !== params.segment) {
     setURLParams({ ...params, segment: ALL_VALUE, page: DEFAULT_PAGE });
     return renderFromURL({ products, productsList, categorysEl, segmentsEl, paginationEl });
   }
 
-  const filteredProducts = getFilteredProducts(products, { ...params, segment: activeSegment });
-  const totalPages = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE);
-  const currentPage = getSafePage(params.page, totalPages);
+  const filteredProducts = getFilteredProducts(products, { category: activeCategory, segment: activeSegment });
+  const totalPages = paginationEl ? Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE) : 1;
+  const currentPage = paginationEl ? getSafePage(params.page, totalPages) : DEFAULT_PAGE;
 
-  if (currentPage !== params.page) {
+  if (paginationEl && currentPage !== params.page) {
     setURLParams({ ...params, page: currentPage });
     return renderFromURL({ products, productsList, categorysEl, segmentsEl, paginationEl });
   }
 
   renderSegments(segmentsEl, segments);
-  renderProducts(productsList, getPaginatedProducts(filteredProducts, currentPage));
+  renderProducts(productsList, paginationEl ? getPaginatedProducts(filteredProducts, currentPage) : filteredProducts);
   renderPagination(paginationEl, currentPage, totalPages);
-  setActiveLink(categorysEl, '[data-category]', params.category);
+  setActiveLink(categorysEl, '[data-category]', activeCategory);
   setActiveLink(segmentsEl, '[data-segment]', activeSegment);
 };
 
 const initCategorys = options => {
   const { categorysEl } = options;
+
+  if (!categorysEl) return;
 
   categorysEl.addEventListener('click', e => {
     const link = e.target.closest('[data-category]');
@@ -224,6 +240,8 @@ const initCategorys = options => {
 
 const initSegments = options => {
   const { segmentsEl } = options;
+
+  if (!segmentsEl) return;
 
   segmentsEl.addEventListener('click', e => {
     const link = e.target.closest('[data-segment]');
@@ -265,8 +283,8 @@ const initPagination = options => {
   });
 };
 
-const loadProducts = async () => {
-  const response = await fetch(PRODUCTS_JSON_URL);
+const loadProducts = async url => {
+  const response = await fetch(url);
 
   if (!response.ok) {
     throw new Error(`Products loading failed: ${response.status}`);
@@ -281,10 +299,11 @@ export const initProducts = async () => {
   const segmentsEl = document.querySelector('[data-product-segments]');
   const paginationEl = document.querySelector('.pagination');
 
-  if (!productsList || !categorysEl || !segmentsEl) return;
+  if (!productsList) return;
 
   try {
-    const products = await loadProducts();
+    const productsURL = getProductsURL(productsList);
+    const products = await loadProducts(productsURL);
     const renderOptions = { products, productsList, categorysEl, segmentsEl, paginationEl };
 
     renderCategorys(categorysEl, getProductCategories(products));

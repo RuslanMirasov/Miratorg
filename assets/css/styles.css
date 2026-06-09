@@ -75,6 +75,7 @@ img {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  pointer-events: none;
 }
 
 h1,
@@ -333,6 +334,11 @@ button:disabled {
 }
 .title.title--28 {
   font-size: clamp(22px, 1.9444vw, 50px);
+}
+.title.title--32 {
+  font-size: clamp(22px, 2.2222vw, 32px);
+  max-width: clamp(375px, 51.3889vw, 740px);
+  margin-top: clamp(20px, 2.2222vw, 32px);
 }
 .title.title--40 {
   font-size: clamp(26px, 2.7778vw, 40px);
@@ -2818,7 +2824,7 @@ button:disabled {
   display: flex;
   position: relative;
   width: 100%;
-  min-height: 50px;
+  min-height: 56px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -2843,6 +2849,14 @@ button:disabled {
   padding: 0px 30px;
   border-radius: 0px;
   margin-top: 16px;
+}
+.prize-slider.big .prize-slide .prize-name {
+  min-height: 84px;
+}
+@media (max-width: 1279px) {
+  .prize-slider.big .prize-slide .prize-name {
+    min-height: 50px;
+  }
 }
 .prize-slider.big .prize-slide .image {
   width: 260px;
@@ -3985,6 +3999,10 @@ button:disabled {
   overflow: hidden;
   z-index: 1;
 }
+.table thead tr {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(9.99%, rgba(255, 255, 255, 0)), color-stop(10%, var(--green)), color-stop(90%, var(--green)), color-stop(90%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 9.99%, var(--green) 10%, var(--green) 90%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+}
 .table thead th {
   text-wrap: nowrap;
   background: var(--green);
@@ -4834,7 +4852,7 @@ button:disabled {
     margin-bottom: 0px;
   }
 }
-.house .fsk img {
+.house .fsk a {
   position: absolute;
   -webkit-transform: translate(0%, -50%);
       -ms-transform: translate(0%, -50%);
@@ -4843,7 +4861,7 @@ button:disabled {
   height: clamp(40px, 3.3333vw, 85px);
 }
 @media (max-width: 1023px) {
-  .house .fsk img {
+  .house .fsk a {
     height: 48px;
   }
 }

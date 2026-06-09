@@ -49,6 +49,12 @@
     font-size: myclamp(22px, 28px, 1440px, 2560px);
   }
 
+  &.title--32 {
+    font-size: myclamp(22px, 32px, 1440px, 1440px);
+    max-width: myclamp(375px, 740px, 1440px, 1440px);
+    margin-top: myclamp(20px, 32px, 1440px, 1440px);
+  }
+
   &.title--40 {
     font-size: myclamp(26px, 40px, 1440px, 1440px);
   }
