@@ -2430,11 +2430,11 @@ button:disabled {
           align-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  gap: 20px;
+  gap: 10px;
   margin-top: 10px;
 }
 .how-to-winn .swiper-slide .how-to-winn-buttons p {
-  font-size: 22px;
+  font-size: 16px;
 }
 .how-to-winn .swiper-slide .how-to-winn-buttons .button {
   min-width: 10px;
