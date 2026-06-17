@@ -361,6 +361,9 @@
     &.green {
       background: var(--green);
     }
+    &.green-image {
+      background: var(--green) url('../img/prizes/garant-bg.svg') no-repeat center center/cover;
+    }
     h3 {
       text-transform: uppercase;
       font-size: myclamp(24px, 32px, 1440px, 1440px);
@@ -628,5 +631,13 @@
     max-width: 500px;
     margin: 0 auto;
     padding: 0px 20px;
+  }
+}
+
+.select-garanty-prize {
+  margin: 0 auto;
+  min-width: 85%;
+  @media (max-width: 767px) {
+    margin-top: 20px;
   }
 }

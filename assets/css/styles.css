@@ -5782,6 +5782,9 @@ button:disabled {
 .my_prize__inner .prize-slider.green {
   background: var(--green);
 }
+.my_prize__inner .prize-slider.green-image {
+  background: var(--green) url("../img/prizes/garant-bg.svg") no-repeat center center/cover;
+}
 .my_prize__inner .prize-slider h3 {
   text-transform: uppercase;
   font-size: clamp(24px, 2.2222vw, 32px);
@@ -6043,6 +6046,16 @@ button:disabled {
     padding: 0px 20px;
   }
 }
+.select-garanty-prize {
+  margin: 0 auto;
+  min-width: 85%;
+}
+@media (max-width: 767px) {
+  .select-garanty-prize {
+    margin-top: 20px;
+  }
+}
+
 .section--products {
   padding-top: 64px;
   min-height: 100vh;
